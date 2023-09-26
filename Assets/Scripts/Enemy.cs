@@ -21,6 +21,11 @@ public class Enemy : MonoBehaviour
         target.InflictDamage(data.damage);
         Destroy(gameObject);
     }
+
+    public void Kill()
+    {
+        Destroy(gameObject);
+    }
     #endregion
 
     #region Unity API
