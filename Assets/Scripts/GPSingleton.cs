@@ -6,6 +6,8 @@ public class GPSingleton : MonoBehaviour
 {
     #region Properties
     public static GPSingleton Instance { get; private set; }
+    public PlanetBehavior Planet;
+    public UICtrl UICtrl;
     #endregion
 
     #region Unity API

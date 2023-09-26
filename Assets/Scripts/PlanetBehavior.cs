@@ -4,15 +4,28 @@ using UnityEngine;
 
 public class PlanetBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    #region Properties
+    private int currentHealth = 50;
+    #endregion
+
+    #region Methods
+    public void InflictDamage(int _damage)
     {
-        
+        currentHealth -= _damage;
+        GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, 50);
     }
 
-    // Update is called once per frame
+    #endregion
+
+    #region Unity API
+    void Start()
+    {
+        GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, 50);
+    }
+
     void Update()
     {
         
     }
+    #endregion
 }
