@@ -6,7 +6,7 @@ public class PlayerCursor : MonoBehaviour
 {
     #region Properties
     Vector3 direction;
-    [SerializeField] private Rigidbody2D rb2d;
+    [SerializeField] private Rigidbody rb;
     private Enemy target;
     #endregion
 
@@ -21,7 +21,7 @@ public class PlayerCursor : MonoBehaviour
     #endregion
 
     #region Unity API
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null)
@@ -30,7 +30,7 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerExit(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy == target)
@@ -55,7 +55,7 @@ public class PlayerCursor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb2d.velocity = direction * Time.deltaTime * 200;
+        rb.velocity = direction * Time.deltaTime * 200;
     }
     #endregion
 }

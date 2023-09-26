@@ -29,7 +29,7 @@ public class Enemy : MonoBehaviour
     #endregion
 
     #region Unity API
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter(Collider collision)
     {
         PlanetBehavior _planet = collision.GetComponent<PlanetBehavior>();
         if (_planet != null)
