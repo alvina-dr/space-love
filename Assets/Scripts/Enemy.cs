@@ -5,9 +5,14 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     #region Properties
+    [Header("COMPONENTS")]
     [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private MeshRenderer mesh;
+    [SerializeField] private PlanetBehavior target;
+
+    [Header("STATS")]
     [SerializeField] private EnemyData data;
-    public PlanetBehavior target;
+    [SerializeField] private int currentHealth;
     #endregion
 
     #region Methods
@@ -35,13 +40,13 @@ public class Enemy : MonoBehaviour
         if (_planet != null)
         {
             Attack();
-
         }
     }
-
     private void Start()
     {
         target = GPSingleton.Instance.Planet;
+        currentHealth = data.maxHealth;
+        GPSingleton.Instance.SetColor(mesh, data.startColor);
     }
 
     private void Update()
