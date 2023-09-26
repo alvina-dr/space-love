@@ -26,16 +26,22 @@ public class PlayerCursor : MonoBehaviour
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null)
         {
+            GPSingleton.Instance.SetColor(_enemy.mesh, EnemyData.Color.White);
             target = _enemy;
+
         }
     }
 
     private void OnTriggerExit(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
-        if (_enemy == target)
+        if (_enemy != null)
         {
-            target = null;
+            GPSingleton.Instance.SetColor(_enemy.mesh, _enemy.currentColor);
+            if (_enemy == target)
+            {
+                target = null;
+            }
         }
     }
 

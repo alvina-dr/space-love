@@ -12,6 +12,7 @@ public class Enemy : MonoBehaviour
     [Header("STATS")]
     public EnemyData data;
     [SerializeField] private int currentHealth;
+    [SerializeField] public EnemyData.Color currentColor;
     #endregion
 
     #region Methods
@@ -46,7 +47,8 @@ public class Enemy : MonoBehaviour
     {
         target = GPSingleton.Instance.Planet;
         currentHealth = data.maxHealth;
-        GPSingleton.Instance.SetColor(mesh, data.startColor);
+        currentColor = data.startColor;
+        GPSingleton.Instance.SetColor(mesh, currentColor);
     }
 
     private void Update()
