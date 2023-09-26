@@ -6,26 +6,37 @@ public class Enemy : MonoBehaviour
 {
     #region Properties
     [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private EnemyData data;
+    public PlanetBehavior target;
     #endregion
 
     #region Methods
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, GPSingleton.Instance.Planet.transform.position, Time.deltaTime * 5f);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
+    }
+
+    private void Attack() //example suicide attack
+    {
+        target.InflictDamage(data.damage);
+        Destroy(gameObject);
     }
     #endregion
 
     #region Unity API
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("COLLISION");
         PlanetBehavior _planet = collision.GetComponent<PlanetBehavior>();
         if (_planet != null)
         {
-            Debug.Log("COLLISION");
-            _planet.InflictDamage(10);
-            Destroy(gameObject);
+            Attack();
+
         }
+    }
+
+    private void Start()
+    {
+        target = GPSingleton.Instance.Planet;
     }
 
     private void Update()

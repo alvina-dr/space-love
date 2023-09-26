@@ -48,6 +48,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 7463774856747288298}
+  data: {fileID: 11400000, guid: a1efccb9e4bbf744fb5fe66b565ac08d, type: 2}
+  target: {fileID: 0}
 --- !u!61 &7047440487706971486
 BoxCollider2D:
   m_ObjectHideFlags: 0
