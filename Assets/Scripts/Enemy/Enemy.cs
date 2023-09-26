@@ -6,22 +6,22 @@ public class Enemy : MonoBehaviour
 {
     #region Properties
     [Header("COMPONENTS")]
-    [SerializeField] private SpriteRenderer sprite;
-    [SerializeField] private MeshRenderer mesh;
-    [SerializeField] private PlanetBehavior target;
+    public MeshRenderer mesh;
+    [HideInInspector] public PlanetBehavior target;
 
     [Header("STATS")]
-    [SerializeField] private EnemyData data;
+    public EnemyData data;
     [SerializeField] private int currentHealth;
     #endregion
 
     #region Methods
-    private void Move()
+    public virtual void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed * 3);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
+        mesh.transform.forward = Vector3.RotateTowards(mesh.transform.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
     }
 
-    private void Attack() //example suicide attack
+    public virtual void Attack() //example suicide attack
     {
         target.InflictDamage(data.damage);
         Destroy(gameObject);
