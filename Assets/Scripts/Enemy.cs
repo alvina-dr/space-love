@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
     #region Methods
     private void Move()
     {
-        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed * 3);
     }
 
     private void Attack() //example suicide attack
