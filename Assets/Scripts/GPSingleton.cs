@@ -11,6 +11,7 @@ public class GPSingleton : MonoBehaviour
     public Color visibleRed;
     public Color visibleBlue;
     public Color visibleAll;
+    [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
     #endregion
 
     #region Methods
@@ -42,6 +43,12 @@ public class GPSingleton : MonoBehaviour
         {
             Instance = this;
         }
+        EnemyData[] enemyDataArray = Resources.LoadAll<EnemyData>("EnemyData");
+        for (int i = 0; i < enemyDataArray.Length; i++)
+        {
+            enemyDataList.Add(enemyDataArray[i]);
+        }
+
     }
     #endregion
 }
