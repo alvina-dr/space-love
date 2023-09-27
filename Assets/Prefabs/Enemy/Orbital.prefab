@@ -163,12 +163,12 @@ PrefabInstance:
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[1].value
-      value: 0.5324402
+      value: 0.3971007
       objectReference: {fileID: 0}
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[2].value
-      value: 0.69855714
+      value: 0.56321764
       objectReference: {fileID: 0}
     - target: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}

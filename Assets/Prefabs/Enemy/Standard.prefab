@@ -28,8 +28,8 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0.50000006, y: -0.50000006, z: 0.49999994, w: 0.49999994}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 100.00002, y: 100, z: 100}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 169988028322263655}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -281,6 +281,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 6917066904245728170, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7346113833092785132, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -331,6 +336,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9142232645109903829, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 218622319115132655, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd, type: 3}
     - {fileID: 4707153446865094598, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd, type: 3}
@@ -379,10 +389,10 @@ MonoBehaviour:
   mesh: {fileID: 2209211011945662324}
   healthBar: {fileID: 1865230990106956209}
   target: {fileID: 0}
-  visualEffect: {fileID: 408414844903827069}
   data: {fileID: 11400000, guid: a1efccb9e4bbf744fb5fe66b565ac08d, type: 2}
   currentHealth: 0
   currentColor: 0
+  visualEffect: {fileID: 408414844903827069}
 --- !u!114 &1865230990106956209 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5391802523438269611, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,

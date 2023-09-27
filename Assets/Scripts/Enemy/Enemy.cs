@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class Enemy : MonoBehaviour
     public MeshRenderer mesh;
     public ValueSlider healthBar;
     [HideInInspector] public PlanetBehavior target;
-    public VisualEffect visualEffect;
 
     [Header("STATS")]
     public EnemyData data;
     [SerializeField] private int currentHealth;
     [SerializeField] public EnemyData.Color currentColor;
+
+    [Header("FX")]
+    public VisualEffect visualEffect;
+
     #endregion
 
     #region Methods
@@ -36,10 +40,17 @@ public class Enemy : MonoBehaviour
     {
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
-        if (currentHealth <= 0)
+        mesh.transform.DOScale(1.1f, .1f).OnComplete( () =>
         {
-            Kill();
-        }
+            mesh.transform.DOScale(1f, .1f).OnComplete(() =>
+            {
+                if (currentHealth <= 0)
+                {
+                    Kill();
+                }
+            });
+        });
+
     }
 
     public void Kill()
