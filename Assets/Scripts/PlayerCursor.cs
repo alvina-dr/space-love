@@ -8,6 +8,7 @@ public class PlayerCursor : MonoBehaviour
     Vector3 direction;
     [SerializeField] private Rigidbody rb;
     private Enemy target;
+    public int cursorPoint;
     #endregion
 
     #region Methods
@@ -15,6 +16,7 @@ public class PlayerCursor : MonoBehaviour
     {
         if (target != null)
         {
+            cursorPoint += target.data.scoreOnKill;
             target.Kill();
         }
     }
