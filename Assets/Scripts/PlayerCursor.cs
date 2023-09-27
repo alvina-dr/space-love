@@ -48,22 +48,14 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Shoot();
-        }
-    }
-
     public void OnMove(InputValue value)
     {
         direction = value.Get<Vector2>();
+    }
+
+    public void OnFire(InputValue value)
+    {
+        Shoot();
     }
 
     private void FixedUpdate()
