@@ -35,7 +35,8 @@ public class GPSingleton : MonoBehaviour
     void spawnEnemy(Enemy enemy)
     {
         float angle = Random.Range(0f, 2.0f * Mathf.PI);
-        Instantiate(enemy, new Vector3(-spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0), Quaternion.identity);
+        Vector3 pos = new Vector3(spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0);
+        Instantiate(enemy, pos, Quaternion.LookRotation(pos,Vector3.forward));
     }
     #endregion
 
