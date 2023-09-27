@@ -114,7 +114,7 @@ MonoBehaviour:
   mesh: {fileID: 4695371271133353224}
   healthBar: {fileID: 5380081396470240869}
   target: {fileID: 0}
-  visualEffect: {fileID: 0}
+  visualEffect: {fileID: 2308726601788394897}
   data: {fileID: 11400000, guid: a1efccb9e4bbf744fb5fe66b565ac08d, type: 2}
   currentHealth: 0
   currentColor: 0
@@ -250,6 +250,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e498d7434b887fb4ea9304c93b0e2f12, type: 3}
+--- !u!2083052967 &2308726601788394897 stripped
+VisualEffect:
+  m_CorrespondingSourceObject: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
+    type: 3}
+  m_PrefabInstance: {fileID: 4453338355255182426}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9021175864821877702 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,

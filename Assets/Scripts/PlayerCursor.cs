@@ -43,6 +43,7 @@ public class PlayerCursor : MonoBehaviour
         if (_enemy != null)
         {
             GPSingleton.Instance.SetColor(_enemy.mesh, _enemy.currentColor);
+            if (_enemy.visualEffect != null) GPSingleton.Instance.SetVFX(_enemy.visualEffect, _enemy.currentColor);
             targetList.Remove(_enemy);
         }
     }
