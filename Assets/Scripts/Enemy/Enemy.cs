@@ -38,11 +38,12 @@ public class Enemy : MonoBehaviour
 
     public virtual void Damage(int _value)
     {
+        if (currentHealth <= 0) return;
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
         mesh.transform.DOScale(1.1f, .1f).OnComplete( () =>
         {
-            mesh.transform.DOScale(1f, .1f).OnComplete(() =>
+            mesh.transform.DOScale(0f, .1f).OnComplete(() =>
             {
                 if (currentHealth <= 0)
                 {
@@ -50,11 +51,11 @@ public class Enemy : MonoBehaviour
                 }
             });
         });
-
     }
 
     public void Kill()
     {
+        Instantiate(GPSingleton.Instance.explosionDeathEffect).transform.position = transform.position;
         Destroy(gameObject);
     }
     #endregion

@@ -61,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: c5c73750581339343acc33ea17c4f352, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -284,7 +284,62 @@ PrefabInstance:
     - target: {fileID: 6917066904245728170, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalRotation.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7280754555968049962, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7346113833092785132, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
@@ -339,7 +394,7 @@ PrefabInstance:
     - target: {fileID: 9142232645109903829, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 218622319115132655, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd, type: 3}
@@ -393,6 +448,7 @@ MonoBehaviour:
   currentHealth: 0
   currentColor: 0
   visualEffect: {fileID: 408414844903827069}
+  explosionDeathEffect: {fileID: 0}
 --- !u!114 &1865230990106956209 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5391802523438269611, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,

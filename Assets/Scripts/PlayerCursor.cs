@@ -12,6 +12,7 @@ public class PlayerCursor : MonoBehaviour
     public int cursorPoint;
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
+    public EnemyData.Color cursorColor;
     #endregion
 
     #region Methods
@@ -19,8 +20,15 @@ public class PlayerCursor : MonoBehaviour
     {
         if (targetList.Count > 0)
         {
-            cursorPoint += targetList[targetList.Count-1].data.scoreOnKill;
-            targetList[targetList.Count - 1].Damage(1);
+            if (targetList[targetList.Count - 1].currentColor != cursorColor)
+            {
+                targetList.Remove(targetList[targetList.Count - 1]);
+                Shoot();
+            } else
+            {
+                cursorPoint += targetList[targetList.Count - 1].data.scoreOnKill;
+                targetList[targetList.Count - 1].Damage(1);
+            }
         }
     }
     #endregion
@@ -29,7 +37,7 @@ public class PlayerCursor : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
-        if (_enemy != null)
+        if (_enemy != null && _enemy.currentColor == cursorColor)
         {
             GPSingleton.Instance.SetColor(_enemy.mesh, EnemyData.Color.White);
             if (_enemy.visualEffect != null) GPSingleton.Instance.SetVFX(_enemy.visualEffect, EnemyData.Color.White);

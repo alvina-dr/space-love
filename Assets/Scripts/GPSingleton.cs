@@ -27,6 +27,9 @@ public class GPSingleton : MonoBehaviour
     public Gradient visibleGradientRed;
     public Gradient visibleGradientBlue;
     public Gradient visibleGradientAll;
+
+    [Header("FX")]
+    public GameObject explosionDeathEffect;
     #endregion
 
     #region Methods
