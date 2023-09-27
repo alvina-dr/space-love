@@ -7,10 +7,23 @@ public class Enemy_Cameleon : Enemy
     #region Methods
     public override void Move()
     {
-        transform.RotateAround(target.transform.position, Vector3.forward, Time.deltaTime * 100);
-        mesh.transform.forward = Vector3.RotateTowards(mesh.transform.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
-        if (Vector3.Distance(transform.position, target.transform.position) > 3)
-            transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
+        meshParent.forward = Vector3.RotateTowards(meshParent.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
+        transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
+    }
+    public override void Damage(int _value)
+    {
+        base.Damage(_value);
+        switch(currentColor)
+        {
+            case EnemyData.Color.Blue:
+                currentColor = EnemyData.Color.Red;
+                break;
+            case EnemyData.Color.Red:
+                currentColor = EnemyData.Color.Blue;
+                break;
+        }
+        GPSingleton.Instance.SetColor(mesh, currentColor);
+        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, currentColor);
     }
     #endregion
 }

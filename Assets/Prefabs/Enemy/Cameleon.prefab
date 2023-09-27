@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 4632772027384749538, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       propertyPath: m_Name
-      value: Cameleon Variant
+      value: Cameleon
       objectReference: {fileID: 0}
     - target: {fileID: 4632772027384749538, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
@@ -105,9 +105,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66040fa979612924d8dd0660af7da1bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshParent: {fileID: 6316456876115573011}
   mesh: {fileID: 5157033172161468840}
   healthBar: {fileID: 5481402558774155973}
   target: {fileID: 0}
+  visualEffect: {fileID: 0}
   data: {fileID: 11400000, guid: e93edf933ed4a164699b7579f1ff212e, type: 2}
   currentHealth: 0
   currentColor: 0
@@ -129,3 +131,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d069a9fd73a442548bd56b2a4affa1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &6316456876115573011 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5866727234085087101, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+    type: 3}
+  m_PrefabInstance: {fileID: 487054265445080686}
+  m_PrefabAsset: {fileID: 0}

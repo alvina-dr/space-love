@@ -21,7 +21,7 @@ PrefabInstance:
     - target: {fileID: 4632772027384749538, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       propertyPath: m_Name
-      value: Slalom Variant
+      value: Slalom
       objectReference: {fileID: 0}
     - target: {fileID: 7346113833092785132, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
@@ -118,9 +118,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7fde8764d2c8d1641ba4a26f628e0dd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshParent: {fileID: 1935495590301067896}
   mesh: {fileID: 785214806643493571}
   healthBar: {fileID: 100495886318913966}
   target: {fileID: 0}
+  visualEffect: {fileID: 0}
   data: {fileID: 11400000, guid: b5d210684f65e724c9c0a075c74b7163, type: 2}
   currentHealth: 0
   currentColor: 0
+--- !u!4 &1935495590301067896 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5866727234085087101, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5455705959348997381}
+  m_PrefabAsset: {fileID: 0}

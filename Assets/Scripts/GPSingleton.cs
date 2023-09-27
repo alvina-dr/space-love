@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.VFX;
 
 public class GPSingleton : MonoBehaviour
 {
@@ -10,9 +11,7 @@ public class GPSingleton : MonoBehaviour
     [Header("REFERENCES")]
     public PlanetBehavior Planet;
     public UICtrl UICtrl;
-    public Color visibleRed;
-    public Color visibleBlue;
-    public Color visibleAll;
+
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
     public SoundData SoundData;
 
@@ -20,6 +19,14 @@ public class GPSingleton : MonoBehaviour
     public float spawnRadius;
     private float startTime;
     private List<float> timerList = new List<float>();
+
+    [Header("COLORS")]
+    public Color visibleRed;
+    public Color visibleBlue;
+    public Color visibleAll;
+    public Gradient visibleGradientRed;
+    public Gradient visibleGradientBlue;
+    public Gradient visibleGradientAll;
     #endregion
 
     #region Methods
@@ -39,11 +46,27 @@ public class GPSingleton : MonoBehaviour
         }
     }
 
+    public void SetVFX(VisualEffect _renderer, EnemyData.Color _color)
+    {
+        switch (_color)
+        {
+            case EnemyData.Color.White:
+                _renderer.SetGradient("smokeColor", visibleGradientAll);
+                break;
+            case EnemyData.Color.Red:
+                _renderer.SetGradient("smokeColor", visibleGradientRed);
+                break;
+            case EnemyData.Color.Blue:
+                _renderer.SetGradient("smokeColor", visibleGradientBlue);
+                break;
+        }
+    }
+
     void SpawnEnemy(Enemy enemyPrefab)
     {
         float angle = Random.Range(0f, 2.0f * Mathf.PI);
         Vector3 pos = new Vector3(spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0);
-        Instantiate(enemyPrefab, pos, Quaternion.LookRotation(-pos,Vector3.forward));
+        Instantiate(enemyPrefab).transform.position = pos;
     }
     #endregion
 

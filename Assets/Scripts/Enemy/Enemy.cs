@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 public class Enemy : MonoBehaviour
 {
     #region Properties
     [Header("COMPONENTS")]
+    public Transform meshParent;
     public MeshRenderer mesh;
     public ValueSlider healthBar;
     [HideInInspector] public PlanetBehavior target;
+    public VisualEffect visualEffect;
 
     [Header("STATS")]
     public EnemyData data;
@@ -20,7 +23,7 @@ public class Enemy : MonoBehaviour
     public virtual void Move()
     {
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
-        mesh.transform.forward = Vector3.RotateTowards(mesh.transform.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
+        meshParent.forward = Vector3.RotateTowards(meshParent.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
     }
 
     public virtual void Attack() //example suicide attack
@@ -29,7 +32,7 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void Damage(int _value)
+    public virtual void Damage(int _value)
     {
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
@@ -61,6 +64,7 @@ public class Enemy : MonoBehaviour
         currentColor = (EnemyData.Color)Random.Range(1, 3);
         GPSingleton.Instance.SetColor(mesh, currentColor);
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
+        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, currentColor);
     }
 
     private void Update()

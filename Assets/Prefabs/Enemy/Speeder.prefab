@@ -73,6 +73,12 @@ PrefabInstance:
       insertIndex: 1
       addedObject: {fileID: 8743144145005346839}
   m_SourcePrefab: {fileID: 100100000, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd, type: 3}
+--- !u!4 &169988028322263655 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5866727234085087101, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+    type: 3}
+  m_PrefabInstance: {fileID: 5994614772798575898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!23 &1324636078678840028 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4707153446865094598, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
@@ -97,9 +103,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9bb9b334589cbd4a847723810b601ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  meshParent: {fileID: 169988028322263655}
   mesh: {fileID: 1324636078678840028}
   healthBar: {fileID: 1865230990106956209}
   target: {fileID: 0}
+  visualEffect: {fileID: 0}
   data: {fileID: 11400000, guid: 82750b8329bc78a448f218a77ec36e8c, type: 2}
   currentHealth: 0
   currentColor: 0
