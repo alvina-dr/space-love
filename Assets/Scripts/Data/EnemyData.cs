@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.VFX;
 
 [CreateAssetMenu(fileName = "Enemy", menuName = "ScriptableObjects/Enemy", order = 1)]
 public class EnemyData : ScriptableObject
@@ -11,6 +12,8 @@ public class EnemyData : ScriptableObject
         Red = 1,
         Blue = 2
     }
+    public float spawnRate;
+    public float spawnTime;
     public Enemy enemyPrefab;
     public Color startColor;
     public int maxHealth;
