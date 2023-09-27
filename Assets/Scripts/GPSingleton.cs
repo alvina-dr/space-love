@@ -9,6 +9,7 @@ public class GPSingleton : MonoBehaviour
     public static GPSingleton Instance { get; private set; }
     public PlanetBehavior Planet;
     public UICtrl UICtrl;
+    public float spawnRadius;
     public Color visibleRed;
     public Color visibleBlue;
     public Color visibleAll;
@@ -31,6 +32,13 @@ public class GPSingleton : MonoBehaviour
                 _renderer.material.color = visibleBlue;
                 break;
         }
+    }
+
+    void spawnEnemy(Enemy enemy)
+    {
+        float angle = Random.Range(0f, 2.0f * Mathf.PI);
+        Vector3 pos = new Vector3(spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0);
+        Instantiate(enemy, pos, Quaternion.LookRotation(pos,Vector3.forward));
     }
     #endregion
 
