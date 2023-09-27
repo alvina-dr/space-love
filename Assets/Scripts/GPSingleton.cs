@@ -64,8 +64,8 @@ public class GPSingleton : MonoBehaviour
 
     private void Start()
     {
-        var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        audioEvent.start();
+        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
+        //audioEvent.start();
     }
     #endregion
 }

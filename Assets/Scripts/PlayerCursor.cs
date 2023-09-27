@@ -10,6 +10,8 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     private Enemy target;
     public int cursorPoint;
+    [Header("ACTION BUTTON")]
+    public KeyCode actionButton;
     #endregion
 
     #region Methods
@@ -45,6 +47,19 @@ public class PlayerCursor : MonoBehaviour
             {
                 target = null;
             }
+        }
+    }
+
+    void Start()
+    {
+        
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(actionButton))
+        {
+            Shoot();
         }
     }
 

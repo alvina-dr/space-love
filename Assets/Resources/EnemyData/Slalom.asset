@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
-  m_Name: Standard
+  m_Name: Slalom
   m_EditorClassIdentifier: 
-  enemyPrefab: {fileID: 8743144145005346839, guid: 72e4da443b8b256448030bde0ea3003b,
+  enemyPrefab: {fileID: 2076813180809475015, guid: 2c9ca875ae047a6418730bfaeaebf100,
     type: 3}
   maxHealth: 1
   speed: 1
