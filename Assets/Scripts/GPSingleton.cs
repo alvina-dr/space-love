@@ -14,6 +14,8 @@ public class GPSingleton : MonoBehaviour
     public Color visibleBlue;
     public Color visibleAll;
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
+    private float startTime;
+    private List<float> timerList = new List<float>();
     public SoundData SoundData;
     #endregion
 
@@ -34,15 +36,42 @@ public class GPSingleton : MonoBehaviour
         }
     }
 
-    void spawnEnemy(Enemy enemy)
+    void SpawnEnemy(Enemy enemyPrefab)
     {
         float angle = Random.Range(0f, 2.0f * Mathf.PI);
         Vector3 pos = new Vector3(spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0);
-        Instantiate(enemy, pos, Quaternion.LookRotation(pos,Vector3.forward));
+        Instantiate(enemyPrefab, pos, Quaternion.LookRotation(-pos,Vector3.forward));
     }
     #endregion
 
     #region Unity API
+    void Start()
+    {
+        var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
+        audioEvent.start();
+        foreach (EnemyData enemy in enemyDataList)
+        {
+            timerList.Add(enemy.spawnRate);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        float timeSinceStart = Time.time - startTime;
+        for(int i = 0; i < timerList.Count; i++)
+        {
+            if(timeSinceStart < enemyDataList[i].spawnTime)
+            {
+                continue;
+            }
+            timerList[i] -= Time.fixedDeltaTime;
+            if (timerList[i] <= 0f)
+            {
+                timerList[i] = enemyDataList[i].spawnRate;
+                SpawnEnemy(enemyDataList[i].enemyPrefab);
+            }
+        }
+    }
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -62,10 +91,6 @@ public class GPSingleton : MonoBehaviour
     }
 
 
-    private void Start()
-    {
-        var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        audioEvent.start();
-    }
+
     #endregion
 }
