@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
     public virtual void Attack() //example suicide attack
     {
         target.InflictDamage(data.damage);
-        Destroy(gameObject);
+        Kill();
     }
 
     public virtual void Damage(int _value)

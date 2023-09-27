@@ -5,14 +5,15 @@ using UnityEngine;
 public class PlanetBehavior : MonoBehaviour
 {
     #region Properties
-    [SerializeField] private int currentHealth;
+    private int currentHealth;
     #endregion
 
     #region Methods
     public void InflictDamage(int _damage)
     {
         currentHealth -= _damage;
-        GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, 50);
+        GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
+        if (currentHealth <= 0) GPSingleton.Instance.GameOver();
     }
 
     #endregion
@@ -20,12 +21,8 @@ public class PlanetBehavior : MonoBehaviour
     #region Unity API
     void Start()
     {
-        GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, 50);
-    }
-
-    void Update()
-    {
-        
+        currentHealth = DataHolder.Instance.GeneralData.planetMaxHealth;
+        GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
     }
     #endregion
 }

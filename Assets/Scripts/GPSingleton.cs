@@ -10,10 +10,13 @@ public class GPSingleton : MonoBehaviour
     public static GPSingleton Instance { get; private set; }
     [Header("REFERENCES")]
     public PlanetBehavior Planet;
+    public PlayerCursor PlayerRed;
+    public PlayerCursor PlayerBlue;
     public UICtrl UICtrl;
 
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
     public SoundData SoundData;
+    public bool pause = false;
 
     [Header("SPAWN")]
     public float spawnRadius;
@@ -30,6 +33,9 @@ public class GPSingleton : MonoBehaviour
 
     [Header("FX")]
     public GameObject explosionDeathEffect;
+
+    [Header("SCORE")]
+    public int currentScore;
     #endregion
 
     #region Methods
@@ -71,23 +77,35 @@ public class GPSingleton : MonoBehaviour
         Vector3 pos = new Vector3(spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0);
         Instantiate(enemyPrefab).transform.position = pos;
     }
+
+    public void GameOver()
+    {
+        currentScore = PlayerBlue.playerCurrentPoint + PlayerRed.playerCurrentPoint;
+        UICtrl.scoreboard.ShowTypeNameMenu();
+        pause = true;
+        Enemy[] enemyArray = FindObjectsOfType<Enemy>();
+        Debug.Log("array size : " + enemyArray.Length);
+        for (int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i].Kill();
+        }
+    }
     #endregion
 
     #region Unity API
     void Start()
     {
-        var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        audioEvent.start();
+        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
+        //audioEvent.start();
         foreach (EnemyData enemy in enemyDataList)
         {
             timerList.Add(enemy.spawnRate);
         }
-        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        //audioEvent.start();
     }
 
     private void FixedUpdate()
     {
+        if (pause) return;
         float timeSinceStart = Time.time - startTime;
         for(int i = 0; i < timerList.Count; i++)
         {
