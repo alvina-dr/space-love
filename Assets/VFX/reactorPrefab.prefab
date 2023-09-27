@@ -69,6 +69,9 @@ VisualEffect:
       - m_Value: 2
         m_Name: fade
         m_Overridden: 1
+      - m_Value: 30
+        m_Name: Spawn_rate
+        m_Overridden: 1
     m_Vector2f:
       m_Array: []
     m_Vector3f:
