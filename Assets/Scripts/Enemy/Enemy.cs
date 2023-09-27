@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
     #region Properties
     [Header("COMPONENTS")]
     public MeshRenderer mesh;
+    public ValueSlider healthBar;
     [HideInInspector] public PlanetBehavior target;
 
     [Header("STATS")]
@@ -28,6 +29,16 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
+    public void Damage(int _value)
+    {
+        currentHealth -= _value;
+        healthBar.SetSliderValue(currentHealth, data.maxHealth);
+        if (currentHealth <= 0)
+        {
+            Kill();
+        }
+    }
+
     public void Kill()
     {
         Destroy(gameObject);
@@ -47,8 +58,9 @@ public class Enemy : MonoBehaviour
     {
         target = GPSingleton.Instance.Planet;
         currentHealth = data.maxHealth;
-        currentColor = data.startColor;
+        currentColor = (EnemyData.Color)Random.Range(1, 3);
         GPSingleton.Instance.SetColor(mesh, currentColor);
+        healthBar.SetSliderValue(currentHealth, data.maxHealth);
     }
 
     private void Update()

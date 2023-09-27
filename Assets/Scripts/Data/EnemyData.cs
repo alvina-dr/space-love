@@ -12,7 +12,6 @@ public class EnemyData : ScriptableObject
         Blue = 2
     }
     public Enemy enemyPrefab;
-    public Color startColor;
     public int maxHealth;
     public float speed;
     public int damage;

@@ -17,7 +17,7 @@ public class PlayerCursor : MonoBehaviour
         if (target != null)
         {
             cursorPoint += target.data.scoreOnKill;
-            target.Kill();
+            target.Damage(1);
         }
     }
     #endregion

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class GPSingleton : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class GPSingleton : MonoBehaviour
     public Color visibleBlue;
     public Color visibleAll;
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
+    public SoundData SoundData;
     #endregion
 
     #region Methods
@@ -49,6 +51,13 @@ public class GPSingleton : MonoBehaviour
             enemyDataList.Add(enemyDataArray[i]);
         }
 
+    }
+
+
+    private void Start()
+    {
+        var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
+        audioEvent.start();
     }
     #endregion
 }
