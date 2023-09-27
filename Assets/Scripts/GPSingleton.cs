@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class GPSingleton : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class GPSingleton : MonoBehaviour
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
     private float startTime;
     private List<float> timerList = new List<float>();
+    public SoundData SoundData;
     #endregion
 
     #region Methods
@@ -45,7 +47,9 @@ public class GPSingleton : MonoBehaviour
     #region Unity API
     void Start()
     {
-        foreach(EnemyData enemy in enemyDataList)
+        var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
+        audioEvent.start();
+        foreach (EnemyData enemy in enemyDataList)
         {
             timerList.Add(enemy.spawnRate);
         }
@@ -85,5 +89,8 @@ public class GPSingleton : MonoBehaviour
         }
 
     }
+
+
+
     #endregion
 }

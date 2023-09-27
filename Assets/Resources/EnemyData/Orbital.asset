@@ -10,14 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
-  m_Name: BlueStandard
+  m_Name: Orbital
   m_EditorClassIdentifier: 
-  spawnRate: 1
+  spawnRate: 10
   spawnTime: 0
-  enemyPrefab: {fileID: 6463793231617647415, guid: 72e4da443b8b256448030bde0ea3003b,
-    type: 3}
-  startColor: 2
+  enemyPrefab: {fileID: 0}
+  startColor: 1
   maxHealth: 10
-  speed: 1
+  speed: 3
   damage: 1
   scoreOnKill: 0

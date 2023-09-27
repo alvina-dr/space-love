@@ -15,7 +15,6 @@ public class EnemyData : ScriptableObject
     public float spawnRate;
     public float spawnTime;
     public Enemy enemyPrefab;
-    public Color startColor;
     public int maxHealth;
     public float speed;
     public int damage;

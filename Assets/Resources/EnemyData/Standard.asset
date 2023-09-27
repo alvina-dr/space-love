@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
-  m_Name: RedStandard
+  m_Name: Standard
   m_EditorClassIdentifier: 
   spawnRate: 1
   spawnTime: 0
-  enemyPrefab: {fileID: 7402661445064698288, guid: 30b5b33b7bbbd6742a31117b95a88993,
+  enemyPrefab: {fileID: 6463793231617647415, guid: 72e4da443b8b256448030bde0ea3003b,
     type: 3}
-  startColor: 1
+  startColor: 2
   maxHealth: 10
   speed: 1
   damage: 1
