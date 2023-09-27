@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
   m_Name: Slalom
   m_EditorClassIdentifier: 
+  spawnRate: 20
+  spawnTime: 0
   enemyPrefab: {fileID: 2076813180809475015, guid: 2c9ca875ae047a6418730bfaeaebf100,
     type: 3}
   maxHealth: 1

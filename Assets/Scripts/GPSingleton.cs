@@ -7,16 +7,19 @@ public class GPSingleton : MonoBehaviour
 {
     #region Properties
     public static GPSingleton Instance { get; private set; }
+    [Header("REFERENCES")]
     public PlanetBehavior Planet;
     public UICtrl UICtrl;
-    public float spawnRadius;
     public Color visibleRed;
     public Color visibleBlue;
     public Color visibleAll;
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
+    public SoundData SoundData;
+
+    [Header("SPAWN")]
+    public float spawnRadius;
     private float startTime;
     private List<float> timerList = new List<float>();
-    public SoundData SoundData;
     #endregion
 
     #region Methods
@@ -53,6 +56,8 @@ public class GPSingleton : MonoBehaviour
         {
             timerList.Add(enemy.spawnRate);
         }
+        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
+        //audioEvent.start();
     }
 
     private void FixedUpdate()
@@ -88,13 +93,6 @@ public class GPSingleton : MonoBehaviour
             enemyDataList.Add(enemyDataArray[i]);
         }
 
-    }
-
-
-    private void Start()
-    {
-        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        //audioEvent.start();
     }
     #endregion
 }
