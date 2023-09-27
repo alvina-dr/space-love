@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PlayerCursor : MonoBehaviour
 {
     #region Properties
     Vector3 direction;
+    [Header("COMPONENTS")]
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private SpriteRenderer circleSprite;
+    [SerializeField] private SpriteRenderer internCircleSprite;
+
+    [Header("CURRENT INFO")]
     private List<Enemy> targetList = new List<Enemy>();
-    public int cursorPoint;
+    public int playerCurrentPoint;
+
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
     public EnemyData.Color cursorColor;
@@ -18,6 +25,10 @@ public class PlayerCursor : MonoBehaviour
     #region Methods
     public void Shoot()
     {
+        internCircleSprite.transform.DOScale(0.05f, .1f).OnComplete(() =>
+        {
+            internCircleSprite.transform.DOScale(0.1f, .1f);
+        });
         if (targetList.Count > 0)
         {
             if (targetList[targetList.Count - 1].currentColor != cursorColor)
@@ -26,7 +37,7 @@ public class PlayerCursor : MonoBehaviour
                 Shoot();
             } else
             {
-                cursorPoint += targetList[targetList.Count - 1].data.scoreOnKill;
+                playerCurrentPoint += targetList[targetList.Count - 1].data.scoreOnKill;
                 targetList[targetList.Count - 1].Damage(1);
             }
         }
@@ -74,10 +85,10 @@ public class PlayerCursor : MonoBehaviour
         direction = value.Get<Vector2>();
     }
 
-    public void OnFire(InputValue value)
-    {
-        Shoot();
-    }
+    //public void OnFire(InputValue value)
+    //{
+    //    Shoot();
+    //}
 
     private void FixedUpdate()
     {

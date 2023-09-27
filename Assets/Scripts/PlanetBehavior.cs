@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlanetBehavior : MonoBehaviour
 {
     #region Properties
-    private int currentHealth = 50;
+    [SerializeField] private int currentHealth;
     #endregion
 
     #region Methods
