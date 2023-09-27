@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerCursor : MonoBehaviour
 {
@@ -54,11 +55,15 @@ public class PlayerCursor : MonoBehaviour
 
     void Update()
     {
-        direction = new Vector3(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"), 0).normalized;
         if (Input.GetKeyDown(KeyCode.Space))
         {
             Shoot();
         }
+    }
+
+    public void OnMove(InputValue value)
+    {
+        direction = value.Get<Vector2>();
     }
 
     private void FixedUpdate()
