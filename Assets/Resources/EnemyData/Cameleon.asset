@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
-  m_Name: Orbital
+  m_Name: Cameleon
   m_EditorClassIdentifier: 
   spawnRate: 10
   spawnTime: 0
-  enemyPrefab: {fileID: 4537874187888344512, guid: 3c473efd8bbf3b640812c9b95f8aaab4,
+  enemyPrefab: {fileID: 6874693653282788102, guid: 11cc0c839df28ca4e8994a9b97f4ee63,
     type: 3}
-  maxHealth: 1
+  maxHealth: 2
   speed: 1
   damage: 1
   scoreOnKill: 0

@@ -8,17 +8,19 @@ public class PlayerCursor : MonoBehaviour
     #region Properties
     Vector3 direction;
     [SerializeField] private Rigidbody rb;
-    private Enemy target;
+    private List<Enemy> targetList = new List<Enemy>();
     public int cursorPoint;
+    [Header("ACTION BUTTON")]
+    public KeyCode actionButton;
     #endregion
 
     #region Methods
     public void Shoot()
     {
-        if (target != null)
+        if (targetList.Count > 0)
         {
-            cursorPoint += target.data.scoreOnKill;
-            target.Damage(1);
+            cursorPoint += targetList[targetList.Count-1].data.scoreOnKill;
+            targetList[targetList.Count - 1].Damage(1);
         }
     }
     #endregion
@@ -30,8 +32,8 @@ public class PlayerCursor : MonoBehaviour
         if (_enemy != null)
         {
             GPSingleton.Instance.SetColor(_enemy.mesh, EnemyData.Color.White);
-            target = _enemy;
-
+            if (_enemy.visualEffect != null) GPSingleton.Instance.SetVFX(_enemy.visualEffect, EnemyData.Color.White);
+            targetList.Add(_enemy);
         }
     }
 
@@ -41,10 +43,7 @@ public class PlayerCursor : MonoBehaviour
         if (_enemy != null)
         {
             GPSingleton.Instance.SetColor(_enemy.mesh, _enemy.currentColor);
-            if (_enemy == target)
-            {
-                target = null;
-            }
+            targetList.Remove(_enemy);
         }
     }
 
@@ -55,7 +54,7 @@ public class PlayerCursor : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(actionButton))
         {
             Shoot();
         }
@@ -64,6 +63,11 @@ public class PlayerCursor : MonoBehaviour
     public void OnMove(InputValue value)
     {
         direction = value.Get<Vector2>();
+    }
+
+    public void OnFire(InputValue value)
+    {
+        Shoot();
     }
 
     private void FixedUpdate()

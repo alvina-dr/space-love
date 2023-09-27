@@ -20,7 +20,7 @@ public class Enemy_Slalom : Enemy
             timer = 0;
         }
         transform.RotateAround(target.transform.position, Vector3.forward, Time.deltaTime * 100 * factor);
-        mesh.transform.forward = Vector3.RotateTowards(mesh.transform.forward, target.transform.position - transform.position, 10 * Time.deltaTime * factor, 0);
+        meshParent.forward = Vector3.RotateTowards(meshParent.forward, target.transform.position - transform.position, 10 * Time.deltaTime * factor, 0);
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
     }
     #endregion

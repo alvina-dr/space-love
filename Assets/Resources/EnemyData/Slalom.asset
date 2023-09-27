@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
-  m_Name: Orbital
+  m_Name: Slalom
   m_EditorClassIdentifier: 
-  spawnRate: 10
+  spawnRate: 20
   spawnTime: 0
-  enemyPrefab: {fileID: 4537874187888344512, guid: 3c473efd8bbf3b640812c9b95f8aaab4,
+  enemyPrefab: {fileID: 2076813180809475015, guid: 2c9ca875ae047a6418730bfaeaebf100,
     type: 3}
   maxHealth: 1
   speed: 1

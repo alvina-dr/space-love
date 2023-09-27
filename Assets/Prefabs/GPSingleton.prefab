@@ -46,8 +46,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Planet: {fileID: 0}
   UICtrl: {fileID: 0}
-  spawnRadius: 0
+  spawnRadius: 10
   visibleRed: {r: 0, g: 0, b: 0, a: 0}
   visibleBlue: {r: 0, g: 0, b: 0, a: 0}
   visibleAll: {r: 0, g: 0, b: 0, a: 0}
   enemyDataList: []
+  SoundData: {fileID: 0}
