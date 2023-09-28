@@ -7,7 +7,7 @@
 [LOG] OutputWASAPI::init                       : Output buffer size: 4096 samples, latency: 0.00ms, period: 10.00ms, DSP buffer: 1024 * 4
 [LOG] Thread::initThread                       : Init FMOD stream thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFB, Stack Size: 98304, Semaphore: No, Sleep Time: 10, Looping: Yes.
 [LOG] Thread::initThread                       : Init FMOD mixer thread. Affinity: 0x4000000000000001, Priority: 0xFFFF7FFA, Stack Size: 81920, Semaphore: No, Sleep Time: 0, Looping: Yes.
-[LOG] AsyncManager::init                       : manager 000002AD38ACBD28 isAsync 0 updatePeriod 0.02
+[LOG] AsyncManager::init                       : manager 000002D831255F58 isAsync 0 updatePeriod 0.02
 [LOG] AsyncManager::init                       : done
 [LOG] PlaybackSystem::init                     : 
 [LOG] Thread::initThread                       : Init FMOD Studio sample load thread. Affinity: 0x4000000000000003, Priority: 0xFFFF7FFD, Stack Size: 98304, Semaphore: No, Sleep Time: 1, Looping: No.
@@ -18,6 +18,155 @@
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] Manager::readBank                        : fileversion = 142, compatVersion = 140 (oldest = 44, newest = 142)
 [LOG] PlaybackSystem::acquireMasterBus         : Setting master channel group format to 6
+[LOG] SystemI::createSound                     : filename = Assets/Love is Blouje FMOD/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000002D826164AC8, queue head = 000002D59B345D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002D826164AC8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Love is Blouje FMOD/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6928736
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23552
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002D82E3F8990
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='AMB-Meca-005', format=5, channels=2, frequency=48000, lengthbytes=157984, lengthpcm=577765, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.054657.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002D826164AC8
+[LOG] SystemI::createSound                     : filename = Assets/Love is Blouje FMOD/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000002D83089A2D8, queue head = 000002D59B345D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002D83089A2D8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Love is Blouje FMOD/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6928736
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23552
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002D82DB425F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='AMB-Beep-012', format=5, channels=2, frequency=48000, lengthbytes=112352, lengthpcm=481280, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.081927.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002D83089A2D8
+[LOG] SoundI::release                          : AMB-Meca-005 (000002D826164AC8)
+[LOG] SoundI::release                          :     AMB-Meca-005 (000002D5974BEC28)
+[LOG] SoundI::release                          :     AMB-Meca-005 (000002D86A0A2998)
+[LOG] SystemI::createSound                     : filename = Assets/Love is Blouje FMOD/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000002D83089A7E8, queue head = 000002D59B345D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002D83089A7E8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Love is Blouje FMOD/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6928736
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23552
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002D82DB42730
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='AMB-Beep-011', format=5, channels=2, frequency=48000, lengthbytes=190208, lengthpcm=566781, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.072806.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002D83089A7E8
+[LOG] SoundI::release                          : AMB-Beep-012 (000002D83089A2D8)
+[LOG] SoundI::release                          :     AMB-Beep-012 (000002D74A165318)
+[LOG] SoundI::release                          :     AMB-Beep-012 (000002D826164C78)
+[LOG] SystemI::createSound                     : filename = Assets/Love is Blouje FMOD/Build/Desktop/Master.bank : mode 02010082
+[LOG] SystemI::createSound                     : FMOD_NONBLOCKING specified.  Putting into queue to be opened asynchronously!
+[LOG] AsyncThread::add                         : add sound to async queue : soundi = 000002D83089ACF8, queue head = 000002D59B345D08, queue count = 0
+[LOG] AsyncThread::threadFunc                  : Starting Asynchronous operation on sound 000002D83089ACF8
+[LOG] SystemI::createSoundInternal             :     Create name='Assets/Love is Blouje FMOD/Build/Desktop/Master.bank', mode=0x02010082
+[LOG] SystemI::createSoundInternal             :     exinfo->cbsize             = 224
+[LOG] SystemI::createSoundInternal             :     exinfo->length             = 6928736
+[LOG] SystemI::createSoundInternal             :     exinfo->fileoffset         = 23552
+[LOG] SystemI::createSoundInternal             :     exinfo->numsubsounds       = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlist      = 000002D82DB425F0
+[LOG] SystemI::createSoundInternal             :     exinfo->inclusionlistnum   = 1
+[LOG] SystemI::createSoundInternal             :     exinfo->suggestedsoundtype = 5
+[LOG] SystemI::createSoundInternal             :     exinfo->initialseekpostype = 1
+[LOG] SystemI::createSoundInternal             :     Stream 0/1: name='AMB-Meca-005', format=5, channels=2, frequency=48000, lengthbytes=157984, lengthpcm=577765, pcmblocksize=0, loopstart=0, loopend=0, mode=0x00000000, channelmask=0x00000000, channelorder=0, peakvolume=0.054657.
+[LOG] AsyncThread::threadFunc                  : Finished Asynchronous operation on sound 000002D83089ACF8
+[LOG] SoundI::release                          :  (000002D818AB25C8)
+[LOG] SoundI::release                          :     AMB-Beep-001 (000002D7275B3D68)
+[LOG] SoundI::release                          :  (000002D818AAFAA8)
+[LOG] SoundI::release                          :     AMB-Beep-002 (000002D7F3787068)
+[LOG] SoundI::release                          :  (000002D818AAEC48)
+[LOG] SoundI::release                          :     AMB-Beep-003 (000002D759C00708)
+[LOG] SoundI::release                          :  (000002D818AB1D28)
+[LOG] SoundI::release                          :     AMB-Beep-004 (000002D749D09668)
+[LOG] SoundI::release                          :  (000002D818AAFC18)
+[LOG] SoundI::release                          :     AMB-Beep-005 (000002D749D09188)
+[LOG] SoundI::release                          :  (000002D818AB0798)
+[LOG] SoundI::release                          :     AMB-Beep-006 (000002D7275B40A8)
+[LOG] SoundI::release                          :  (000002D818AB04B8)
+[LOG] SoundI::release                          :     AMB-Beep-007 (000002D759C008A8)
+[LOG] SoundI::release                          :  (000002D818AAF208)
+[LOG] SoundI::release                          :     AMB-Beep-008 (000002D759C003C8)
+[LOG] SoundI::release                          :  (000002D818AAF658)
+[LOG] SoundI::release                          :     AMB-Beep-009 (000002D826166338)
+[LOG] SoundI::release                          :  (000002D818AB0A78)
+[LOG] SoundI::release                          :     AMB-Beep-010 (000002D7275B48C8)
+[LOG] SoundI::release                          :  (000002D818AB1038)
+[LOG] SoundI::release                          :     AMB-Beep-013 (000002D59B377198)
+[LOG] SoundI::release                          :  (000002D818AB0D58)
+[LOG] SoundI::release                          :     AMB-Beep-014 (000002D7F3787888)
+[LOG] SoundI::release                          : ENJMIN_Music_LoveIsBlouge_Layer1 (000002D82E59D908)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Layer1 (000002D82E0BE728)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Layer1 (000002D82DD1BE18)
+[LOG] SoundI::release                          : ENJMIN_Music_LoveIsBlouge_MainLoop (000002D82E5A3788)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_MainLoop (000002D82E0BE8C8)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_MainLoop (000002D82DD17228)
+[LOG] SoundI::release                          : ENJMIN_Music_LoveIsBlouge_Layer3 (000002D82E5A3938)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Layer3 (000002D74B9B7F28)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Layer3 (000002D82DD1D918)
+[LOG] SoundI::release                          : ENJMIN_Music_LoveIsBlouge_Menu (000002D82E5A41A8)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Menu (000002D75879A588)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Menu (000002D82DD17C48)
+[LOG] SoundI::release                          : ENJMIN_Music_LoveIsBlouge_Layer2 (000002D82E5A46B8)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Layer2 (000002D59B64D878)
+[LOG] SoundI::release                          :     ENJMIN_Music_LoveIsBlouge_Layer2 (000002D82DD1BC68)
+[LOG] SoundI::release                          : AMB-Vent4 (000002D75A70B198)
+[LOG] SoundI::release                          :     AMB-Vent4 (000002D75A96D5A8)
+[LOG] SoundI::release                          :     AMB-Vent4 (000002D82DD17DF8)
+[LOG] SoundI::release                          : AMB-Vent3 (000002D75A70D1A8)
+[LOG] SoundI::release                          :     AMB-Vent3 (000002D82E0BE0A8)
+[LOG] SoundI::release                          :     AMB-Vent3 (000002D82DD1B908)
+[LOG] SoundI::release                          : AMB-Meca-005 (000002D83089ACF8)
+[LOG] SoundI::release                          :     AMB-Meca-005 (000002D5974BEC28)
+[LOG] SoundI::release                          :     AMB-Meca-005 (000002D86A0A07D8)
+[LOG] SoundI::release                          : AMB-Vent1 (000002D75A70A268)
+[LOG] SoundI::release                          :     AMB-Vent1 (000002D82E0BE248)
+[LOG] SoundI::release                          :     AMB-Vent1 (000002D82DD1B3F8)
+[LOG] SoundI::release                          : AMB-Vent2 (000002D75A710958)
+[LOG] SoundI::release                          :     AMB-Vent2 (000002D82E0BEA68)
+[LOG] SoundI::release                          :     AMB-Vent2 (000002D82DD173D8)
+[LOG] SoundI::release                          : AMB-Beep-011 (000002D83089A7E8)
+[LOG] SoundI::release                          :     AMB-Beep-011 (000002D59B3DF148)
+[LOG] SoundI::release                          :     AMB-Beep-011 (000002D86A0A2EA8)
+[LOG] SoundI::release                          :  (000002D818AB2458)
+[LOG] SoundI::release                          :     AMB-Beep-015 (000002D7F3787208)
+[LOG] SoundI::release                          :  (000002D818AADC78)
+[LOG] SoundI::release                          :     AMB-Meca-001 (000002D749D08CA8)
+[LOG] SoundI::release                          :  (000002D818AB3708)
+[LOG] SoundI::release                          :     AMB-Meca-002 (000002D7F3787A28)
+[LOG] SoundI::release                          :  (000002D818AB22E8)
+[LOG] SoundI::release                          :     AMB-Meca-003 (000002D749D08E48)
+[LOG] SoundI::release                          :  (000002D818AAEF28)
+[LOG] SoundI::release                          :     AMB-Meca-004 (000002D826166198)
+[LOG] SoundI::release                          :  (000002D818AB1318)
+[LOG] SoundI::release                          :     AMB-Meca-006 (000002D826166E98)
+[LOG] SoundI::release                          :  (000002D818AAF938)
+[LOG] SoundI::release                          :     AMB-Meca-007 (000002D7275B3F08)
+[LOG] SoundI::release                          :  (000002D818AAEAD8)
+[LOG] SoundI::release                          :     AMB-Meca-008 (000002D7F37873A8)
+[LOG] Thread::callback                         : FMOD Studio update thread finished.
+[LOG] Thread::callback                         : FMOD Studio bank load thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] Thread::callback                         : FMOD Studio sample load thread finished.
+[LOG] LiveUpdate::release                      : 
+[LOG] LiveUpdate::reset                        : Reset connection (reason Disconnected)
+[LOG] Thread::callback                         : FMOD stream thread finished.
+[LOG] Thread::callback                         : FMOD mixer thread finished.
+[LOG] Profile::disconnectAll                   : Profiler disconnecting all clients
+[LOG] SystemI::close                           : Closed.
 [LOG] Thread::callback                         : FMOD Studio bank load thread finished.
 [LOG] Thread::callback                         : FMOD Studio sample load thread finished.
 [LOG] LiveUpdate::release                      : 
@@ -25,3 +174,5 @@
 [LOG] Thread::callback                         : FMOD stream thread finished.
 [LOG] Thread::callback                         : FMOD mixer thread finished.
 [LOG] SystemI::close                           : Closed.
+[LOG] Thread::callback                         : FMOD nonblocking thread (0) finished.
+[LOG] Thread::callback                         : FMOD file thread finished.
