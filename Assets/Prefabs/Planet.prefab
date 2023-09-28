@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a31b177455074b429864afdfed5e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  serialController: {fileID: 0}
   mesh: {fileID: 1848622627134521174}
 --- !u!135 &4120679308913274458
 SphereCollider:

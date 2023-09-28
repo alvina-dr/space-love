@@ -15,9 +15,12 @@ public class PlanetBehavior : MonoBehaviour
     public void InflictDamage(int _damage)
     {
         currentHealth -= _damage;
+        mesh.DOScale(1.1f, .2f).OnComplete(() =>
+        {
+            mesh.DOScale(1f, .2f);
+        });
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
         if(serialController != null) serialController.SendSerialMessage(((char)currentHealth).ToString());
-        Debug.Log(currentHealth);
         if (currentHealth <= 0) GPSingleton.Instance.GameOver();
     }
     #endregion
