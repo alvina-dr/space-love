@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
 using UnityEngine.VFX;
+using System;
+using System.Linq;
 
 public class GPSingleton : MonoBehaviour
 {
@@ -13,6 +15,8 @@ public class GPSingleton : MonoBehaviour
     public PlayerCursor PlayerRed;
     public PlayerCursor PlayerBlue;
     public UICtrl UICtrl;
+    public SerialController serialControler;
+    public List<char> currentInput;
 
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
     public SoundData SoundData;
@@ -90,7 +94,7 @@ public class GPSingleton : MonoBehaviour
 
     void SpawnEnemy(Enemy enemyPrefab, float _angle = 0, float _radiusBonus = 0)
     {
-        if (_angle == 0) _angle = Random.Range(0f, 2.0f * Mathf.PI);
+        if (_angle == 0) _angle = UnityEngine.Random.Range(0f, 2.0f * Mathf.PI);
         Vector3 pos = new Vector3((spawnRadius + _radiusBonus)* Mathf.Cos(_angle), (spawnRadius + _radiusBonus ) * Mathf.Sin(_angle), 0);
         Instantiate(enemyPrefab).transform.position = pos;
     }
@@ -111,6 +115,8 @@ public class GPSingleton : MonoBehaviour
     #region Unity API
     void Start()
     {
+
+        serialControler = GetComponent<SerialController>();
         foreach (EnemyData enemy in enemyDataList)
         {
             timerList.Add(enemy.spawnRate);
@@ -121,6 +127,25 @@ public class GPSingleton : MonoBehaviour
     {
         if (pause) return;
         float timeSinceStart = Time.time - startTime;
+        currentInput.Clear();
+        string input;
+        while ((input = serialControler.ReadSerialMessage()) != null)
+            if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
+                Debug.Log("Connection established");
+            else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
+                Debug.Log("Connection attempt failed or disconnection detected");
+            else
+            {
+                currentInput.AddRange(input);
+                Debug.Log(input);
+            }
+
+        if(currentInput.Contains('R'))
+            PlayerRed.Shoot();
+
+        if (currentInput.Contains('B'))
+            PlayerBlue.Shoot();
+
         if (timeSinceStart > DataHolder.Instance.GeneralData.gameStage[currentGameStage])
         {
             if (DataHolder.Instance.GeneralData.gameStage.Count > currentGameStage + 1)
@@ -144,7 +169,7 @@ public class GPSingleton : MonoBehaviour
                 timerList[i] = enemyDataList[i].spawnRate;
                 if (enemyDataList[i].name == "Standard")
                 {
-                    float _angle = Random.Range(0f, 2.0f * Mathf.PI);
+                    float _angle = UnityEngine.Random.Range(0f, 2.0f * Mathf.PI);
                     SpawnEnemy(enemyDataList[i].enemyPrefab, _angle, 1);
                     SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.1f);
                     SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.2f, 2);

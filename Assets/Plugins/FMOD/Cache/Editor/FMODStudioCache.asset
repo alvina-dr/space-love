@@ -43,7 +43,7 @@ MonoBehaviour:
     Data3: -519639662
     Data4: -770551822
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -70,7 +70,7 @@ MonoBehaviour:
     Data3: 120432298
     Data4: 483053723
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -97,7 +97,7 @@ MonoBehaviour:
     Data3: 2095276214
     Data4: 386938233
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -105,26 +105,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 596
---- !u!114 &-3579743942994205033
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: ../../fmod-projects/Love is Blouje FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638315093811669511
-  FileSizes:
-  - Name: Desktop
-    Value: 6952288
-  Exists: 1
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,8 +118,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 1237394916100097899}
-  - {fileID: -3579743942994205033}
+  - {fileID: 4680875936719921099}
+  - {fileID: 905203115620260987}
   EditorEvents:
   - {fileID: 7716218744695588670}
   - {fileID: 7682796559211813361}
@@ -151,10 +131,10 @@ MonoBehaviour:
   - {fileID: -3616167560537056303}
   EditorParameters: []
   MasterBanks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   StringsBanks:
-  - {fileID: 1237394916100097899}
-  cacheTime: 638315093811744959
+  - {fileID: 4680875936719921099}
+  cacheTime: 638315130034079593
   cacheVersion: 131607
 --- !u!114 &620410374099459167
 MonoBehaviour:
@@ -184,7 +164,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1075
---- !u!114 &1237394916100097899
+--- !u!114 &905203115620260987
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -194,15 +174,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
+  m_Name: bank:/Master.bank
   m_EditorClassIdentifier: 
-  Path: ../../fmod-projects/Love is Blouje FMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638315093811744959
+  Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638315130034039589
   FileSizes:
   - Name: Desktop
-    Value: 1100
+    Value: 6952288
   Exists: 1
 --- !u!114 &1589377964747055621
 MonoBehaviour:
@@ -223,7 +203,7 @@ MonoBehaviour:
     Data3: -1313752396
     Data4: -1901202936
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -278,7 +258,7 @@ MonoBehaviour:
     Data3: 147126950
     Data4: -417053843
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -286,6 +266,26 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 318
+--- !u!114 &4680875936719921099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638315130034079593
+  FileSizes:
+  - Name: Desktop
+    Value: 1100
+  Exists: 1
 --- !u!114 &5294883282102479005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ MonoBehaviour:
     Data3: -1869263465
     Data4: -2131288044
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -372,7 +372,7 @@ MonoBehaviour:
     Data3: -488920951
     Data4: -34821698
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -400,7 +400,7 @@ MonoBehaviour:
     Data3: -307916874
     Data4: -350091769
   Banks:
-  - {fileID: -3579743942994205033}
+  - {fileID: 905203115620260987}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
