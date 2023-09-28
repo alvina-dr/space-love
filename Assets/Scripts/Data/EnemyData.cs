@@ -21,4 +21,9 @@ public class EnemyData : ScriptableObject
     public float speed;
     public int damage;
     public int scoreOnKill;
+
+    [Header("SHOOTING UNITS")]
+    public float shootingDistance;
+    public float projectileSpeed;
+    public float reloadTime;
 }

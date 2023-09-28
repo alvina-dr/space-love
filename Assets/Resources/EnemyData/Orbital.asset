@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
   m_Name: Orbital
   m_EditorClassIdentifier: 
-  spawnRate: 10
+  spawnRate: 3
   spawnTime: 0
   enemyPrefab: {fileID: 4537874187888344512, guid: 3c473efd8bbf3b640812c9b95f8aaab4,
     type: 3}
@@ -20,3 +20,6 @@ MonoBehaviour:
   speed: 1
   damage: 1
   scoreOnKill: 20
+  shootingDistance: 3
+  projectileSpeed: 4
+  reloadTime: 2

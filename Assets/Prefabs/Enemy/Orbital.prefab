@@ -125,12 +125,14 @@ MonoBehaviour:
   mesh: {fileID: 2198480134647382632}
   healthBar: {fileID: 5380081396470240869}
   target: {fileID: 0}
-  data: {fileID: 11400000, guid: a1efccb9e4bbf744fb5fe66b565ac08d, type: 2}
+  data: {fileID: 11400000, guid: debea066f705a4d428eb086a8ccd9ed1, type: 2}
   currentHealth: 0
   currentColor: 0
   visualEffect: {fileID: 2308726601788394897}
   leftTrail: {fileID: 0}
   rightTrail: {fileID: 0}
+  projectilePrefab: {fileID: 3389932735456574026, guid: c9934d8aaef6ebb4481861bc7ed465ca,
+    type: 3}
 --- !u!114 &5380081396470240869 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5391802523438269611, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
