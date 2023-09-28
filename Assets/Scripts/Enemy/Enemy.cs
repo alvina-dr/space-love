@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
 
     [Header("FX")]
     public VisualEffect visualEffect;
+    public TrailRenderer leftTrail;
+    public TrailRenderer rightTrail;
 
     #endregion
 
