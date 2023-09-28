@@ -16,7 +16,7 @@ public class PlanetBehavior : MonoBehaviour
     {
         currentHealth -= _damage;
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
-        serialController.SendSerialMessage(((char)currentHealth).ToString());
+        serialController.SendSerialMessage(currentHealth.ToString());
         Debug.Log(currentHealth);
         if (currentHealth <= 0) GPSingleton.Instance.GameOver();
     }
