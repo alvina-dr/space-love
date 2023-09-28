@@ -111,8 +111,6 @@ public class GPSingleton : MonoBehaviour
     #region Unity API
     void Start()
     {
-        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        //audioEvent.start();
         foreach (EnemyData enemy in enemyDataList)
         {
             timerList.Add(enemy.spawnRate);
@@ -172,7 +170,8 @@ public class GPSingleton : MonoBehaviour
         {
             enemyDataList.Add(enemyDataArray[i]);
         }
-
+        var audioEvent = RuntimeManager.CreateInstance("event:/AMB/Cockpit");
+        audioEvent.start();
     }
     #endregion
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
+using FMODUnity;
 
 public class PlayerCursor : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class PlayerCursor : MonoBehaviour
     {
         internCircleSprite.transform.DOScale(0.05f, .1f).OnComplete(() =>
         {
+            var audioEvent = RuntimeManager.CreateInstance("event:/Character/Tir");
+            audioEvent.start();
             internCircleSprite.transform.DOScale(0.1f, .1f);
         });
         if (targetList.Count > 0)

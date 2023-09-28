@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a31b177455074b429864afdfed5e390, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mesh: {fileID: 1848622627134521174}
 --- !u!135 &4120679308913274458
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -93,22 +94,22 @@ PrefabInstance:
     - target: {fileID: 7480749764872710361, guid: a947c6a6d1e6e0e46a814649e1f2531a,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.03014394
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7480749764872710361, guid: a947c6a6d1e6e0e46a814649e1f2531a,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.53655845
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7480749764872710361, guid: a947c6a6d1e6e0e46a814649e1f2531a,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.019183809
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7480749764872710361, guid: a947c6a6d1e6e0e46a814649e1f2531a,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.8431064
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7480749764872710361, guid: a947c6a6d1e6e0e46a814649e1f2531a,
         type: 3}
@@ -123,7 +124,7 @@ PrefabInstance:
     - target: {fileID: 7480749764872710361, guid: a947c6a6d1e6e0e46a814649e1f2531a,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: -175.905
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7825891565534147171, guid: a947c6a6d1e6e0e46a814649e1f2531a,
         type: 3}

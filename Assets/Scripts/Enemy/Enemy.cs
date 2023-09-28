@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 using DG.Tweening;
-
+using FMODUnity;
 public class Enemy : MonoBehaviour
 {
     #region Properties
@@ -61,6 +61,8 @@ public class Enemy : MonoBehaviour
         Instantiate(GPSingleton.Instance.explosionDeathEffect).transform.position = transform.position;
         if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
         if (meshParent == null) return;
+        var audioEvent = RuntimeManager.CreateInstance("event:/Ennemy/Die");
+        audioEvent.start();
         meshParent.transform.DOScale(0f, .1f).OnComplete(() => { 
             Destroy(gameObject);
         });
