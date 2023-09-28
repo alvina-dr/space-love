@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 
-public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
 {
     #region Properties
     public Image background;
@@ -26,5 +26,13 @@ public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler
     {
         text.color = Color.black;
         background.color = active;
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnDeselect(null);
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        OnSelect(null);
     }
 }
