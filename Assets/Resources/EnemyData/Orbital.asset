@@ -22,4 +22,4 @@ MonoBehaviour:
   scoreOnKill: 20
   shootingDistance: 3
   projectileSpeed: 4
-  reloadTime: 2
+  reloadTime: 5
