@@ -99,6 +99,16 @@ public class GPSingleton : MonoBehaviour
         Instantiate(enemyPrefab).transform.position = pos;
     }
 
+    public void SpecialAttack()
+    {
+        Enemy[] enemyArray = FindObjectsOfType<Enemy>();
+        for (int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i].currentColor = EnemyData.Color.White;
+            enemyArray[i].ChangeColor(EnemyData.Color.White);
+        }
+    }
+
     public void GameOver()
     {
         currentScore = PlayerBlue.playerCurrentPoint + PlayerRed.playerCurrentPoint;
