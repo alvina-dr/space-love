@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using FMODUnity;
 
 public class DataHolder : MonoBehaviour
 {
@@ -19,5 +20,7 @@ public class DataHolder : MonoBehaviour
             Destroy(gameObject);
         }
         GeneralData = Resources.Load<GeneralData>("GeneralData");
+        var audioEvent = RuntimeManager.CreateInstance("event:/MX/MX");
+        audioEvent.start();
     }
 }

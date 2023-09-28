@@ -560,8 +560,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../fmod-projects/Love Is Blouje FMOD/Love Is Blouje.fspro
-  sourceBankPath: ../../fmod-projects/Love Is Blouje FMOD/Build
+  sourceProjectPath: ../../fmod-projects/Love is Blouje FMOD/Love is Blouje FMOD.fspro
+  sourceBankPath: ../../fmod-projects/Love is Blouje FMOD/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1
@@ -583,7 +583,7 @@ MonoBehaviour:
   RealChannelSettings: []
   Plugins: []
   MasterBanks:
-  - Desktop/Master
+  - Master
   Banks: []
   BanksToLoad: []
   LiveUpdatePort: 9264
