@@ -1,27 +1,68 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using DG.Tweening;
 
 public class PlayerCursor : MonoBehaviour
 {
     #region Properties
     Vector3 direction;
+    [Header("COMPONENTS")]
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private SpriteRenderer circleSprite;
+    [SerializeField] private SpriteRenderer internCircleSprite;
+
+    [Header("CURRENT INFO")]
     private List<Enemy> targetList = new List<Enemy>();
-    public int cursorPoint;
+    public int playerCurrentPoint = 0;
+
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
+    public EnemyData.Color cursorColor;
+    public SerialController serialController;
+    public char inputValue;
     #endregion
 
     #region Methods
     public void Shoot()
     {
+        internCircleSprite.transform.DOScale(0.05f, .1f).OnComplete(() =>
+        {
+            internCircleSprite.transform.DOScale(0.1f, .1f);
+        });
         if (targetList.Count > 0)
         {
-            cursorPoint += targetList[targetList.Count-1].data.scoreOnKill;
-            targetList[targetList.Count - 1].Damage(1);
+            if (targetList[targetList.Count - 1].currentColor != cursorColor)
+            {
+                targetList.Remove(targetList[targetList.Count - 1]);
+                Shoot();
+            } else
+            {
+                playerCurrentPoint += targetList[targetList.Count - 1].data.scoreOnKill;
+                targetList[targetList.Count - 1].Damage(1, this);
+            }
         }
+    }
+
+    public void GainPoints(int _value)
+    {
+        playerCurrentPoint += _value;
+        switch (cursorColor)
+        {
+            case EnemyData.Color.Red:
+                GPSingleton.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
+                break;
+            case EnemyData.Color.Blue:
+                GPSingleton.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
+                break;
+        }
+    }
+
+    public void OnMove(InputValue value)
+    {
+        direction = value.Get<Vector2>();
     }
     #endregion
 
@@ -29,10 +70,9 @@ public class PlayerCursor : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
-        if (_enemy != null)
+        if (_enemy != null && _enemy.currentColor == cursorColor)
         {
-            GPSingleton.Instance.SetColor(_enemy.mesh, EnemyData.Color.White);
-            if (_enemy.visualEffect != null) GPSingleton.Instance.SetVFX(_enemy.visualEffect, EnemyData.Color.White);
+            _enemy.ChangeColor(EnemyData.Color.White);
             targetList.Add(_enemy);
         }
     }
@@ -42,38 +82,48 @@ public class PlayerCursor : MonoBehaviour
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null)
         {
-            GPSingleton.Instance.SetColor(_enemy.mesh, _enemy.currentColor);
-            if (_enemy.visualEffect != null) GPSingleton.Instance.SetVFX(_enemy.visualEffect, _enemy.currentColor);
+            _enemy.ChangeColor(_enemy.currentColor);
             targetList.Remove(_enemy);
         }
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
+        //byte[] input = serialController.ReadSerialMessage();
+        //if(input.Contains<byte>((byte)inputValue)) {
+        //    Shoot();
+        //}
         if (Input.GetKeyDown(actionButton))
         {
             Shoot();
         }
     }
 
-    public void OnMove(InputValue value)
-    {
-        direction = value.Get<Vector2>();
-    }
-
-    public void OnFire(InputValue value)
-    {
-        Shoot();
-    }
+    //public void OnFire(InputValue value)
+    //{
+    //    Shoot();
+    //}
 
     private void FixedUpdate()
     {
-        rb.velocity = direction * Time.deltaTime * 200;
+        rb.velocity = direction * Time.deltaTime * DataHolder.Instance.GeneralData.cursorSpeed;
+    }
+
+    private void Start()
+    {
+        switch (cursorColor)
+        {
+            case EnemyData.Color.Red:
+                GPSingleton.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
+                inputValue = 'R';
+                break;
+            case EnemyData.Color.Blue:
+                GPSingleton.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
+                inputValue = 'B';
+                break;
+        }
     }
     #endregion
+
+
 }

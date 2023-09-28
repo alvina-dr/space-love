@@ -12,11 +12,18 @@ public class EnemyData : ScriptableObject
         Red = 1,
         Blue = 2
     }
+    [Header("How often the enemy spawns (in seconds)")]
     public float spawnRate;
+    [Header("When the enemy starts to spawn")]
     public float spawnTime;
     public Enemy enemyPrefab;
     public int maxHealth;
     public float speed;
     public int damage;
     public int scoreOnKill;
+
+    [Header("SHOOTING UNITS")]
+    public float shootingDistance;
+    public float projectileSpeed;
+    public float reloadTime;
 }

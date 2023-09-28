@@ -10,10 +10,13 @@ public class GPSingleton : MonoBehaviour
     public static GPSingleton Instance { get; private set; }
     [Header("REFERENCES")]
     public PlanetBehavior Planet;
+    public PlayerCursor PlayerRed;
+    public PlayerCursor PlayerBlue;
     public UICtrl UICtrl;
 
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
     public SoundData SoundData;
+    public bool pause = false;
 
     [Header("SPAWN")]
     public float spawnRadius;
@@ -27,6 +30,13 @@ public class GPSingleton : MonoBehaviour
     public Gradient visibleGradientRed;
     public Gradient visibleGradientBlue;
     public Gradient visibleGradientAll;
+
+    [Header("FX")]
+    public GameObject explosionDeathEffect;
+
+    [Header("SCORE")]
+    public int currentScore;
+    public int currentGameStage = 0;
     #endregion
 
     #region Methods
@@ -62,30 +72,68 @@ public class GPSingleton : MonoBehaviour
         }
     }
 
-    void SpawnEnemy(Enemy enemyPrefab)
+    public void SetVFX(TrailRenderer _renderer, EnemyData.Color _color)
     {
-        float angle = Random.Range(0f, 2.0f * Mathf.PI);
-        Vector3 pos = new Vector3(spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0);
+        switch (_color)
+        {
+            case EnemyData.Color.White:
+                _renderer.colorGradient = visibleGradientAll;
+                break;
+            case EnemyData.Color.Red:
+                _renderer.colorGradient = visibleGradientRed;
+                break;
+            case EnemyData.Color.Blue:
+                _renderer.colorGradient = visibleGradientBlue;
+                break;
+        }
+    }
+
+    void SpawnEnemy(Enemy enemyPrefab, float _angle = 0, float _radiusBonus = 0)
+    {
+        if (_angle == 0) _angle = Random.Range(0f, 2.0f * Mathf.PI);
+        Vector3 pos = new Vector3((spawnRadius + _radiusBonus)* Mathf.Cos(_angle), (spawnRadius + _radiusBonus ) * Mathf.Sin(_angle), 0);
         Instantiate(enemyPrefab).transform.position = pos;
+    }
+
+    public void GameOver()
+    {
+        currentScore = PlayerBlue.playerCurrentPoint + PlayerRed.playerCurrentPoint;
+        UICtrl.scoreboard.ShowTypeNameMenu();
+        pause = true;
+        Enemy[] enemyArray = FindObjectsOfType<Enemy>();
+        for (int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i].Kill();
+        }
     }
     #endregion
 
     #region Unity API
     void Start()
     {
-        var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        audioEvent.start();
+        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
+        //audioEvent.start();
         foreach (EnemyData enemy in enemyDataList)
         {
             timerList.Add(enemy.spawnRate);
         }
-        //var audioEvent = RuntimeManager.CreateInstance("event:/Character/TirFeu");
-        //audioEvent.start();
     }
 
     private void FixedUpdate()
     {
+        if (pause) return;
         float timeSinceStart = Time.time - startTime;
+        if (timeSinceStart > DataHolder.Instance.GeneralData.gameStage[currentGameStage])
+        {
+            if (DataHolder.Instance.GeneralData.gameStage.Count > currentGameStage + 1)
+            {
+                for (int i = 0; i < enemyDataList.Count; i++)
+                {
+                    enemyDataList[i].spawnTime *= DataHolder.Instance.GeneralData.timeRateReduction;
+                }
+                currentGameStage++;
+            }
+        }
         for(int i = 0; i < timerList.Count; i++)
         {
             if(timeSinceStart < enemyDataList[i].spawnTime)
@@ -96,7 +144,16 @@ public class GPSingleton : MonoBehaviour
             if (timerList[i] <= 0f)
             {
                 timerList[i] = enemyDataList[i].spawnRate;
-                SpawnEnemy(enemyDataList[i].enemyPrefab);
+                if (enemyDataList[i].name == "Standard")
+                {
+                    float _angle = Random.Range(0f, 2.0f * Mathf.PI);
+                    SpawnEnemy(enemyDataList[i].enemyPrefab, _angle, 1);
+                    SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.1f);
+                    SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.2f, 2);
+                } else
+                {
+                    SpawnEnemy(enemyDataList[i].enemyPrefab);
+                }
             }
         }
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
+using DG.Tweening;
 
 public class Enemy : MonoBehaviour
 {
@@ -11,12 +12,17 @@ public class Enemy : MonoBehaviour
     public MeshRenderer mesh;
     public ValueSlider healthBar;
     [HideInInspector] public PlanetBehavior target;
-    public VisualEffect visualEffect;
 
     [Header("STATS")]
     public EnemyData data;
     [SerializeField] private int currentHealth;
     [SerializeField] public EnemyData.Color currentColor;
+
+    [Header("FX")]
+    public VisualEffect visualEffect;
+    public TrailRenderer leftTrail;
+    public TrailRenderer rightTrail;
+
     #endregion
 
     #region Methods
@@ -29,22 +35,43 @@ public class Enemy : MonoBehaviour
     public virtual void Attack() //example suicide attack
     {
         target.InflictDamage(data.damage);
-        Destroy(gameObject);
+        Kill();
     }
 
-    public virtual void Damage(int _value)
+    public virtual void Damage(int _value, PlayerCursor _cursor)
     {
+        if (currentHealth <= 0) return;
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
-        if (currentHealth <= 0)
+        if (meshParent == null) return;
+        meshParent.transform.DOScale(1.1f, .1f).OnComplete( () =>
         {
-            Kill();
-        }
+            meshParent.transform.DOScale(1f, .1f).OnComplete(() =>
+            {
+                if (currentHealth <= 0)
+                {
+                    Kill(_cursor);
+                }
+            });
+        });
     }
 
-    public void Kill()
+    public void Kill(PlayerCursor _cursor = null)
     {
-        Destroy(gameObject);
+        Instantiate(GPSingleton.Instance.explosionDeathEffect).transform.position = transform.position;
+        if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
+        if (meshParent == null) return;
+        meshParent.transform.DOScale(0f, .1f).OnComplete(() => { 
+            Destroy(gameObject);
+        });
+    }
+
+    public void ChangeColor(EnemyData.Color _color)
+    {
+        GPSingleton.Instance.SetColor(mesh, _color);
+        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, _color);
+        if (leftTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
+        if (rightTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
     }
     #endregion
 
@@ -62,9 +89,8 @@ public class Enemy : MonoBehaviour
         target = GPSingleton.Instance.Planet;
         currentHealth = data.maxHealth;
         currentColor = (EnemyData.Color)Random.Range(1, 3);
-        GPSingleton.Instance.SetColor(mesh, currentColor);
+        ChangeColor(currentColor);
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
-        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, currentColor);
     }
 
     private void Update()

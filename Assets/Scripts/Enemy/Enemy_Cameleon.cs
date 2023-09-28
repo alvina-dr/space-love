@@ -10,9 +10,9 @@ public class Enemy_Cameleon : Enemy
         meshParent.forward = Vector3.RotateTowards(meshParent.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
         transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
     }
-    public override void Damage(int _value)
+    public override void Damage(int _value, PlayerCursor _cursor)
     {
-        base.Damage(_value);
+        base.Damage(_value, _cursor);
         switch(currentColor)
         {
             case EnemyData.Color.Blue:
@@ -22,8 +22,7 @@ public class Enemy_Cameleon : Enemy
                 currentColor = EnemyData.Color.Blue;
                 break;
         }
-        GPSingleton.Instance.SetColor(mesh, currentColor);
-        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, currentColor);
+        ChangeColor(currentColor);
     }
     #endregion
 }
