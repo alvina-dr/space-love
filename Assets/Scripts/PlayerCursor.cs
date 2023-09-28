@@ -37,7 +37,7 @@ public class PlayerCursor : MonoBehaviour
         });
         if (targetList.Count > 0)
         {
-            if (targetList[targetList.Count - 1].currentColor != cursorColor)
+            if (targetList[targetList.Count - 1].currentColor == cursorColor)
             {
                 targetList.Remove(targetList[targetList.Count - 1]);
                 Shoot();
