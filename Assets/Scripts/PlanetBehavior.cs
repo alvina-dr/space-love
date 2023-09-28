@@ -18,6 +18,7 @@ public class PlanetBehavior : MonoBehaviour
         mesh.DOScale(1.1f, .2f).OnComplete(() =>
         {
             mesh.DOScale(1f, .2f);
+            mesh.DOShakePosition(.8f, .1f, 10);
         });
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
         if(serialController != null) serialController.SendSerialMessage(((char)currentHealth).ToString());

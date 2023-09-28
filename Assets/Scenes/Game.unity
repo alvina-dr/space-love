@@ -283,74 +283,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d069a9fd73a442548bd56b2a4affa1a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1001 &494664353
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 304555507343533624, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2414410573395515446, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
-        type: 3}
-      propertyPath: m_Name
-      value: LoveFrenzy
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: e56350f62bb0bb74bb7cdf52f9c03f0a, type: 3}
 --- !u!1001 &683326851
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -648,8 +580,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5395a58fa3c583d4fb1066d576d00603, type: 2}
+  m_sharedMaterial: {fileID: 6216491926519437519, guid: 5395a58fa3c583d4fb1066d576d00603,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -673,8 +606,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -798,8 +731,9 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
-  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 5395a58fa3c583d4fb1066d576d00603, type: 2}
+  m_sharedMaterial: {fileID: 6216491926519437519, guid: 5395a58fa3c583d4fb1066d576d00603,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -823,8 +757,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 60
+  m_fontSizeBase: 60
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -5412,4 +5346,3 @@ SceneRoots:
   - {fileID: 1176959896}
   - {fileID: 1713690419}
   - {fileID: 8889072022302421488}
-  - {fileID: 494664353}

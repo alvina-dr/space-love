@@ -92,10 +92,11 @@ public class GPSingleton : MonoBehaviour
         }
     }
 
-    void SpawnEnemy(Enemy enemyPrefab, float _angle = 0, float _radiusBonus = 0)
+    void SpawnEnemy(Enemy enemyPrefab, float _angle = 0, float _radiusBonus = 0, bool center = false)
     {
         if (_angle == 0) _angle = UnityEngine.Random.Range(0f, 2.0f * Mathf.PI);
         Vector3 pos = new Vector3((spawnRadius + _radiusBonus)* Mathf.Cos(_angle), (spawnRadius + _radiusBonus ) * Mathf.Sin(_angle), 0);
+        if (center) pos = Vector3.zero;
         Instantiate(enemyPrefab).transform.position = pos;
     }
 
@@ -183,6 +184,9 @@ public class GPSingleton : MonoBehaviour
                     SpawnEnemy(enemyDataList[i].enemyPrefab, _angle, 1);
                     SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.1f);
                     SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.2f, 2);
+                } else if (enemyDataList[i].name == "LoveFrenzy")
+                {
+                    SpawnEnemy(enemyDataList[i].enemyPrefab, center:true);
                 } else
                 {
                     SpawnEnemy(enemyDataList[i].enemyPrefab);

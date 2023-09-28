@@ -30,6 +30,7 @@ public class Scoreboard : MonoBehaviour
 
     private ScoreboardList scoreList = new ScoreboardList();
     public TMP_InputField inputField;
+    public TextMeshProUGUI scoreText;
     public CanvasGroup typeNameMenu;
     public CanvasGroup scoreboardMenu;
     public GameObject scoreEntryPrefab;
@@ -40,6 +41,7 @@ public class Scoreboard : MonoBehaviour
     {
         typeNameMenu.alpha = 0;
         scoreboardMenu.alpha = 0;
+        scoreText.transform.localScale = Vector3.zero;
         if (scoreList.entries.Count == 0)
         {
             if (PlayerPrefs.HasKey("scoreboard"))
@@ -48,6 +50,7 @@ public class Scoreboard : MonoBehaviour
                 scoreList = JsonUtility.FromJson<ScoreboardList>(json);
             }
         }
+
     }
 
     public void AddScoreButton()
@@ -67,7 +70,14 @@ public class Scoreboard : MonoBehaviour
     public void ShowTypeNameMenu()
     {
         typeNameMenu.gameObject.SetActive(true);
-        typeNameMenu.DOFade(1, .3f);
+        typeNameMenu.DOFade(1, .3f).OnComplete(() =>
+        {
+            scoreText.text = GPSingleton.Instance.currentScore.ToString();
+            scoreText.transform.DOScale(1.1f, .3f).OnComplete(() =>
+            {
+                scoreText.transform.DOScale(1f, .1f);
+            });
+        });
     }
 
     public void ShowScoreboard()
