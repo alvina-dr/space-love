@@ -136,6 +136,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   background: {fileID: 5413120529173333981}
   text: {fileID: 4026057570611465692}
+  active: {r: 1, g: 0, b: 1, a: 1}
+  inactive: {r: 0, g: 0, b: 0, a: 0}
 --- !u!1 &4938320227941169654
 GameObject:
   m_ObjectHideFlags: 0

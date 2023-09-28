@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Linq;
+using DG.Tweening;
+using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 public class Scoreboard : MonoBehaviour
 {
@@ -27,13 +30,16 @@ public class Scoreboard : MonoBehaviour
 
     private ScoreboardList scoreList = new ScoreboardList();
     public TMP_InputField inputField;
-    public GameObject typeNameMenu;
-    public GameObject scoreboardMenu;
+    public CanvasGroup typeNameMenu;
+    public CanvasGroup scoreboardMenu;
     public GameObject scoreEntryPrefab;
     public Transform scoreEntryLayout;
+    public GameObject mainMenuButton;
 
     private void Start()
     {
+        typeNameMenu.alpha = 0;
+        scoreboardMenu.alpha = 0;
         if (scoreList.entries.Count == 0)
         {
             if (PlayerPrefs.HasKey("scoreboard"))
@@ -47,8 +53,7 @@ public class Scoreboard : MonoBehaviour
     public void AddScoreButton()
     {
         AddScoreToScoreboard(inputField.text, GPSingleton.Instance.currentScore);
-        typeNameMenu.SetActive(false);
-        scoreboardMenu.SetActive(true);
+        typeNameMenu.gameObject.SetActive(false);
         ShowScoreboard();
     }
 
@@ -61,14 +66,18 @@ public class Scoreboard : MonoBehaviour
 
     public void ShowTypeNameMenu()
     {
-        typeNameMenu.SetActive(true);
+        typeNameMenu.gameObject.SetActive(true);
+        typeNameMenu.DOFade(1, .3f);
     }
 
     public void ShowScoreboard()
     {
+        EventSystem.current.SetSelectedGameObject(mainMenuButton);
+        scoreboardMenu.gameObject.SetActive(true);
+        scoreboardMenu.DOFade(1, .3f);
         for (int i = 0; i < scoreList.entries.Count; i++)
         {
-            InstantiateScoreboardEntry(scoreList.entries[i]);
+            InstantiateScoreboardEntry(scoreList.entries[i], i);
         }
     }
 
@@ -82,11 +91,17 @@ public class Scoreboard : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    public void InstantiateScoreboardEntry(ScoreboardEntry scoreboardEntry)
+    public void InstantiateScoreboardEntry(ScoreboardEntry scoreboardEntry, int rank)
     {
         GameObject scoreEntry = Instantiate(scoreEntryPrefab, scoreEntryLayout);
-        scoreEntry.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = scoreboardEntry.name;
-        scoreEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = scoreboardEntry.score.ToString();
+        scoreEntry.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = rank.ToString();
+        scoreEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = scoreboardEntry.name;
+        scoreEntry.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = scoreboardEntry.score.ToString();
+    }
+
+    public void BackToMainMenu()
+    {
+        SceneManager.LoadScene("Menu");
     }
 
     static int SortByScore(ScoreboardEntry p1, ScoreboardEntry p2)

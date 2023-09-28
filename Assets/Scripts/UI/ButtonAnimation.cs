@@ -12,16 +12,19 @@ public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler
     public TextMeshProUGUI text;
     #endregion
 
+    [SerializeField] private Color active;
+    [SerializeField] private Color inactive;
+
     public void OnDeselect(BaseEventData eventData)
     {
-        text.color = MainMenu.Instance.purple;
-        background.color = MainMenu.Instance.transparent;
+        text.color = active;
+        background.color = inactive;
 
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         text.color = Color.black;
-        background.color = MainMenu.Instance.purple;
+        background.color = active;
     }
 }
