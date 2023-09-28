@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using DG.Tweening;
 
 public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -19,13 +20,14 @@ public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, 
     {
         text.color = active;
         background.color = inactive;
-
+        transform.DOScale(1f, .3f);
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         text.color = Color.black;
         background.color = active;
+        transform.DOScale(1.05f, .3f);
     }
     public void OnPointerExit(PointerEventData eventData)
     {
