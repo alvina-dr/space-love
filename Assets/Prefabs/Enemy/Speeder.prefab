@@ -353,8 +353,8 @@ MonoBehaviour:
   currentHealth: 0
   currentColor: 0
   visualEffect: {fileID: 5602522264680387364}
-  leftTrail: {fileID: 0}
-  rightTrail: {fileID: 0}
+  leftTrail: {fileID: 1116683663952670637}
+  rightTrail: {fileID: 2712652086239570938}
 --- !u!114 &1865230990106956209 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5391802523438269611, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
@@ -450,6 +450,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee3b4346fee6c414686848ce0016a740, type: 3}
+--- !u!96 &2712652086239570938 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 8710443503974499483, guid: ee3b4346fee6c414686848ce0016a740,
+    type: 3}
+  m_PrefabInstance: {fileID: 6720760996707331937}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6260527461810845009 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 839125328090257968, guid: ee3b4346fee6c414686848ce0016a740,
@@ -539,6 +545,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee3b4346fee6c414686848ce0016a740, type: 3}
+--- !u!96 &1116683663952670637 stripped
+TrailRenderer:
+  m_CorrespondingSourceObject: {fileID: 8710443503974499483, guid: ee3b4346fee6c414686848ce0016a740,
+    type: 3}
+  m_PrefabInstance: {fileID: 8619599242692078390}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8951990428848713990 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 839125328090257968, guid: ee3b4346fee6c414686848ce0016a740,

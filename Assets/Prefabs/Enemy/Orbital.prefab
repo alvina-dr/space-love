@@ -92,11 +92,11 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5866727234085087101, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 9021175864821877702}
+      addedObject: {fileID: 1065592606260918535}
     - targetCorrespondingSourceObject: {fileID: 5866727234085087101, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1065592606260918535}
+      addedObject: {fileID: 9021175864821877702}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4632772027384749538, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
@@ -282,12 +282,12 @@ PrefabInstance:
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[1].value
-      value: 0.3971007
+      value: 0.25228742
       objectReference: {fileID: 0}
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[2].value
-      value: 0.56321764
+      value: 0.41840437
       objectReference: {fileID: 0}
     - target: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
@@ -317,7 +317,7 @@ PrefabInstance:
     - target: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.425
+      value: -0.368
       objectReference: {fileID: 0}
     - target: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}

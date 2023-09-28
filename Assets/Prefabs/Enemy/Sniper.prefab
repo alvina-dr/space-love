@@ -246,22 +246,22 @@ PrefabInstance:
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[1].time
-      value: 0.06387009
+      value: 0.07567282
       objectReference: {fileID: 0}
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[2].time
-      value: 1.0083313
+      value: 1.020134
       objectReference: {fileID: 0}
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[1].value
-      value: 0.3971007
+      value: 0.0910728
       objectReference: {fileID: 0}
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[2].value
-      value: 0.56321764
+      value: 0.25718975
       objectReference: {fileID: 0}
     - target: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
@@ -291,7 +291,7 @@ PrefabInstance:
     - target: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.425
+      value: -0.229
       objectReference: {fileID: 0}
     - target: {fileID: 4682837635126955932, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
