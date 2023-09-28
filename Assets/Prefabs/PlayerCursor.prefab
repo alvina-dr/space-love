@@ -219,16 +219,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 1227452468975223562}
-  cursorPoint: 0
-  actionButton: 0
-  cursorColor: 0
-  serialController: {fileID: 0}
-  inputValue: 66
   circleSprite: {fileID: 6828210086234628748}
   internCircleSprite: {fileID: 4110444259292137761}
   playerCurrentPoint: 0
   actionButton: 0
   cursorColor: 0
+  serialController: {fileID: 3883313030488664444}
+  inputValue: 66
 --- !u!54 &1227452468975223562
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class PlayerCursor : MonoBehaviour
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
     public EnemyData.Color cursorColor;
-    public SerialControllerCustomDelimiter serialController;
+    public SerialController serialController;
     public char inputValue;
     #endregion
 
@@ -91,10 +91,10 @@ public class PlayerCursor : MonoBehaviour
 
     void Update()
     {
-        byte[] input = serialController.ReadSerialMessage();
-        if(input.Contains<byte>((byte)inputValue)) {
-            Shoot();
-        }
+        //byte[] input = serialController.ReadSerialMessage();
+        //if(input.Contains<byte>((byte)inputValue)) {
+        //    Shoot();
+        //}
         if (Input.GetKeyDown(actionButton))
         {
             Shoot();

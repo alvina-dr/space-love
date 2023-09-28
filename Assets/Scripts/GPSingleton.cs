@@ -85,7 +85,6 @@ public class GPSingleton : MonoBehaviour
         UICtrl.scoreboard.ShowTypeNameMenu();
         pause = true;
         Enemy[] enemyArray = FindObjectsOfType<Enemy>();
-        Debug.Log("array size : " + enemyArray.Length);
         for (int i = 0; i < enemyArray.Length; i++)
         {
             enemyArray[i].Kill();
