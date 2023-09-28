@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
   m_Name: Cameleon
   m_EditorClassIdentifier: 
-  spawnRate: 15
-  spawnTime: 0
+  spawnRate: 30
+  spawnTime: 120
   enemyPrefab: {fileID: 6874693653282788102, guid: 11cc0c839df28ca4e8994a9b97f4ee63,
     type: 3}
   maxHealth: 2
-  speed: 1
+  speed: 0.3
   damage: 1
   scoreOnKill: 40
