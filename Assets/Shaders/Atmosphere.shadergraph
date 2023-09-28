@@ -370,7 +370,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Tile",
     "m_StageCapability": 3,
-    "m_Value": 2.0,
+    "m_Value": 3.0,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -434,8 +434,8 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -2690.400146484375,
-            "y": -419.9999694824219,
+            "x": -2696.800048828125,
+            "y": -524.7999877929688,
             "width": 208.0,
             "height": 277.5999755859375
         }
@@ -801,10 +801,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -912.0,
-            "y": 256.0000915527344,
-            "width": 207.99993896484376,
-            "height": 359.1999206542969
+            "x": -954.3999633789063,
+            "y": 276.79998779296877,
+            "width": 208.0,
+            "height": 359.20001220703127
         }
     },
     "m_Slots": [
@@ -1114,7 +1114,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "AlphaClipThreshold",
     "m_StageCapability": 2,
-    "m_Value": 0.10000000149011612,
+    "m_Value": 0.0,
     "m_DefaultValue": 0.5,
     "m_Labels": []
 }
@@ -1334,10 +1334,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -3455.999755859375,
-            "y": -27.20001220703125,
-            "width": 138.399658203125,
-            "height": 33.59999465942383
+            "x": -3584.000244140625,
+            "y": -52.80000686645508,
+            "width": 138.39990234375,
+            "height": 33.600013732910159
         }
     },
     "m_Slots": [
@@ -1499,7 +1499,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Power",
     "m_StageCapability": 3,
-    "m_Value": 2.0,
+    "m_Value": 1.5,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
@@ -1760,7 +1760,7 @@
     "m_Hidden": false,
     "m_ShaderOutputName": "Contrast",
     "m_StageCapability": 3,
-    "m_Value": 5.0,
+    "m_Value": 3.0,
     "m_DefaultValue": 1.0,
     "m_Labels": []
 }
