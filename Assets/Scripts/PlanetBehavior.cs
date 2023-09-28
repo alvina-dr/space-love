@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class PlanetBehavior : MonoBehaviour
 {
     #region Properties
     private int currentHealth;
     public SerialController serialController;
+    [SerializeField] private Transform mesh;
     #endregion
 
     #region Methods
@@ -18,7 +20,6 @@ public class PlanetBehavior : MonoBehaviour
         Debug.Log(currentHealth);
         if (currentHealth <= 0) GPSingleton.Instance.GameOver();
     }
-
     #endregion
 
     #region Unity API
@@ -26,6 +27,7 @@ public class PlanetBehavior : MonoBehaviour
     {
         currentHealth = DataHolder.Instance.GeneralData.planetMaxHealth;
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
+        mesh.DOLocalRotate(new Vector3(0, 180, 0), 3f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
     }
     #endregion
 }
