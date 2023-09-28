@@ -62,6 +62,14 @@ public class Enemy : MonoBehaviour
         if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
         Destroy(gameObject);
     }
+
+    public void ChangeColor(EnemyData.Color _color)
+    {
+        GPSingleton.Instance.SetColor(mesh, _color);
+        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, _color);
+        //if (leftTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
+        //if (rightTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
+    }
     #endregion
 
     #region Unity API
@@ -78,9 +86,8 @@ public class Enemy : MonoBehaviour
         target = GPSingleton.Instance.Planet;
         currentHealth = data.maxHealth;
         currentColor = (EnemyData.Color)Random.Range(1, 3);
-        GPSingleton.Instance.SetColor(mesh, currentColor);
+        ChangeColor(currentColor);
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
-        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, currentColor);
     }
 
     private void Update()

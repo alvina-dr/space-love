@@ -72,8 +72,7 @@ public class PlayerCursor : MonoBehaviour
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null && _enemy.currentColor == cursorColor)
         {
-            GPSingleton.Instance.SetColor(_enemy.mesh, EnemyData.Color.White);
-            if (_enemy.visualEffect != null) GPSingleton.Instance.SetVFX(_enemy.visualEffect, EnemyData.Color.White);
+            _enemy.ChangeColor(EnemyData.Color.White);
             targetList.Add(_enemy);
         }
     }
@@ -83,8 +82,7 @@ public class PlayerCursor : MonoBehaviour
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null)
         {
-            GPSingleton.Instance.SetColor(_enemy.mesh, _enemy.currentColor);
-            if (_enemy.visualEffect != null) GPSingleton.Instance.SetVFX(_enemy.visualEffect, _enemy.currentColor);
+            _enemy.ChangeColor(_enemy.currentColor);
             targetList.Remove(_enemy);
         }
     }

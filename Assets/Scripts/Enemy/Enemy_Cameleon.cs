@@ -22,8 +22,7 @@ public class Enemy_Cameleon : Enemy
                 currentColor = EnemyData.Color.Blue;
                 break;
         }
-        GPSingleton.Instance.SetColor(mesh, currentColor);
-        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, currentColor);
+        ChangeColor(currentColor);
     }
     #endregion
 }
