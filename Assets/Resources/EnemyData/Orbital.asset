@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Orbital
   m_EditorClassIdentifier: 
   spawnRate: 20
-  spawnTime: 0
+  spawnTime: 60
   enemyPrefab: {fileID: 4537874187888344512, guid: 3c473efd8bbf3b640812c9b95f8aaab4,
     type: 3}
   maxHealth: 1
