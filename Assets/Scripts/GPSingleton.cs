@@ -72,6 +72,22 @@ public class GPSingleton : MonoBehaviour
         }
     }
 
+    public void SetVFX(TrailRenderer _renderer, EnemyData.Color _color)
+    {
+        switch (_color)
+        {
+            case EnemyData.Color.White:
+                _renderer.colorGradient = visibleGradientAll;
+                break;
+            case EnemyData.Color.Red:
+                _renderer.colorGradient = visibleGradientRed;
+                break;
+            case EnemyData.Color.Blue:
+                _renderer.colorGradient = visibleGradientBlue;
+                break;
+        }
+    }
+
     void SpawnEnemy(Enemy enemyPrefab)
     {
         float angle = Random.Range(0f, 2.0f * Mathf.PI);

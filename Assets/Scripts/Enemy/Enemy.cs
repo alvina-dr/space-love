@@ -43,10 +43,10 @@ public class Enemy : MonoBehaviour
         if (currentHealth <= 0) return;
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
-        if (mesh == null) return;
-        mesh.transform.DOScale(1.1f, .1f).OnComplete( () =>
+        if (meshParent == null) return;
+        meshParent.transform.DOScale(1.1f, .1f).OnComplete( () =>
         {
-            mesh.transform.DOScale(0f, .1f).OnComplete(() =>
+            meshParent.transform.DOScale(1f, .1f).OnComplete(() =>
             {
                 if (currentHealth <= 0)
                 {
@@ -60,15 +60,18 @@ public class Enemy : MonoBehaviour
     {
         Instantiate(GPSingleton.Instance.explosionDeathEffect).transform.position = transform.position;
         if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
-        Destroy(gameObject);
+        if (meshParent == null) return;
+        meshParent.transform.DOScale(0f, .1f).OnComplete(() => { 
+            Destroy(gameObject);
+        });
     }
 
     public void ChangeColor(EnemyData.Color _color)
     {
         GPSingleton.Instance.SetColor(mesh, _color);
         if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, _color);
-        //if (leftTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
-        //if (rightTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
+        if (leftTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
+        if (rightTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
     }
     #endregion
 
