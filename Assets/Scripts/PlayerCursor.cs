@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
@@ -20,6 +21,8 @@ public class PlayerCursor : MonoBehaviour
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
     public EnemyData.Color cursorColor;
+    public SerialControllerCustomDelimiter serialController;
+    public char inputValue;
     #endregion
 
     #region Methods
@@ -46,7 +49,6 @@ public class PlayerCursor : MonoBehaviour
     public void GainPoints(int _value)
     {
         playerCurrentPoint += _value;
-        Debug.Log("GAIN POINTS : " + playerCurrentPoint);
         switch (cursorColor)
         {
             case EnemyData.Color.Red:
@@ -89,6 +91,10 @@ public class PlayerCursor : MonoBehaviour
 
     void Update()
     {
+        byte[] input = serialController.ReadSerialMessage();
+        if(input.Contains<byte>((byte)inputValue)) {
+            Shoot();
+        }
         if (Input.GetKeyDown(actionButton))
         {
             Shoot();
@@ -111,11 +117,15 @@ public class PlayerCursor : MonoBehaviour
         {
             case EnemyData.Color.Red:
                 GPSingleton.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
+                inputValue = 'R';
                 break;
             case EnemyData.Color.Blue:
                 GPSingleton.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
+                inputValue = 'B';
                 break;
         }
     }
     #endregion
+
+
 }
