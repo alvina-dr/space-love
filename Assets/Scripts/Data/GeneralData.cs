@@ -7,4 +7,7 @@ public class GeneralData : ScriptableObject
 {
     public int scoreboardSize;
     public int planetMaxHealth;
+    public int cursorSpeed;
+    public List<float> gameStage = new List<float>();
+    public float timeRateReduction;
 }

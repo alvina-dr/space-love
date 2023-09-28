@@ -36,6 +36,7 @@ public class GPSingleton : MonoBehaviour
 
     [Header("SCORE")]
     public int currentScore;
+    public int currentGameStage = 0;
     #endregion
 
     #region Methods
@@ -107,6 +108,17 @@ public class GPSingleton : MonoBehaviour
     {
         if (pause) return;
         float timeSinceStart = Time.time - startTime;
+        if (timeSinceStart > DataHolder.Instance.GeneralData.gameStage[currentGameStage])
+        {
+            if (DataHolder.Instance.GeneralData.gameStage.Count > currentGameStage + 1)
+            {
+                for (int i = 0; i < enemyDataList.Count; i++)
+                {
+                    enemyDataList[i].spawnTime *= DataHolder.Instance.GeneralData.timeRateReduction;
+                }
+                currentGameStage++;
+            }
+        }
         for(int i = 0; i < timerList.Count; i++)
         {
             if(timeSinceStart < enemyDataList[i].spawnTime)

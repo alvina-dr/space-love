@@ -36,26 +36,28 @@ public class Enemy : MonoBehaviour
         Kill();
     }
 
-    public virtual void Damage(int _value)
+    public virtual void Damage(int _value, PlayerCursor _cursor)
     {
         if (currentHealth <= 0) return;
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
+        if (mesh == null) return;
         mesh.transform.DOScale(1.1f, .1f).OnComplete( () =>
         {
             mesh.transform.DOScale(0f, .1f).OnComplete(() =>
             {
                 if (currentHealth <= 0)
                 {
-                    Kill();
+                    Kill(_cursor);
                 }
             });
         });
     }
 
-    public void Kill()
+    public void Kill(PlayerCursor _cursor = null)
     {
         Instantiate(GPSingleton.Instance.explosionDeathEffect).transform.position = transform.position;
+        if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
         Destroy(gameObject);
     }
     #endregion

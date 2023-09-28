@@ -15,7 +15,7 @@ public class PlayerCursor : MonoBehaviour
 
     [Header("CURRENT INFO")]
     private List<Enemy> targetList = new List<Enemy>();
-    public int playerCurrentPoint;
+    public int playerCurrentPoint = 0;
 
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
@@ -38,9 +38,29 @@ public class PlayerCursor : MonoBehaviour
             } else
             {
                 playerCurrentPoint += targetList[targetList.Count - 1].data.scoreOnKill;
-                targetList[targetList.Count - 1].Damage(1);
+                targetList[targetList.Count - 1].Damage(1, this);
             }
         }
+    }
+
+    public void GainPoints(int _value)
+    {
+        playerCurrentPoint += _value;
+        Debug.Log("GAIN POINTS : " + playerCurrentPoint);
+        switch (cursorColor)
+        {
+            case EnemyData.Color.Red:
+                GPSingleton.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
+                break;
+            case EnemyData.Color.Blue:
+                GPSingleton.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
+                break;
+        }
+    }
+
+    public void OnMove(InputValue value)
+    {
+        direction = value.Get<Vector2>();
     }
     #endregion
 
@@ -67,22 +87,12 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
-    void Start()
-    {
-        
-    }
-
     void Update()
     {
         if (Input.GetKeyDown(actionButton))
         {
             Shoot();
         }
-    }
-
-    public void OnMove(InputValue value)
-    {
-        direction = value.Get<Vector2>();
     }
 
     //public void OnFire(InputValue value)
@@ -92,7 +102,20 @@ public class PlayerCursor : MonoBehaviour
 
     private void FixedUpdate()
     {
-        rb.velocity = direction * Time.deltaTime * 200;
+        rb.velocity = direction * Time.deltaTime * DataHolder.Instance.GeneralData.cursorSpeed;
+    }
+
+    private void Start()
+    {
+        switch (cursorColor)
+        {
+            case EnemyData.Color.Red:
+                GPSingleton.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
+                break;
+            case EnemyData.Color.Blue:
+                GPSingleton.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
+                break;
+        }
     }
     #endregion
 }
