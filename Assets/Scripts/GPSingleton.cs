@@ -88,10 +88,10 @@ public class GPSingleton : MonoBehaviour
         }
     }
 
-    void SpawnEnemy(Enemy enemyPrefab)
+    void SpawnEnemy(Enemy enemyPrefab, float _angle = 0, float _radiusBonus = 0)
     {
-        float angle = Random.Range(0f, 2.0f * Mathf.PI);
-        Vector3 pos = new Vector3(spawnRadius * Mathf.Cos(angle), spawnRadius * Mathf.Sin(angle), 0);
+        if (_angle == 0) _angle = Random.Range(0f, 2.0f * Mathf.PI);
+        Vector3 pos = new Vector3((spawnRadius + _radiusBonus)* Mathf.Cos(_angle), (spawnRadius + _radiusBonus ) * Mathf.Sin(_angle), 0);
         Instantiate(enemyPrefab).transform.position = pos;
     }
 
@@ -144,7 +144,16 @@ public class GPSingleton : MonoBehaviour
             if (timerList[i] <= 0f)
             {
                 timerList[i] = enemyDataList[i].spawnRate;
-                SpawnEnemy(enemyDataList[i].enemyPrefab);
+                if (enemyDataList[i].name == "Standard")
+                {
+                    float _angle = Random.Range(0f, 2.0f * Mathf.PI);
+                    SpawnEnemy(enemyDataList[i].enemyPrefab, _angle, 1);
+                    SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.1f);
+                    SpawnEnemy(enemyDataList[i].enemyPrefab, _angle + 0.2f, 2);
+                } else
+                {
+                    SpawnEnemy(enemyDataList[i].enemyPrefab);
+                }
             }
         }
     }
