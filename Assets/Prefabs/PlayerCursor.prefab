@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: 1227452468975223562}
   - component: {fileID: 3627336392840058914}
   - component: {fileID: 1063967004348678349}
+  - component: {fileID: 3883313030488664444}
   m_Layer: 0
   m_Name: PlayerCursor
   m_TagString: Untagged
@@ -134,6 +135,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 1227452468975223562}
   cursorPoint: 0
+  actionButton: 0
+  cursorColor: 0
+  serialController: {fileID: 0}
+  inputValue: 66
 --- !u!54 &1227452468975223562
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -213,3 +218,20 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!114 &3883313030488664444
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8974442546683678017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc5f48af2cffd747a079fe8c632e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  portName: COM3
+  baudRate: 9600
+  messageListener: {fileID: 0}
+  reconnectionDelay: 1000
+  maxUnreadMessages: 1

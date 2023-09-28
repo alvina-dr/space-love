@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -13,6 +14,8 @@ public class PlayerCursor : MonoBehaviour
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
     public EnemyData.Color cursorColor;
+    public SerialControllerCustomDelimiter serialController;
+    public char inputValue;
     #endregion
 
     #region Methods
@@ -58,11 +61,21 @@ public class PlayerCursor : MonoBehaviour
 
     void Start()
     {
-        
+        if(cursorColor == EnemyData.Color.Blue)
+        {
+            inputValue = 'B';
+        } else if(cursorColor == EnemyData.Color.Red)
+        {
+            inputValue = 'R';
+        }
     }
 
     void Update()
     {
+        byte[] input = serialController.ReadSerialMessage();
+        if(input.Contains<byte>((byte)inputValue)) {
+            Shoot();
+        }
         if (Input.GetKeyDown(actionButton))
         {
             Shoot();
@@ -84,4 +97,6 @@ public class PlayerCursor : MonoBehaviour
         rb.velocity = direction * Time.deltaTime * 200;
     }
     #endregion
+
+
 }
