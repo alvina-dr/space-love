@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Slalom
   m_EditorClassIdentifier: 
   spawnRate: 20
-  spawnTime: 0
+  spawnTime: 30
   enemyPrefab: {fileID: 2076813180809475015, guid: 2c9ca875ae047a6418730bfaeaebf100,
     type: 3}
   maxHealth: 1
