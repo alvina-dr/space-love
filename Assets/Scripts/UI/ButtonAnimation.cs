@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
 using DG.Tweening;
+using FMODUnity;
 
 public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
 {
@@ -28,6 +29,8 @@ public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, 
         text.color = Color.black;
         background.color = active;
         transform.DOScale(1.05f, .3f);
+        var audioEvent = RuntimeManager.CreateInstance("event:/UI/Hover");
+        audioEvent.start();
     }
     public void OnPointerExit(PointerEventData eventData)
     {
@@ -36,5 +39,11 @@ public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, 
     public void OnPointerEnter(PointerEventData eventData)
     {
         OnSelect(null);
+    }
+
+    public void Activate()
+    {
+        var audioEvent = RuntimeManager.CreateInstance("event:/UI/Click");
+        audioEvent.start();
     }
 }

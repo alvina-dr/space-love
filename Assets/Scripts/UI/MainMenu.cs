@@ -16,7 +16,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        DataHolder.Instance.StartGame();
     }
 
     public void Credits()

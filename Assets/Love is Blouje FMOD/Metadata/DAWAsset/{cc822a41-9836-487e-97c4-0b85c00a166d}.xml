@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="DAWAsset" id="{cc822a41-9836-487e-97c4-0b85c00a166d}">
+		<property name="assetPath">
+			<value>Love is Blouge.RPP.link/Enemy_Orbital.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.49789583333333332</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a6c9d72e-ae26-4699-8540-7659ceb2a8c3}</destination>
+		</relationship>
+		<relationship name="project">
+			<destination>{f05889a7-7627-41e1-a97c-30fa8abaa973}</destination>
+		</relationship>
+	</object>
+</objects>

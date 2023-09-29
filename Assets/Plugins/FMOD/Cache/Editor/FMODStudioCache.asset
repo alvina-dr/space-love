@@ -1,5 +1,29 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8310875000991181464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Cockpit/Layer
+  m_EditorClassIdentifier: 
+  Name: Layer
+  StudioPath: 
+  Min: -1
+  Max: 3
+  Default: -1
+  ID:
+    data1: 292836476
+    data2: 2518151824
+  Type: 0
+  IsGlobal: 0
+  Labels: []
+  Exists: 1
 --- !u!114 &-6864374313688935042
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24,6 +48,114 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5972299682773713322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/TargetReveal
+  m_EditorClassIdentifier: 
+  Path: event:/Character/TargetReveal
+  Guid:
+    Data1: 96018021
+    Data2: 1284213804
+    Data3: -1906955098
+    Data4: 1770933046
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 203
+--- !u!114 &-5468340679084014931
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Text
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Text
+  Guid:
+    Data1: -1211549068
+    Data2: 1211250467
+    Data3: -1129321284
+    Data4: -1326307326
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 94
+--- !u!114 &-5305166903241093663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/CameleonDie
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/CameleonDie
+  Guid:
+    Data1: -2108906398
+    Data2: 1196932864
+    Data3: -1859844702
+    Data4: -942915190
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 968
+--- !u!114 &-5195140019947353399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Character/TirBleu
+  m_EditorClassIdentifier: 
+  Path: event:/Character/TirBleu
+  Guid:
+    Data1: -1864601040
+    Data2: 1129231733
+    Data3: 2063880636
+    Data4: 1893409825
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 515
 --- !u!114 &-4852152937221951336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,10 +179,38 @@ MonoBehaviour:
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -8310875000991181464}
   MinDistance: 1
   MaxDistance: 20
   Length: 60000
+--- !u!114 &-3885277739681449933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Earth/PlanetHit
+  m_EditorClassIdentifier: 
+  Path: event:/Earth/PlanetHit
+  Guid:
+    Data1: 1002115509
+    Data2: 1264211593
+    Data3: -1839953259
+    Data4: 473929378
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1115
 --- !u!114 &-3709854521266690261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -78,7 +238,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 401
---- !u!114 &-3616167560537056303
+--- !u!114 &-3556026323699837305
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -88,9 +248,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Character/Tir
+  m_Name: event:/Character/TirRouge
   m_EditorClassIdentifier: 
-  Path: event:/Character/Tir
+  Path: event:/Character/TirRouge
   Guid:
     Data1: -888747272
     Data2: 1280901111
@@ -104,7 +264,61 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 596
+  Length: 515
+--- !u!114 &-2288258945336539106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/SniperTir
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/SniperTir
+  Guid:
+    Data1: -1074906815
+    Data2: 1128681429
+    Data3: 956310450
+    Data4: 2102605107
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &-1976089859117960825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/CameleonHit
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/CameleonHit
+  Guid:
+    Data1: -739241494
+    Data2: 1279415908
+    Data3: 377558931
+    Data4: 906161234
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 968
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,16 +340,57 @@ MonoBehaviour:
   - {fileID: 4077385207838924547}
   - {fileID: -3709854521266690261}
   - {fileID: 1589377964747055621}
-  - {fileID: 7132380793538379189}
   - {fileID: -4852152937221951336}
-  - {fileID: -3616167560537056303}
+  - {fileID: 8933400205619141484}
+  - {fileID: -5195140019947353399}
+  - {fileID: 2969500495970375705}
+  - {fileID: -2288258945336539106}
+  - {fileID: 1138635782430036256}
+  - {fileID: 6449137559486325694}
+  - {fileID: -5305166903241093663}
+  - {fileID: -5972299682773713322}
+  - {fileID: -5468340679084014931}
+  - {fileID: 3136905307772652101}
+  - {fileID: 2162070451160821598}
+  - {fileID: -3885277739681449933}
+  - {fileID: 30694965924488207}
+  - {fileID: 6484743451784858101}
+  - {fileID: -1976089859117960825}
+  - {fileID: -3556026323699837305}
   EditorParameters: []
   MasterBanks:
   - {fileID: 905203115620260987}
   StringsBanks:
   - {fileID: 4680875936719921099}
-  cacheTime: 638315167322319081
+  cacheTime: 638315833828092682
   cacheVersion: 131607
+--- !u!114 &30694965924488207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/StandartDie
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/StandartDie
+  Guid:
+    Data1: -397982022
+    Data2: 1176232196
+    Data3: -1869263465
+    Data4: -2131288044
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 968
 --- !u!114 &620410374099459167
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,11 +434,38 @@ MonoBehaviour:
   Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638315167322309382
+  lastModified: 638315833828062636
   FileSizes:
   - Name: Desktop
-    Value: 6952288
+    Value: 7950144
   Exists: 1
+--- !u!114 &1138635782430036256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Earth/ChargeRelease
+  m_EditorClassIdentifier: 
+  Path: event:/Earth/ChargeRelease
+  Guid:
+    Data1: 426386757
+    Data2: 1081079053
+    Data3: -574372447
+    Data4: 384608451
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
 --- !u!114 &1589377964747055621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,6 +493,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4395
+--- !u!114 &2162070451160821598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/SlalomDie
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/SlalomDie
+  Guid:
+    Data1: 1659723933
+    Data2: 1245466322
+    Data3: -902662490
+    Data4: -1183152325
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 968
 --- !u!114 &2629002066914701604
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -239,6 +548,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1095
+--- !u!114 &2969500495970375705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/SniperCharge
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/SniperCharge
+  Guid:
+    Data1: -399400140
+    Data2: 1222899546
+    Data3: -2016436339
+    Data4: 690378874
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &3136905307772652101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/TirOrbital
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/TirOrbital
+  Guid:
+    Data1: -496491134
+    Data2: 1202546435
+    Data3: -603688008
+    Data4: -360615754
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 596
 --- !u!114 &4077385207838924547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -281,10 +644,10 @@ MonoBehaviour:
   Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638315167322319081
+  lastModified: 638315833828092682
   FileSizes:
   - Name: Desktop
-    Value: 1100
+    Value: 1782
   Exists: 1
 --- !u!114 &5294883282102479005
 MonoBehaviour:
@@ -306,6 +669,60 @@ MonoBehaviour:
   - Name: Desktop
     Value: 17184
   Exists: 1
+--- !u!114 &6449137559486325694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Earth/PlanetExplosion
+  m_EditorClassIdentifier: 
+  Path: event:/Earth/PlanetExplosion
+  Guid:
+    Data1: 2064335968
+    Data2: 1193444571
+    Data3: -253585995
+    Data4: -2097341456
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &6484743451784858101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Earth/ChargeReady
+  m_EditorClassIdentifier: 
+  Path: event:/Earth/ChargeReady
+  Guid:
+    Data1: 1468193500
+    Data2: 1170901494
+    Data3: -198081095
+    Data4: -958148204
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
 --- !u!114 &6983785603629349052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,33 +743,6 @@ MonoBehaviour:
   - Name: Desktop
     Value: 766
   Exists: 1
---- !u!114 &7132380793538379189
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ennemy/Die
-  m_EditorClassIdentifier: 
-  Path: event:/Ennemy/Die
-  Guid:
-    Data1: -397982022
-    Data2: 1176232196
-    Data3: -1869263465
-    Data4: -2131288044
-  Banks:
-  - {fileID: 905203115620260987}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 968
 --- !u!114 &7682796559211813361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,3 +818,30 @@ MonoBehaviour:
   - Name: Desktop
     Value: 18560
   Exists: 1
+--- !u!114 &8933400205619141484
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ennemy/OrbitalDie
+  m_EditorClassIdentifier: 
+  Path: event:/Ennemy/OrbitalDie
+  Guid:
+    Data1: 108569615
+    Data2: 1290779922
+    Data3: -1855341683
+    Data4: -2092888109
+  Banks:
+  - {fileID: 905203115620260987}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 968

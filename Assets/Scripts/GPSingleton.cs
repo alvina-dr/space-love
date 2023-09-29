@@ -166,6 +166,15 @@ public class GPSingleton : MonoBehaviour
 
             if (currentInput.Contains('B'))
                 PlayerBlue.Shoot();
+
+            Debug.Log("UP MUSIC" + timeSinceStart);
+            if (timeSinceStart >= 180) DataHolder.Instance.musicEvent.setParameterByName("Layer", 3);
+            else if (timeSinceStart >= 120) DataHolder.Instance.musicEvent.setParameterByName("Layer", 2);
+            else if (timeSinceStart >= 60)
+            {
+                DataHolder.Instance.musicEvent.setParameterByName("Layer", 1);
+            }
+
         }
 
         if (timeSinceStart > DataHolder.Instance.GeneralData.gameStage[currentGameStage])
@@ -220,8 +229,7 @@ public class GPSingleton : MonoBehaviour
         {
             enemyDataList.Add(enemyDataArray[i]);
         }
-        var audioEvent = RuntimeManager.CreateInstance("event:/AMB/Cockpit");
-        audioEvent.start();
+        startTime = Time.time;
     }
     #endregion
 }
