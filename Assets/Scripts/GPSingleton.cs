@@ -68,6 +68,22 @@ public class GPSingleton : MonoBehaviour
         }
     }
 
+    public void SetShaderColor(Renderer _renderer, EnemyData.Color _color)
+    {
+        switch (_color)
+        {
+            case EnemyData.Color.White:
+                _renderer.material.SetColor("_color",  visibleAll);
+                break;
+            case EnemyData.Color.Red:
+                _renderer.material.SetColor("_color", visibleRed);
+                break;
+            case EnemyData.Color.Blue:
+                _renderer.material.SetColor("_color", visibleBlue);
+                break;
+        }
+    }
+
     public void SetVFX(VisualEffect _renderer, EnemyData.Color _color)
     {
         switch (_color)

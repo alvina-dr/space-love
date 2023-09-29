@@ -8,7 +8,8 @@ public class Projectile : MonoBehaviour
     private Transform target;
     private float speed;
     private int damage;
-    [SerializeField] private MeshRenderer mesh;
+    [SerializeField] private MeshRenderer meshTop;
+    [SerializeField] private MeshRenderer meshDown;
     #endregion
 
     #region Methods
@@ -17,7 +18,8 @@ public class Projectile : MonoBehaviour
         target = GPSingleton.Instance.Planet.transform;
         speed = _data.projectileSpeed;
         damage = _data.damage;
-        GPSingleton.Instance.SetColor(mesh, _color);
+        GPSingleton.Instance.SetShaderColor(meshTop, _color);
+        GPSingleton.Instance.SetShaderColor(meshDown, _color);
     }
     #endregion
 
@@ -31,7 +33,6 @@ public class Projectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider collision)
     {
-        Debug.Log("collider enter : " + collision.name);
         PlanetBehavior _planet = collision.GetComponent<PlanetBehavior>();
         if (_planet != null)
         {

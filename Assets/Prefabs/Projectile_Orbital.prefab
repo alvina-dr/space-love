@@ -179,7 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c4df9d921eb9554b9333597a2e35f4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mesh: {fileID: 5076488513069520074}
+  meshTop: {fileID: 7970370060473000062}
+  meshDown: {fileID: 1516433527305623899}
 --- !u!54 &2965928597929293079
 Rigidbody:
   m_ObjectHideFlags: 0
