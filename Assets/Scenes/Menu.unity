@@ -1217,7 +1217,7 @@ PrefabInstance:
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: visibleRed.r
-      value: 1
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
@@ -1268,7 +1268,7 @@ PrefabInstance:
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: visibleGradientRed.key0.r
-      value: 1
+      value: 0.9019608
       objectReference: {fileID: 0}
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}

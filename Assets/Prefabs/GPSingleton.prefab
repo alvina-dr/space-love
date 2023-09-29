@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58de7dc97100c1e428df0e62b9192cd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnerMode: 0
   Planet: {fileID: 0}
   PlayerRed: {fileID: 0}
   PlayerBlue: {fileID: 0}
@@ -54,7 +55,7 @@ MonoBehaviour:
   enemyDataList: []
   SoundData: {fileID: 0}
   pause: 0
-  spawnRadius: 10
+  spawnRadius: 9
   visibleRed: {r: 0, g: 0, b: 0, a: 0}
   visibleBlue: {r: 0, g: 0, b: 0, a: 0}
   visibleAll: {r: 0, g: 0, b: 0, a: 0}

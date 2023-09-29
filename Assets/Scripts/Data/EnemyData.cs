@@ -21,8 +21,11 @@ public class EnemyData : ScriptableObject
     public float speed;
     public int damage;
     public int scoreOnKill;
+
+    [Header("SOUNDS")]
     public string deathSound;
     public string hitSound;
+    public string shootSound;
 
     [Header("SHOOTING UNITS")]
     public float shootingDistance;

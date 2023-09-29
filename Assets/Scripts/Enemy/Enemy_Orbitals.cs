@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class Enemy_Orbitals : Enemy
 {
     float timer = 0;
@@ -29,6 +29,8 @@ public class Enemy_Orbitals : Enemy
         Projectile _projectile = Instantiate(projectilePrefab);
         _projectile.SetupProjectile(data, currentColor);
         _projectile.transform.position = transform.position;
+        var audioEvent = RuntimeManager.CreateInstance(data.shootSound);
+        audioEvent.start();
         timer = 0;
     }
     #endregion

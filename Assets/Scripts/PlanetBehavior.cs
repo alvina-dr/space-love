@@ -18,8 +18,10 @@ public class PlanetBehavior : MonoBehaviour
         currentHealth -= _damage;
         mesh.DOScale(1.1f, .2f).OnComplete(() =>
         {
+            mesh.DOKill();
+            mesh.transform.position = Vector3.zero;
             mesh.DOScale(1f, .2f);
-            mesh.DOShakePosition(.1f, new Vector3(.8f, .8f, 0), 10);
+            mesh.DOShakePosition(.1f, new Vector3(.1f, .1f, 0), 1);
             var damageEvent = RuntimeManager.CreateInstance("event:/Earth/PlanetHit");
             damageEvent.start();
         });
