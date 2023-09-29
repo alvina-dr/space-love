@@ -21,7 +21,7 @@ public class PlanetBehavior : MonoBehaviour
             mesh.DOShakePosition(.8f, .1f, 10);
         });
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
-        serialController.SendSerialMessage(currentHealth.ToString());
+        serialController.SendSerialMessage((currentHealth+10).ToString());
         Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
