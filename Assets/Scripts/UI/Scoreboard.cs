@@ -117,7 +117,7 @@ public class Scoreboard : MonoBehaviour
     public void InstantiateScoreboardEntry(ScoreboardEntry scoreboardEntry, int rank)
     {
         GameObject scoreEntry = Instantiate(scoreEntryPrefab, scoreEntryLayout);
-        scoreEntry.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = rank.ToString();
+        scoreEntry.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = (rank + 1).ToString();
         scoreEntry.transform.GetChild(1).GetComponent<TextMeshProUGUI>().text = scoreboardEntry.name;
         scoreEntry.transform.GetChild(2).GetComponent<TextMeshProUGUI>().text = scoreboardEntry.score.ToString();
     }

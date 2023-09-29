@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using DG.Tweening;
 
 public class MainMenu : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class MainMenu : MonoBehaviour
     public Color purple;
     public Color transparent;
     public GameObject startingButton;
-    public GameObject credits;
+    public CanvasGroup credits;
     public Scoreboard scoreboard;
 
     public void StartGame()
@@ -20,7 +21,23 @@ public class MainMenu : MonoBehaviour
 
     public void Credits()
     {
-        credits.SetActive(!credits.activeSelf);
+        if (credits.gameObject.activeSelf)
+        {
+            credits.DOFade(0, .3f).OnComplete(() =>
+            {
+                credits.gameObject.SetActive(false);
+            });
+        }
+        else
+        {
+            credits.gameObject.SetActive(true);
+            credits.DOFade(1, .3f);
+        }
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 
     public void Scoreboard()
@@ -32,6 +49,7 @@ public class MainMenu : MonoBehaviour
         else
         {
             scoreboard.ShowScoreboard();
+            EventSystem.current.SetSelectedGameObject(scoreboard.mainMenuButton);
         }
     }
 
