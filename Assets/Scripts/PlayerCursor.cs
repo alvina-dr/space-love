@@ -31,8 +31,17 @@ public class PlayerCursor : MonoBehaviour
     {
         internCircleSprite.transform.DOScale(0.05f, .1f).OnComplete(() =>
         {
-            var audioEvent = RuntimeManager.CreateInstance("event:/Character/Tir");
-            audioEvent.start();
+            switch(cursorColor)
+            {
+                case EnemyData.Color.Blue:
+                    var audioEventRed = RuntimeManager.CreateInstance("event:/Character/TirBleu");
+                    audioEventRed.start();
+                    break;
+                case EnemyData.Color.Red:
+                    var audioEventBlue = RuntimeManager.CreateInstance("event:/Character/TirRouge");
+                    audioEventBlue.start();
+                    break;
+            }
             internCircleSprite.transform.DOScale(0.1f, .1f);
         });
         if (targetList.Count > 0)
