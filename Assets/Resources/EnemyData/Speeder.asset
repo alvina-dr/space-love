@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
   m_Name: Speeder
   m_EditorClassIdentifier: 
-  spawnRate: 30
-  spawnTime: 90
+  spawnRate: 3
+  spawnTime: 0
   enemyPrefab: {fileID: 8743144145005346839, guid: 48fe9efa0c8d98a4c8a7d545afaacc32,
     type: 3}
   maxHealth: 1
@@ -22,6 +22,7 @@ MonoBehaviour:
   scoreOnKill: 20
   deathSound: event:/Ennemy/StandartDie
   hitSound: 
+  shootSound: 
   shootingDistance: 0
   projectileSpeed: 0
   reloadTime: 0

@@ -27,8 +27,7 @@ public class PlanetBehavior : MonoBehaviour
             var damageEvent = RuntimeManager.CreateInstance("event:/Earth/PlanetHit");
             damageEvent.start();
             float _destruction = currentHealth * 0.38f / DataHolder.Instance.GeneralData.planetMaxHealth ;
-            Debug.Log("destruction : " + _destruction);
-            meshRenderer.material.SetFloat("_destruction", _destruction);
+            if(meshRenderer != null) meshRenderer.material.SetFloat("_destruction", _destruction);
         });
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
         serialController.SendSerialMessage((currentHealth+10).ToString());

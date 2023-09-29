@@ -5,7 +5,7 @@
 			<value>Click</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>3</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0cb12866-cab4-449f-9580-c610b8863676}</destination>
@@ -98,7 +98,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{c9f0beee-3a36-41cb-a314-c976c7af4b3d}">
 		<property name="volume">
-			<value>-12</value>
+			<value>-1</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -118,7 +118,17 @@
 			<destination>{475e3749-61f4-4255-bc01-92ca4f0169d1}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{911cd769-baa7-497e-8952-0d4fae64f0b9}" />
+	<object class="MixerBusPanner" id="{911cd769-baa7-497e-8952-0d4fae64f0b9}">
+		<property name="surroundStereoSeparation">
+			<value>0</value>
+		</property>
+		<property name="surroundStereoAxis">
+			<value>180</value>
+		</property>
+		<property name="overridingOutputFormat">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9ad6d59a-2f05-417a-804b-26f0206efe66}" />
 	<object class="MixerBusEffectChain" id="{2a166888-19a3-4cf8-894d-88ad6a975028}">
 		<relationship name="effects">

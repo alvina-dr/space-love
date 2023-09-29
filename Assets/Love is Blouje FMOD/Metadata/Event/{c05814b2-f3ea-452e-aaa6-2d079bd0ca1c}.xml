@@ -5,7 +5,7 @@
 			<value>GoBack</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>3</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0cb12866-cab4-449f-9580-c610b8863676}</destination>
@@ -98,7 +98,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{73b5adcb-eb03-4456-91ae-bbd9212e4a0f}">
 		<property name="volume">
-			<value>-6.5</value>
+			<value>2.5</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>
@@ -118,7 +118,17 @@
 			<destination>{a6f7bae0-aa59-4dde-a881-762b19e96e12}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{325eac97-5053-479d-904f-4393851692e0}" />
+	<object class="MixerBusPanner" id="{325eac97-5053-479d-904f-4393851692e0}">
+		<property name="surroundStereoSeparation">
+			<value>0</value>
+		</property>
+		<property name="surroundStereoAxis">
+			<value>180</value>
+		</property>
+		<property name="overridingOutputFormat">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{b84df7b6-7221-4b0c-bc29-5195321b69aa}" />
 	<object class="MixerBusEffectChain" id="{6a133193-2dfa-468e-abd9-fb4ee831c80a}">
 		<relationship name="effects">

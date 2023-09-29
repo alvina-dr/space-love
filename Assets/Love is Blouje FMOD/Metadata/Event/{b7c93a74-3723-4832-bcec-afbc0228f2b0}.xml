@@ -5,7 +5,7 @@
 			<value>Text</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>3</value>
 		</property>
 		<relationship name="folder">
 			<destination>{0cb12866-cab4-449f-9580-c610b8863676}</destination>
@@ -95,9 +95,6 @@
 		<property name="timelockedOffset">
 			<value>0.055045871559633031</value>
 		</property>
-		<property name="volume">
-			<value>-18</value>
-		</property>
 		<relationship name="modulators">
 			<destination>{b1232f4e-8ad4-49ea-8105-3eef70d98395}</destination>
 		</relationship>
@@ -106,6 +103,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d4014767-c371-4156-9229-e989b1382805}">
+		<property name="volume">
+			<value>-10.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -124,14 +124,24 @@
 			<destination>{9467545b-8dc6-4944-aa2f-745a98bc27da}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{3e1b7d30-2f97-47b3-bffc-f613f3c1ee74}" />
+	<object class="MixerBusPanner" id="{3e1b7d30-2f97-47b3-bffc-f613f3c1ee74}">
+		<property name="surroundStereoSeparation">
+			<value>0</value>
+		</property>
+		<property name="surroundStereoAxis">
+			<value>180</value>
+		</property>
+		<property name="overridingOutputFormat">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{7550b482-06e1-4f91-8138-45809317b079}" />
 	<object class="RandomizerModulator" id="{b1232f4e-8ad4-49ea-8105-3eef70d98395}">
 		<property name="nameOfPropertyBeingModulated">
 			<value>pitch</value>
 		</property>
 		<property name="amount">
-			<value>74.5</value>
+			<value>15.5</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{4f66bd92-652b-4484-a5ff-54a44242bd05}">

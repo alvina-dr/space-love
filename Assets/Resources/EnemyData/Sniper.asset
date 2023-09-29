@@ -23,6 +23,6 @@ MonoBehaviour:
   deathSound: event:/Ennemy/StandartDie
   hitSound: 
   shootSound: event:/Ennemy/SniperTir
-  shootingDistance: 3
+  shootingDistance: 4.5
   projectileSpeed: 4
   reloadTime: 5

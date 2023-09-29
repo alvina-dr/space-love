@@ -5,7 +5,7 @@
 			<value>TargetReveal</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>3</value>
 		</property>
 		<relationship name="folder">
 			<destination>{43305055-da18-4c4b-ae15-0edad7897e66}</destination>
@@ -97,6 +97,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{8d48b8da-9a38-4012-ad7a-5e0e87ae3a6b}">
+		<property name="volume">
+			<value>-9</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -113,9 +116,20 @@
 	<object class="MixerBusEffectChain" id="{fad96990-699c-4ac6-9f3d-b75fc3eb3793}">
 		<relationship name="effects">
 			<destination>{cfd2913b-fa22-4df2-86ee-8b7e374f4db0}</destination>
+			<destination>{9a5c21fe-5c29-4e45-97d4-6b979a01517f}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{bd456e3c-845f-4719-973a-6a9a2a7beda0}" />
+	<object class="MixerBusPanner" id="{bd456e3c-845f-4719-973a-6a9a2a7beda0}">
+		<property name="surroundPanDirection">
+			<value>-180</value>
+		</property>
+		<property name="surroundPanExtent">
+			<value>94</value>
+		</property>
+		<property name="overridingOutputFormat">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{16cb6930-aedf-4adf-96ae-ad77747ce528}" />
 	<object class="MixerBusEffectChain" id="{7523c587-76fd-4e35-af0f-93e3d213112f}">
 		<relationship name="effects">
@@ -124,5 +138,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{25ed14e8-07ae-42e1-8076-5874fcf691c3}" />
 	<object class="MixerBusFader" id="{cfd2913b-fa22-4df2-86ee-8b7e374f4db0}" />
+	<object class="SpatialiserEffect" id="{9a5c21fe-5c29-4e45-97d4-6b979a01517f}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{60b52f92-96f7-47d1-b019-151260add9de}" />
 </objects>

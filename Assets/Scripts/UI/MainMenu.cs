@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class MainMenu : MonoBehaviour
     public GameObject startingButton;
     public CanvasGroup credits;
     public Scoreboard scoreboard;
+    public SerialController serialControler;
+    public List<char> currentInput;
 
     public void StartGame()
     {
@@ -68,6 +71,27 @@ public class MainMenu : MonoBehaviour
         {
             Instance = this;
         }
+    }
+
+    private void Update()
+    {
+        currentInput.Clear();
+        string input;
+        while ((input = serialControler.ReadSerialMessage()) != null)
+            if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
+                Debug.Log("Connection established");
+            else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
+                Debug.Log("Connection attempt failed or disconnection detected");
+            else
+            {
+                currentInput.AddRange(input);
+            }
+
+        if (currentInput.Contains('R'))
+            EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+
+        if (currentInput.Contains('B'))
+            EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
     }
     #endregion
 }

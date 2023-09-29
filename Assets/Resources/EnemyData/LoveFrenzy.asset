@@ -17,9 +17,12 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2117703788881945439, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
     type: 3}
   maxHealth: 1
-  speed: 10
+  speed: 8
   damage: 1
   scoreOnKill: 10
+  deathSound: event:/Ennemy/StandartDie
+  hitSound: 
+  shootSound: 
   shootingDistance: 0
   projectileSpeed: 0
   reloadTime: 0

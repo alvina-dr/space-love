@@ -139,6 +139,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{cd1e0f94-d86d-43eb-9cf9-1ef07a8a4919}">
+		<property name="volume">
+			<value>3.5</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{40919ab9-f6b9-4d33-ae02-f0fd7f2277c2}</destination>
 		</relationship>
@@ -277,7 +280,7 @@
 			<value>60</value>
 		</property>
 		<property name="volume">
-			<value>-19.5</value>
+			<value>-13.5</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
 			<value>1000</value>
@@ -363,10 +366,10 @@
 	</object>
 	<object class="MixerBusPanner" id="{50915167-e472-4287-9ab3-ce4e44a6262c}">
 		<property name="surroundPanDirection">
-			<value>-176.381363</value>
+			<value>177.776031</value>
 		</property>
 		<property name="surroundPanExtent">
-			<value>246.652023</value>
+			<value>0</value>
 		</property>
 		<property name="overridingOutputFormat">
 			<value>3</value>
@@ -607,7 +610,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-14</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{95b70a39-e419-406e-98ac-39016097381e}">
@@ -620,10 +623,10 @@
 	</object>
 	<object class="AutomationPoint" id="{f9323deb-890a-49dd-aeec-7272a1431e87}">
 		<property name="position">
-			<value>-0.0018348623853210455</value>
+			<value>0</value>
 		</property>
 		<property name="value">
-			<value>-80</value>
+			<value>-13</value>
 		</property>
 	</object>
 	<object class="AutomationPoint" id="{ac29cd01-15a5-45b4-a375-060d17be7d78}">

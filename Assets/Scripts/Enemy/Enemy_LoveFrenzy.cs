@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Enemy_LoveFrenzy : Enemy
 {
+    float generalTimer;
     float timerX;
     float timerY;
     float changeDirectionTimer = .1f;
@@ -15,6 +16,7 @@ public class Enemy_LoveFrenzy : Enemy
     #region Methods
     public override void Move()
     {
+        generalTimer += Time.deltaTime;
         timerX += Time.deltaTime;
         timerY += Time.deltaTime;
         if (timerX >= changeDirectionTimer)
@@ -46,6 +48,7 @@ public class Enemy_LoveFrenzy : Enemy
             }
         }
         rb.velocity = randomDirection * Time.deltaTime * data.speed * 100;
+        if (generalTimer >= 10) Kill();
     }
 
     public void SetStartingDirection()
@@ -62,8 +65,8 @@ public class Enemy_LoveFrenzy : Enemy
 
     public override void Kill(PlayerCursor _cursor = null)
     {
-        GPSingleton.Instance.SpecialAttack();
         base.Kill(_cursor);
+        GPSingleton.Instance.SpecialAttack();
     }
 
     public override void Damage(int _value, PlayerCursor _cursor)

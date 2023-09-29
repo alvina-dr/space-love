@@ -77,7 +77,7 @@ public class Enemy : MonoBehaviour
         if (mesh != null) GPSingleton.Instance.SetColor(mesh, _color);
         if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, _color);
         if (leftTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
-        if (rightTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
+        if (rightTrail != null) GPSingleton.Instance.SetVFX(rightTrail, currentColor);
     }
     #endregion
 

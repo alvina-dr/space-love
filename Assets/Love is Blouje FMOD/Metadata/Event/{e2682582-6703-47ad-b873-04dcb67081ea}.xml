@@ -5,7 +5,7 @@
 			<value>TirOrbital</value>
 		</property>
 		<property name="outputFormat">
-			<value>1</value>
+			<value>3</value>
 		</property>
 		<relationship name="folder">
 			<destination>{12ccea3a-aa86-459d-8981-3d38ea68333a}</destination>
@@ -72,6 +72,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{401e8592-f852-438b-b21a-da93ee274603}">
+		<property name="volume">
+			<value>-14</value>
+		</property>
 		<relationship name="effectChain">
 			<destination>{153212f1-3b31-4385-b9b9-ba0a9e29f457}</destination>
 		</relationship>
@@ -113,9 +116,23 @@
 	<object class="MixerBusEffectChain" id="{153212f1-3b31-4385-b9b9-ba0a9e29f457}">
 		<relationship name="effects">
 			<destination>{26bccc02-b800-4be3-aaae-ba0149e17623}</destination>
+			<destination>{68c06956-55ab-4de9-b752-864d115aa9f4}</destination>
+			<destination>{5c3e1711-ac0b-40d4-bf53-432412d50347}</destination>
+			<destination>{126acae1-cddf-4f26-b5db-c22fa1da4096}</destination>
+			<destination>{9950f876-7ae2-480d-9cf9-47e8442ea09a}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{1cf90baa-0faf-4c5c-a077-c673eb2fbd46}" />
+	<object class="MixerBusPanner" id="{1cf90baa-0faf-4c5c-a077-c673eb2fbd46}">
+		<property name="surroundPanDirection">
+			<value>-1.81830299</value>
+		</property>
+		<property name="surroundPanExtent">
+			<value>0</value>
+		</property>
+		<property name="overridingOutputFormat">
+			<value>3</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{0884ae54-99c2-4c2c-bbe7-89e0c32dfb8c}" />
 	<object class="MixerBusEffectChain" id="{beb70e13-92f4-4792-a4f5-464763f1b905}">
 		<relationship name="effects">
@@ -124,5 +141,58 @@
 	</object>
 	<object class="MixerBusPanner" id="{6819eadb-c182-4a6a-ad87-76f69606d5fd}" />
 	<object class="MixerBusFader" id="{26bccc02-b800-4be3-aaae-ba0149e17623}" />
+	<object class="SpatialiserEffect" id="{68c06956-55ab-4de9-b752-864d115aa9f4}">
+		<property name="distanceRolloffType">
+			<value>4</value>
+		</property>
+	</object>
+	<object class="MultibandEqEffect" id="{5c3e1711-ac0b-40d4-bf53-432412d50347}">
+		<property name="filterTypeA">
+			<value>7</value>
+		</property>
+		<property name="frequencyA">
+			<value>225.849808</value>
+		</property>
+		<property name="gainA">
+			<value>5.17241478</value>
+		</property>
+	</object>
+	<object class="DelayEffect" id="{126acae1-cddf-4f26-b5db-c22fa1da4096}">
+		<property name="delay">
+			<value>86</value>
+		</property>
+		<property name="feedback">
+			<value>31</value>
+		</property>
+		<property name="level">
+			<value>-11</value>
+		</property>
+	</object>
+	<object class="SFXReverbEffect" id="{9950f876-7ae2-480d-9cf9-47e8442ea09a}">
+		<property name="earlyDelay">
+			<value>300</value>
+		</property>
+		<property name="lateDelay">
+			<value>100</value>
+		</property>
+		<property name="HFDecayRatio">
+			<value>21</value>
+		</property>
+		<property name="diffusion">
+			<value>27</value>
+		</property>
+		<property name="highCut">
+			<value>1220</value>
+		</property>
+		<property name="earlyLateMix">
+			<value>82</value>
+		</property>
+		<property name="wetLevel">
+			<value>-4.5</value>
+		</property>
+		<property name="dryLevel">
+			<value>-6</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{90a26433-c480-453b-9147-89429c26600a}" />
 </objects>
