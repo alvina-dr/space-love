@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Sniper
   m_EditorClassIdentifier: 
   spawnRate: 7
-  spawnTime: 0
+  spawnTime: 60
   enemyPrefab: {fileID: 516706601494008066, guid: 8a1587ee4902e5343821dfcb5d241291,
     type: 3}
   maxHealth: 1
