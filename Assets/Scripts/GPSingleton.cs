@@ -5,7 +5,7 @@ using FMODUnity;
 using UnityEngine.VFX;
 using System;
 using System.Linq;
-
+using DG.Tweening;
 public class GPSingleton : MonoBehaviour
 {
     #region Properties
@@ -113,13 +113,13 @@ public class GPSingleton : MonoBehaviour
     public void GameOver()
     {
         currentScore = PlayerBlue.playerCurrentPoint + PlayerRed.playerCurrentPoint;
-        UICtrl.scoreboard.ShowTypeNameMenu();
         pause = true;
         Enemy[] enemyArray = FindObjectsOfType<Enemy>();
         for (int i = 0; i < enemyArray.Length; i++)
         {
             enemyArray[i].Kill();
         }
+        DOVirtual.DelayedCall(1f, () => UICtrl.scoreboard.ShowTypeNameMenu());
     }
     #endregion
 

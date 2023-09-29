@@ -4920,17 +4920,22 @@ PrefabInstance:
     - target: {fileID: 66443702568895336, guid: 0095332039e49d04196cb92c6f693a69,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 66443702568895336, guid: 0095332039e49d04196cb92c6f693a69,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 361541590156079767, guid: 0095332039e49d04196cb92c6f693a69,
         type: 3}
       propertyPath: m_Name
       value: HealthBar
+      objectReference: {fileID: 0}
+    - target: {fileID: 361541590156079767, guid: 0095332039e49d04196cb92c6f693a69,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6262084325036108993, guid: 0095332039e49d04196cb92c6f693a69,
         type: 3}
