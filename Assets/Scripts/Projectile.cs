@@ -29,9 +29,10 @@ public class Projectile : MonoBehaviour
         transform.forward = Vector3.RotateTowards(transform.forward, target.transform.position - transform.position, 5 * Time.deltaTime, 0);
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider collision)
     {
-        PlanetBehavior _planet = other.GetComponent<PlanetBehavior>();
+        Debug.Log("collider enter : " + collision.name);
+        PlanetBehavior _planet = collision.GetComponent<PlanetBehavior>();
         if (_planet != null)
         {
             _planet.InflictDamage(damage);

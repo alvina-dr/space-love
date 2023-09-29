@@ -16,7 +16,7 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private SpriteRenderer internCircleSprite;
 
     [Header("CURRENT INFO")]
-    private List<Enemy> targetList = new List<Enemy>();
+    public List<Enemy> targetList = new List<Enemy>();
     public int playerCurrentPoint = 0;
 
     [Header("ACTION BUTTON")]
@@ -73,7 +73,7 @@ public class PlayerCursor : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
-        if (_enemy != null && _enemy.currentColor == cursorColor)
+        if (_enemy != null && _enemy.currentColor != cursorColor)
         {
             _enemy.ChangeColor(EnemyData.Color.White);
             targetList.Add(_enemy);

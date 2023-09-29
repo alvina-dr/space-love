@@ -51,12 +51,13 @@ public class Enemy : MonoBehaviour
                 if (currentHealth <= 0)
                 {
                     Kill(_cursor);
+                    _cursor.targetList.Remove(this);
                 }
             });
         });
     }
 
-    public void Kill(PlayerCursor _cursor = null)
+    public virtual void Kill(PlayerCursor _cursor = null)
     {
         Instantiate(GPSingleton.Instance.explosionDeathEffect).transform.position = transform.position;
         if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
@@ -70,7 +71,7 @@ public class Enemy : MonoBehaviour
 
     public void ChangeColor(EnemyData.Color _color)
     {
-        GPSingleton.Instance.SetColor(mesh, _color);
+        if (mesh != null) GPSingleton.Instance.SetColor(mesh, _color);
         if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, _color);
         if (leftTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
         if (rightTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
@@ -86,7 +87,7 @@ public class Enemy : MonoBehaviour
             Attack();
         }
     }
-    private void Start()
+    public virtual void Start()
     {
         target = GPSingleton.Instance.Planet;
         currentHealth = data.maxHealth;

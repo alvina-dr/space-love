@@ -4,24 +4,37 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using TMPro;
+using DG.Tweening;
 
-public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler
+public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, IPointerEnterHandler, IPointerExitHandler
 {
     #region Properties
     public Image background;
     public TextMeshProUGUI text;
     #endregion
 
+    [SerializeField] private Color active;
+    [SerializeField] private Color inactive;
+
     public void OnDeselect(BaseEventData eventData)
     {
-        text.color = MainMenu.Instance.purple;
-        background.color = MainMenu.Instance.transparent;
-
+        text.color = active;
+        background.color = inactive;
+        transform.DOScale(1f, .3f);
     }
 
     public void OnSelect(BaseEventData eventData)
     {
         text.color = Color.black;
-        background.color = MainMenu.Instance.purple;
+        background.color = active;
+        transform.DOScale(1.05f, .3f);
+    }
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        OnDeselect(null);
+    }
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        OnSelect(null);
     }
 }
