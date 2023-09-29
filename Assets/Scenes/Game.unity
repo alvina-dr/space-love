@@ -5088,7 +5088,7 @@ PrefabInstance:
     - target: {fileID: 3614636906175348408, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: portName
-      value: COM5
+      value: COM3
       objectReference: {fileID: 0}
     - target: {fileID: 5977869905310930427, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
@@ -5204,7 +5204,7 @@ PrefabInstance:
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: visibleRed.r
-      value: 0.9019608
+      value: 0.8235294
       objectReference: {fileID: 0}
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
@@ -5275,7 +5275,7 @@ PrefabInstance:
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: visibleGradientRed.key0.r
-      value: 0.9019608
+      value: 0.8235294
       objectReference: {fileID: 0}
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
