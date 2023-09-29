@@ -17,6 +17,6 @@ MonoBehaviour:
   enemyPrefab: {fileID: 2076813180809475015, guid: 2c9ca875ae047a6418730bfaeaebf100,
     type: 3}
   maxHealth: 1
-  speed: 0.3
+  speed: 0.5
   damage: 1
   scoreOnKill: 20
