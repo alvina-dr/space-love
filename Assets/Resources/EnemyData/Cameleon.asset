@@ -20,3 +20,8 @@ MonoBehaviour:
   speed: 0.3
   damage: 1
   scoreOnKill: 40
+  deathSound: event:/Ennemy/CameleonDie
+  hitSound: event:/Ennemy/CameleonHit
+  shootingDistance: 0
+  projectileSpeed: 0
+  reloadTime: 0

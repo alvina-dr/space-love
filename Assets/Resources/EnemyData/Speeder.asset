@@ -20,3 +20,8 @@ MonoBehaviour:
   speed: 1
   damage: 1
   scoreOnKill: 20
+  deathSound: event:/Ennemy/StandartDie
+  hitSound: 
+  shootingDistance: 0
+  projectileSpeed: 0
+  reloadTime: 0

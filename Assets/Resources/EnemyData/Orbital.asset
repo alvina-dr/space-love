@@ -20,6 +20,8 @@ MonoBehaviour:
   speed: 0.3
   damage: 1
   scoreOnKill: 20
+  deathSound: event:/Ennemy/OrbitalDie
+  hitSound: 
   shootingDistance: 3
   projectileSpeed: 4
   reloadTime: 5

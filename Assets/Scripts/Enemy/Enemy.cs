@@ -64,7 +64,7 @@ public class Enemy : MonoBehaviour
         if (meshParent == null) return;
         if (GPSingleton.Instance.spawnerMode == GPSingleton.SpawnerMode.Game)
         {
-            var audioEvent = RuntimeManager.CreateInstance("event:/Ennemy/StandartDie");
+            var audioEvent = RuntimeManager.CreateInstance(data.deathSound);
             audioEvent.start();
         }
         meshParent.transform.DOScale(0f, .1f).OnComplete(() => { 

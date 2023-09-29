@@ -84,6 +84,8 @@ public class PlayerCursor : MonoBehaviour
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null && _enemy.currentColor != cursorColor)
         {
+            var audioEvent = RuntimeManager.CreateInstance("event:/Character/TargetReveal");
+            audioEvent.start();
             _enemy.ChangeColor(EnemyData.Color.White);
             targetList.Add(_enemy);
         }

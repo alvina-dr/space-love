@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using FMODUnity;
 public class Enemy_Cameleon : Enemy
 {
     #region Methods
@@ -23,6 +23,11 @@ public class Enemy_Cameleon : Enemy
                 break;
         }
         ChangeColor(currentColor);
+        if (GPSingleton.Instance.spawnerMode == GPSingleton.SpawnerMode.Game)
+        {
+            var audioEvent = RuntimeManager.CreateInstance(data.hitSound);
+            audioEvent.start();
+        }
     }
     #endregion
 }
