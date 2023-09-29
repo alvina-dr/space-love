@@ -10,10 +10,29 @@ public class MainMenu : MonoBehaviour
     public Color purple;
     public Color transparent;
     public GameObject startingButton;
+    public GameObject credits;
+    public Scoreboard scoreboard;
 
     public void StartGame()
     {
         SceneManager.LoadScene("Game");
+    }
+
+    public void Credits()
+    {
+        credits.SetActive(!credits.activeSelf);
+    }
+
+    public void Scoreboard()
+    {
+        if (scoreboard.scoreboardMenu.gameObject.activeSelf)
+        {
+            scoreboard.HideScoreboard();
+        }
+        else
+        {
+            scoreboard.ShowScoreboard();
+        }
     }
 
     #region Unity API

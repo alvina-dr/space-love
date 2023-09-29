@@ -5,9 +5,10 @@ using DG.Tweening;
 
 public class LogoAnimation : MonoBehaviour
 {
+    public float bigSize;
     void Start()
     {
-        transform.DOScale(1.01f, 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
+        transform.DOScale(bigSize, 1f).SetEase(Ease.InOutSine).SetLoops(-1, LoopType.Yoyo);
 
     }
 }

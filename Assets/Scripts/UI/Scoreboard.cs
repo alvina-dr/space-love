@@ -91,6 +91,19 @@ public class Scoreboard : MonoBehaviour
         }
     }
 
+    public void HideScoreboard()
+    {
+        scoreboardMenu.DOFade(0, .3f).OnComplete(() =>
+        {
+            scoreboardMenu.gameObject.SetActive(false);
+            for (int i = 0; i < scoreEntryLayout.childCount; i++)
+            {
+                Destroy(scoreEntryLayout.GetChild(i));
+            }
+
+        });
+    }
+
     public void SaveScoreboard()
     {
         scoreList.entries.Sort(SortByScore);
