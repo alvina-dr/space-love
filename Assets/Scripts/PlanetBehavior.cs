@@ -9,6 +9,8 @@ public class PlanetBehavior : MonoBehaviour
     private int currentHealth;
     public SerialController serialController;
     [SerializeField] private Transform mesh;
+    [SerializeField] private MeshRenderer meshRenderer;
+    private Tweener shake;
     #endregion
 
     #region Methods
@@ -18,12 +20,15 @@ public class PlanetBehavior : MonoBehaviour
         currentHealth -= _damage;
         mesh.DOScale(1.1f, .2f).OnComplete(() =>
         {
-            mesh.DOKill();
+            shake.Kill();
             mesh.transform.position = Vector3.zero;
             mesh.DOScale(1f, .2f);
-            mesh.DOShakePosition(.1f, new Vector3(.1f, .1f, 0), 1);
+            shake = mesh.DOShakePosition(.1f, new Vector3(.1f, .1f, 0), 1);
             var damageEvent = RuntimeManager.CreateInstance("event:/Earth/PlanetHit");
             damageEvent.start();
+            float _destruction = currentHealth * 0.38f / DataHolder.Instance.GeneralData.planetMaxHealth ;
+            Debug.Log("destruction : " + _destruction);
+            meshRenderer.material.SetFloat("_destruction", _destruction);
         });
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
         serialController.SendSerialMessage((currentHealth+10).ToString());

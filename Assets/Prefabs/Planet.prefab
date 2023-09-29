@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   serialController: {fileID: 0}
   mesh: {fileID: 1848622627134521174}
+  meshRenderer: {fileID: 586876648705889232}
 --- !u!135 &4120679308913274458
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -236,6 +237,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a947c6a6d1e6e0e46a814649e1f2531a, type: 3}
+--- !u!23 &586876648705889232 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 8525972741803672671, guid: a947c6a6d1e6e0e46a814649e1f2531a,
+    type: 3}
+  m_PrefabInstance: {fileID: 9112847181920409487}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1848622627134521174 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7480749764872710361, guid: a947c6a6d1e6e0e46a814649e1f2531a,
