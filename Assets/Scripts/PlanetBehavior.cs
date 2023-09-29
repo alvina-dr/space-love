@@ -14,6 +14,7 @@ public class PlanetBehavior : MonoBehaviour
     #region Methods
     public void InflictDamage(int _damage)
     {
+        if (GPSingleton.Instance.spawnerMode == GPSingleton.SpawnerMode.Menu) return; 
         currentHealth -= _damage;
         mesh.DOScale(1.1f, .2f).OnComplete(() =>
         {
@@ -33,10 +34,13 @@ public class PlanetBehavior : MonoBehaviour
     #region Unity API
     void Start()
     {
-        currentHealth = DataHolder.Instance.GeneralData.planetMaxHealth;
-        serialController.SendSerialMessage((currentHealth + 10).ToString());
-        GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
-        mesh.DOLocalRotate(new Vector3(0, 180, 0), 3f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
+        if(GPSingleton.Instance.spawnerMode == GPSingleton.SpawnerMode.Game)
+        {
+            currentHealth = DataHolder.Instance.GeneralData.planetMaxHealth;
+            serialController.SendSerialMessage((currentHealth + 10).ToString());
+            GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
+            mesh.DOLocalRotate(new Vector3(0, 180, 0), 3f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
+        }
     }
     #endregion
 }

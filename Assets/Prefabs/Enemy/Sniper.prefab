@@ -215,7 +215,7 @@ MonoBehaviour:
   visualEffect: {fileID: 7100126509060599140}
   leftTrail: {fileID: 0}
   rightTrail: {fileID: 0}
-  projectilePrefab: {fileID: 3389932735456574026, guid: c9934d8aaef6ebb4481861bc7ed465ca,
+  projectilePrefab: {fileID: 3389932735456574026, guid: 9eab1ce359efcde4bbc87551652a1775,
     type: 3}
 --- !u!114 &3422987729143133368 stripped
 MonoBehaviour:

@@ -10,6 +10,14 @@ public class GPSingleton : MonoBehaviour
 {
     #region Properties
     public static GPSingleton Instance { get; private set; }
+    public enum SpawnerMode
+    {
+        Game = 0,
+        Menu = 1
+    }
+
+    public SpawnerMode spawnerMode;
+
     [Header("REFERENCES")]
     public PlanetBehavior Planet;
     public PlayerCursor PlayerRed;
@@ -126,7 +134,6 @@ public class GPSingleton : MonoBehaviour
     #region Unity API
     void Start()
     {
-
         serialControler = GetComponent<SerialController>();
         foreach (EnemyData enemy in enemyDataList)
         {
@@ -137,24 +144,29 @@ public class GPSingleton : MonoBehaviour
     private void FixedUpdate()
     {
         if (pause) return;
+
         float timeSinceStart = Time.time - startTime;
-        currentInput.Clear();
-        string input;
-        while ((input = serialControler.ReadSerialMessage()) != null)
-            if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
-                Debug.Log("Connection established");
-            else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
-                Debug.Log("Connection attempt failed or disconnection detected");
-            else
-            {
-                currentInput.AddRange(input);
-            }
 
-        if(currentInput.Contains('R'))
-            PlayerRed.Shoot();
+        if (spawnerMode == SpawnerMode.Game)
+        {
+            currentInput.Clear();
+            string input;
+            while ((input = serialControler.ReadSerialMessage()) != null)
+                if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
+                    Debug.Log("Connection established");
+                else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
+                    Debug.Log("Connection attempt failed or disconnection detected");
+                else
+                {
+                    currentInput.AddRange(input);
+                }
 
-        if (currentInput.Contains('B'))
-            PlayerBlue.Shoot();
+            if (currentInput.Contains('R'))
+                PlayerRed.Shoot();
+
+            if (currentInput.Contains('B'))
+                PlayerBlue.Shoot();
+        }
 
         if (timeSinceStart > DataHolder.Instance.GeneralData.gameStage[currentGameStage])
         {
