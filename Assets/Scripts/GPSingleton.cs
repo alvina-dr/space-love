@@ -148,7 +148,6 @@ public class GPSingleton : MonoBehaviour
             else
             {
                 currentInput.AddRange(input);
-                Debug.Log(input);
             }
 
         if(currentInput.Contains('R'))

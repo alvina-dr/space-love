@@ -296,6 +296,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Planet
       objectReference: {fileID: 0}
+    - target: {fileID: 367062542837036281, guid: ed7a203655fc39249b8ec0a6fbc7e04e,
+        type: 3}
+      propertyPath: serialController
+      value: 
+      objectReference: {fileID: 1451930942}
     - target: {fileID: 3417639009282249246, guid: ed7a203655fc39249b8ec0a6fbc7e04e,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -669,6 +674,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1257434474}
+--- !u!114 &1451930942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3614636906175348408, guid: a3772895895549d4881bda57250f25b0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8059928726914491584}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc5f48af2cffd747a079fe8c632e2c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1622362912
 GameObject:
   m_ObjectHideFlags: 0
@@ -5033,6 +5050,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GPSingleton
       objectReference: {fileID: 0}
+    - target: {fileID: 3614636906175348408, guid: a3772895895549d4881bda57250f25b0,
+        type: 3}
+      propertyPath: portName
+      value: COM5
+      objectReference: {fileID: 0}
     - target: {fileID: 5977869905310930427, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5169,6 +5191,11 @@ PrefabInstance:
       propertyPath: visibleBlue.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
+        type: 3}
+      propertyPath: serialControler
+      value: 
+      objectReference: {fileID: 1451930942}
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: explosionDeathEffect

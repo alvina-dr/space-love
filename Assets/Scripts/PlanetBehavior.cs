@@ -34,7 +34,7 @@ public class PlanetBehavior : MonoBehaviour
     void Start()
     {
         currentHealth = DataHolder.Instance.GeneralData.planetMaxHealth;
-        serialController.SendSerialMessage(currentHealth.ToString());
+        serialController.SendSerialMessage((currentHealth + 10).ToString());
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
         mesh.DOLocalRotate(new Vector3(0, 180, 0), 3f).SetEase(Ease.Linear).SetLoops(-1, LoopType.Incremental);
     }
