@@ -25,7 +25,6 @@ public class PlanetBehavior : MonoBehaviour
         });
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
         serialController.SendSerialMessage((currentHealth+10).ToString());
-        Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
             var deathEvent = RuntimeManager.CreateInstance("event:/Earth/PlanetExplosion");
