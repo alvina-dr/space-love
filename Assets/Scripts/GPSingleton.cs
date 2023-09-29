@@ -127,6 +127,7 @@ public class GPSingleton : MonoBehaviour
         {
             enemyArray[i].Kill();
         }
+        DataHolder.Instance.musicEvent.setParameterByName("Layer", -1);
         DOVirtual.DelayedCall(1f, () => UICtrl.scoreboard.ShowTypeNameMenu());
     }
     #endregion
@@ -167,7 +168,6 @@ public class GPSingleton : MonoBehaviour
             if (currentInput.Contains('B'))
                 PlayerBlue.Shoot();
 
-            Debug.Log("UP MUSIC" + timeSinceStart);
             if (timeSinceStart >= 180) DataHolder.Instance.musicEvent.setParameterByName("Layer", 3);
             else if (timeSinceStart >= 120) DataHolder.Instance.musicEvent.setParameterByName("Layer", 2);
             else if (timeSinceStart >= 60)

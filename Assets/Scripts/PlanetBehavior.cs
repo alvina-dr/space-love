@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-
+using FMODUnity;
 public class PlanetBehavior : MonoBehaviour
 {
     #region Properties
@@ -19,13 +19,17 @@ public class PlanetBehavior : MonoBehaviour
         mesh.DOScale(1.1f, .2f).OnComplete(() =>
         {
             mesh.DOScale(1f, .2f);
-            mesh.DOShakePosition(.8f, .1f, 10);
+            mesh.DOShakePosition(.1f, new Vector3(.8f, .8f, 0), 10);
+            var damageEvent = RuntimeManager.CreateInstance("event:/Earth/PlanetHit");
+            damageEvent.start();
         });
         GPSingleton.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
         serialController.SendSerialMessage((currentHealth+10).ToString());
         Debug.Log(currentHealth);
         if (currentHealth <= 0)
         {
+            var deathEvent = RuntimeManager.CreateInstance("event:/Earth/PlanetExplosion");
+            deathEvent.start();
             GPSingleton.Instance.GameOver();
         }
     }
