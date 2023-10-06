@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public class Enemy_LoveFrenzy : Enemy
 {
@@ -65,12 +66,13 @@ public class Enemy_LoveFrenzy : Enemy
 
     public override void Kill(PlayerCursor _cursor = null)
     {
+        //if(meshParent != null) meshParent.transform.DOKill();
         base.Kill(_cursor);
-        GPCtrl.Instance.SpecialAttack();
     }
 
     public override void Damage(int _value, PlayerCursor _cursor)
     {
+        GPCtrl.Instance.SpecialAttack();
         base.Damage(_value, _cursor);
     }
     #endregion
@@ -82,6 +84,7 @@ public class Enemy_LoveFrenzy : Enemy
         currentColor = EnemyData.Color.White;
         ChangeColor(currentColor);
         SetStartingDirection();
+        meshParent.transform.DOScale(1.2f, .3f).SetLoops(-1, LoopType.Yoyo);
     }
     #endregion
 }
