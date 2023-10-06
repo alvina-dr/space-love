@@ -21,16 +21,16 @@ public class DataHolder : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            GeneralData = Resources.Load<GeneralData>("GeneralData");
+            musicEvent = RuntimeManager.CreateInstance("event:/MX/MX");
+            musicEvent.start();
+            ambianceEvent = RuntimeManager.CreateInstance("event:/AMB/Cockpit");
+            ambianceEvent.start();
         }
         else
         {
             Destroy(gameObject);
         }
-        GeneralData = Resources.Load<GeneralData>("GeneralData");
-        musicEvent = RuntimeManager.CreateInstance("event:/MX/MX");
-        musicEvent.start();
-        ambianceEvent = RuntimeManager.CreateInstance("event:/AMB/Cockpit");
-        ambianceEvent.start();
     }
 
     public void LoadGame()
