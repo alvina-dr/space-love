@@ -33,9 +33,9 @@ public class DataHolder : MonoBehaviour
         ambianceEvent.start();
     }
 
-    public void StartGame()
+    public void LoadGame()
     {
-        Destroy(GPCtrl.Instance.gameObject);
+        //Destroy(GPCtrl.Instance.gameObject);
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
         darkBackground.DOFade(1, .3f).OnComplete(() =>
         {
@@ -43,19 +43,19 @@ public class DataHolder : MonoBehaviour
             musicEvent.setParameterByName("Layer", 0);
             ambianceEvent.setParameterByName("Layer", 0);
         });
-
     }
 
-    void OnEnable()
+    public void LoadMenu()
     {
-        //Tell our 'OnLevelFinishedLoading' function to start listening for a scene change as soon as this script is enabled.
+        //Destroy(GPCtrl.Instance.gameObject);
+        SceneManager.sceneLoaded += OnLevelFinishedLoading;
+        darkBackground.DOFade(1, .3f).OnComplete(() =>
+        {
+            SceneManager.LoadScene("Menu");
+            musicEvent.setParameterByName("Layer", -1);
+            ambianceEvent.setParameterByName("Layer", -1);
+        });
     }
-
-    //void OnDisable()
-    //{
-    //    //Tell our 'OnLevelFinishedLoading' function to stop listening for a scene change as soon as this script is disabled. Remember to always have an unsubscription for every delegate you subscribe to!
-    //    SceneManager.sceneLoaded -= OnLevelFinishedLoading;
-    //}
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {

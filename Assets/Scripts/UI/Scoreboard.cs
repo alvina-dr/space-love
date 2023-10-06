@@ -124,7 +124,7 @@ public class Scoreboard : MonoBehaviour
 
     public void BackToMainMenu()
     {
-        SceneManager.LoadScene("Menu");
+        DataHolder.Instance.LoadMenu();
     }
 
     static int SortByScore(ScoreboardEntry p1, ScoreboardEntry p2)

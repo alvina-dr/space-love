@@ -19,7 +19,7 @@ public class MainMenu : MonoBehaviour
 
     public void StartGame()
     {
-        DataHolder.Instance.StartGame();
+        DataHolder.Instance.LoadGame();
     }
 
     public void Credits()

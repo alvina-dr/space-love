@@ -10,5 +10,4 @@ public class UICtrl : MonoBehaviour
     public Score redScore;
     public Score blueScore;
     #endregion
-
 }
