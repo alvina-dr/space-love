@@ -59,10 +59,10 @@ public class Enemy : MonoBehaviour
 
     public virtual void Kill(PlayerCursor _cursor = null)
     {
-        Instantiate(GPSingleton.Instance.explosionDeathEffect).transform.position = transform.position;
+        Instantiate(DataHolder.Instance.GeneralData.explosionDeathEffect).transform.position = transform.position;
         if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
         if (meshParent == null) return;
-        if (GPSingleton.Instance.spawnerMode == GPSingleton.SpawnerMode.Game)
+        if (GPCtrl.Instance.spawnerMode == GPCtrl.SpawnerMode.Game)
         {
             var audioEvent = RuntimeManager.CreateInstance(data.deathSound);
             audioEvent.start();
@@ -74,10 +74,10 @@ public class Enemy : MonoBehaviour
 
     public void ChangeColor(EnemyData.Color _color)
     {
-        if (mesh != null) GPSingleton.Instance.SetColor(mesh, _color);
-        if (visualEffect != null) GPSingleton.Instance.SetVFX(visualEffect, _color);
-        if (leftTrail != null) GPSingleton.Instance.SetVFX(leftTrail, currentColor);
-        if (rightTrail != null) GPSingleton.Instance.SetVFX(rightTrail, currentColor);
+        if (mesh != null) GPCtrl.Instance.SetColor(mesh, _color);
+        if (visualEffect != null) GPCtrl.Instance.SetVFX(visualEffect, _color);
+        if (leftTrail != null) GPCtrl.Instance.SetVFX(leftTrail, currentColor);
+        if (rightTrail != null) GPCtrl.Instance.SetVFX(rightTrail, currentColor);
     }
     #endregion
 
@@ -92,7 +92,7 @@ public class Enemy : MonoBehaviour
     }
     public virtual void Start()
     {
-        target = GPSingleton.Instance.Planet;
+        target = GPCtrl.Instance.Planet;
         currentHealth = data.maxHealth;
         currentColor = (EnemyData.Color)Random.Range(1, 3);
         ChangeColor(currentColor);

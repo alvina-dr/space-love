@@ -6,10 +6,10 @@ using UnityEngine.VFX;
 using System;
 using System.Linq;
 using DG.Tweening;
-public class GPSingleton : MonoBehaviour
+public class GPCtrl : MonoBehaviour
 {
     #region Properties
-    public static GPSingleton Instance { get; private set; }
+    public static GPCtrl Instance { get; private set; }
     public enum SpawnerMode
     {
         Game = 0,
@@ -27,8 +27,7 @@ public class GPSingleton : MonoBehaviour
     public List<char> currentInput;
 
     [SerializeField] private List<EnemyData> enemyDataList = new List<EnemyData>();
-    public SoundData SoundData;
-    public bool pause = false;
+    [HideInInspector] public bool pause = false;
 
     [Header("SPAWN")]
     public float spawnRadius;
@@ -42,9 +41,6 @@ public class GPSingleton : MonoBehaviour
     public Gradient visibleGradientRed;
     public Gradient visibleGradientBlue;
     public Gradient visibleGradientAll;
-
-    [Header("FX")]
-    public GameObject explosionDeathEffect;
 
     [Header("SCORE")]
     public int currentScore;
@@ -149,14 +145,7 @@ public class GPSingleton : MonoBehaviour
     #endregion
 
     #region Unity API
-    void Start()
-    {
-        serialControler = GetComponent<SerialController>();
-        foreach (EnemyData enemy in enemyDataList)
-        {
-            timerList.Add(enemy.spawnRate);
-        }
-    }
+
 
     private void FixedUpdate()
     {
@@ -246,6 +235,20 @@ public class GPSingleton : MonoBehaviour
             enemyDataList.Add(enemyDataArray[i]);
         }
         startTime = Time.time;
+        //if (DataHolder.Instance.GeneralData.computerMode)
+        //{
+        //    PlayerRed.playerInput.SwitchCurrentControlScheme(UnityEngine.InputSystem.Keyboard.current);
+        //    PlayerBlue.playerInput.SwitchCurrentControlScheme(UnityEngine.InputSystem.Keyboard.current);
+        //}
+    }
+
+    void Start()
+    {
+        serialControler = GetComponent<SerialController>();
+        foreach (EnemyData enemy in enemyDataList)
+        {
+            timerList.Add(enemy.spawnRate);
+        }
     }
     #endregion
 }

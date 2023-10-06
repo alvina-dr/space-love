@@ -15,11 +15,11 @@ public class Projectile : MonoBehaviour
     #region Methods
     public void SetupProjectile(EnemyData _data, EnemyData.Color _color)
     {
-        target = GPSingleton.Instance.Planet.transform;
+        target = GPCtrl.Instance.Planet.transform;
         speed = _data.projectileSpeed;
         damage = _data.damage;
-        GPSingleton.Instance.SetShaderColor(meshTop, _color);
-        GPSingleton.Instance.SetShaderColor(meshDown, _color);
+        GPCtrl.Instance.SetShaderColor(meshTop, _color);
+        GPCtrl.Instance.SetShaderColor(meshDown, _color);
     }
     #endregion
 

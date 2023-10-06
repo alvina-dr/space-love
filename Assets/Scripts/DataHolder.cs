@@ -31,7 +31,7 @@ public class DataHolder : MonoBehaviour
 
     public void StartGame()
     {
-        Destroy(GPSingleton.Instance.gameObject);
+        Destroy(GPCtrl.Instance.gameObject);
         SceneManager.LoadScene("Game");
         musicEvent.setParameterByName("Layer", 0);
         ambianceEvent.setParameterByName("Layer", 0);

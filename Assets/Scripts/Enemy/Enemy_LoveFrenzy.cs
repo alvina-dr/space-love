@@ -66,7 +66,7 @@ public class Enemy_LoveFrenzy : Enemy
     public override void Kill(PlayerCursor _cursor = null)
     {
         base.Kill(_cursor);
-        GPSingleton.Instance.SpecialAttack();
+        GPCtrl.Instance.SpecialAttack();
     }
 
     public override void Damage(int _value, PlayerCursor _cursor)

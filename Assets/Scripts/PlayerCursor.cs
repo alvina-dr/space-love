@@ -14,6 +14,7 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private SpriteRenderer circleSprite;
     [SerializeField] private SpriteRenderer internCircleSprite;
+    public PlayerInput playerInput;
 
     [Header("CURRENT INFO")]
     public List<Enemy> targetList = new List<Enemy>();
@@ -22,8 +23,7 @@ public class PlayerCursor : MonoBehaviour
     [Header("ACTION BUTTON")]
     public KeyCode actionButton;
     public EnemyData.Color cursorColor;
-    public SerialController serialController;
-    public char inputValue;
+    private char inputValue;
     #endregion
 
     #region Methods
@@ -64,17 +64,20 @@ public class PlayerCursor : MonoBehaviour
         switch (cursorColor)
         {
             case EnemyData.Color.Red:
-                GPSingleton.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
+                GPCtrl.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
                 break;
             case EnemyData.Color.Blue:
-                GPSingleton.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
+                GPCtrl.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
                 break;
         }
     }
 
     public void OnMove(InputValue value)
     {
-        direction = value.Get<Vector2>();
+        if (!DataHolder.Instance.GeneralData.computerMode)
+        {
+            direction = value.Get<Vector2>().normalized;
+        }
     }
     #endregion
 
@@ -111,6 +114,18 @@ public class PlayerCursor : MonoBehaviour
         {
             Shoot();
         }
+        if (DataHolder.Instance.GeneralData.computerMode)
+        {
+            switch(cursorColor)
+            {
+                case EnemyData.Color.Blue:
+                    direction = new Vector3(Input.GetAxisRaw("HorizontalRight"), Input.GetAxisRaw("VerticalRight"), 0).normalized;
+                    break;
+                case EnemyData.Color.Red:
+                    direction = new Vector3(Input.GetAxisRaw("HorizontalLeft"), Input.GetAxisRaw("VerticalLeft"), 0).normalized;
+                    break;
+            }
+        }
     }
 
     //public void OnFire(InputValue value)
@@ -128,11 +143,11 @@ public class PlayerCursor : MonoBehaviour
         switch (cursorColor)
         {
             case EnemyData.Color.Red:
-                GPSingleton.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
+                GPCtrl.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
                 inputValue = 'R';
                 break;
             case EnemyData.Color.Blue:
-                GPSingleton.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
+                GPCtrl.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
                 inputValue = 'B';
                 break;
         }

@@ -305,12 +305,11 @@ MonoBehaviour:
   rb: {fileID: 1227452468975223562}
   circleSprite: {fileID: 6828210086234628748}
   internCircleSprite: {fileID: 4110444259292137761}
+  playerInput: {fileID: 1063967004348678349}
   targetList: []
   playerCurrentPoint: 0
   actionButton: 0
   cursorColor: 0
-  serialController: {fileID: 0}
-  inputValue: 66
 --- !u!54 &1227452468975223562
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -55,7 +55,7 @@ public class Scoreboard : MonoBehaviour
 
     public void AddScoreButton()
     {
-        AddScoreToScoreboard(inputField.text, GPSingleton.Instance.currentScore);
+        AddScoreToScoreboard(inputField.text, GPCtrl.Instance.currentScore);
         typeNameMenu.gameObject.SetActive(false);
         ShowScoreboard();
     }
@@ -72,7 +72,7 @@ public class Scoreboard : MonoBehaviour
         typeNameMenu.gameObject.SetActive(true);
         typeNameMenu.DOFade(1, .3f).OnComplete(() =>
         {
-            scoreText.text = GPSingleton.Instance.currentScore.ToString();
+            scoreText.text = GPCtrl.Instance.currentScore.ToString();
             scoreText.transform.DOScale(1.1f, .3f).OnComplete(() =>
             {
                 scoreText.transform.DOScale(1f, .1f);

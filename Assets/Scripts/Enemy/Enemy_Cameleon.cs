@@ -23,7 +23,7 @@ public class Enemy_Cameleon : Enemy
                 break;
         }
         ChangeColor(currentColor);
-        if (GPSingleton.Instance.spawnerMode == GPSingleton.SpawnerMode.Game)
+        if (GPCtrl.Instance.spawnerMode == GPCtrl.SpawnerMode.Game)
         {
             var audioEvent = RuntimeManager.CreateInstance(data.hitSound);
             audioEvent.start();

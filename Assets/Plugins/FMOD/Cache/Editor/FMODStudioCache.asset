@@ -69,7 +69,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 905203115620260987}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -123,7 +123,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 905203115620260987}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -143,10 +143,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/Character/TirBleu
   Guid:
-    Data1: -1864601040
-    Data2: 1129231733
-    Data3: 2063880636
-    Data4: 1893409825
+    Data1: 2021078537
+    Data2: 1239740972
+    Data3: -322961751
+    Data4: -1252541200
   Banks:
   - {fileID: 905203115620260987}
   IsStream: 0
@@ -313,7 +313,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 905203115620260987}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -362,7 +362,7 @@ MonoBehaviour:
   - {fileID: 905203115620260987}
   StringsBanks:
   - {fileID: 4680875936719921099}
-  cacheTime: 638315833828092682
+  cacheTime: 638315948180000000
   cacheVersion: 131607
 --- !u!114 &30694965924488207
 MonoBehaviour:
@@ -434,10 +434,10 @@ MonoBehaviour:
   Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638315833828062636
+  lastModified: 638315948180000000
   FileSizes:
   - Name: Desktop
-    Value: 7950144
+    Value: 7964608
   Exists: 1
 --- !u!114 &1138635782430036256
 MonoBehaviour:
@@ -596,7 +596,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 905203115620260987}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
@@ -644,7 +644,7 @@ MonoBehaviour:
   Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638315833828092682
+  lastModified: 638315948180000000
   FileSizes:
   - Name: Desktop
     Value: 1782
@@ -839,7 +839,7 @@ MonoBehaviour:
   Banks:
   - {fileID: 905203115620260987}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
