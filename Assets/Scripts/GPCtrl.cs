@@ -45,6 +45,10 @@ public class GPCtrl : MonoBehaviour
     [Header("SCORE")]
     public int currentScore;
     public int currentGameStage = 0;
+
+    [Header("IN GAME")]
+    [HideInInspector] public bool loveFrenzy = false;
+    private float loveFrenzyTimer;
     #endregion
 
     #region Methods
@@ -120,13 +124,24 @@ public class GPCtrl : MonoBehaviour
         Instantiate(enemyPrefab).transform.position = pos;
     }
 
-    public void SpecialAttack()
+    public void StartLoveFrenzy()
     {
+        loveFrenzyTimer = DataHolder.Instance.GeneralData.loveFrenzyDuration;
+        loveFrenzy = true;
         Enemy[] enemyArray = FindObjectsOfType<Enemy>();
         for (int i = 0; i < enemyArray.Length; i++)
         {
-            enemyArray[i].currentColor = EnemyData.Color.White;
             enemyArray[i].ChangeColor(EnemyData.Color.White);
+        }
+    }
+
+    public void EndLoveFrenzy()
+    {
+        loveFrenzy = false;
+        Enemy[] enemyArray = FindObjectsOfType<Enemy>();
+        for (int i = 0; i < enemyArray.Length; i++)
+        {
+            enemyArray[i].ChangeColor(enemyArray[i].currentColor);
         }
     }
 
@@ -152,6 +167,9 @@ public class GPCtrl : MonoBehaviour
         if (pause) return;
 
         float timeSinceStart = Time.time - startTime;
+
+        if (loveFrenzy) loveFrenzyTimer -= Time.deltaTime;
+        if (loveFrenzyTimer <= 0) EndLoveFrenzy();
 
         if (spawnerMode == SpawnerMode.Game)
         {

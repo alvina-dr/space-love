@@ -49,7 +49,7 @@ public class Enemy_LoveFrenzy : Enemy
             }
         }
         rb.velocity = randomDirection * Time.deltaTime * data.speed * 100;
-        if (generalTimer >= 10) Kill();
+        if (generalTimer >= data.lifeDuration) Kill();
     }
 
     public void SetStartingDirection()
@@ -72,7 +72,7 @@ public class Enemy_LoveFrenzy : Enemy
 
     public override void Damage(int _value, PlayerCursor _cursor)
     {
-        GPCtrl.Instance.SpecialAttack();
+        GPCtrl.Instance.StartLoveFrenzy();
         base.Damage(_value, _cursor);
     }
     #endregion

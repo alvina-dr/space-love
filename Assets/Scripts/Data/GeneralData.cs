@@ -17,4 +17,7 @@ public class GeneralData : ScriptableObject
 
     [Header("FX")]
     public GameObject explosionDeathEffect;
+
+    [Header("GAMEPLAY")]
+    public float loveFrenzyDuration;
 }

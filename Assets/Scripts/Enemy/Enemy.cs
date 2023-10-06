@@ -95,7 +95,8 @@ public class Enemy : MonoBehaviour
         target = GPCtrl.Instance.Planet;
         currentHealth = data.maxHealth;
         currentColor = (EnemyData.Color)Random.Range(1, 3);
-        ChangeColor(currentColor);
+        if (GPCtrl.Instance.loveFrenzy) ChangeColor(EnemyData.Color.White);
+        else ChangeColor(currentColor);
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
     }
 

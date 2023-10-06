@@ -99,7 +99,7 @@ public class PlayerCursor : MonoBehaviour
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null)
         {
-            _enemy.ChangeColor(_enemy.currentColor);
+            if(!GPCtrl.Instance.loveFrenzy) _enemy.ChangeColor(_enemy.currentColor);
             targetList.Remove(_enemy);
         }
     }

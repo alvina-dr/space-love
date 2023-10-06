@@ -31,4 +31,7 @@ public class EnemyData : ScriptableObject
     public float shootingDistance;
     public float projectileSpeed;
     public float reloadTime;
+
+    [Header("TEMPORARY UNITS")]
+    public float lifeDuration;
 }
