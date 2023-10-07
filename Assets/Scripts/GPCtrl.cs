@@ -169,7 +169,7 @@ public class GPCtrl : MonoBehaviour
         float timeSinceStart = Time.time - startTime;
 
         if (loveFrenzy) loveFrenzyTimer -= Time.deltaTime;
-        if (loveFrenzyTimer <= 0) EndLoveFrenzy();
+        if (loveFrenzy && loveFrenzyTimer <= 0) EndLoveFrenzy();
 
         if (spawnerMode == SpawnerMode.Game)
         {

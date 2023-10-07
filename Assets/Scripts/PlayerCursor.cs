@@ -85,7 +85,7 @@ public class PlayerCursor : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
-        if (_enemy != null && _enemy.currentColor != cursorColor || GPCtrl.Instance.loveFrenzy)
+        if (_enemy != null && (_enemy.currentColor != cursorColor || GPCtrl.Instance.loveFrenzy))
         {
             var audioEvent = RuntimeManager.CreateInstance("event:/Character/TargetReveal");
             audioEvent.start();
