@@ -46,7 +46,7 @@ public class PlayerCursor : MonoBehaviour
         });
         if (targetList.Count > 0)
         {
-            if (targetList[targetList.Count - 1].currentColor == cursorColor)
+            if (targetList[targetList.Count - 1].currentColor == cursorColor && !GPCtrl.Instance.loveFrenzy)
             {
                 targetList.Remove(targetList[targetList.Count - 1]);
                 Shoot();
@@ -85,7 +85,7 @@ public class PlayerCursor : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         Enemy _enemy = collision.GetComponent<Enemy>();
-        if (_enemy != null && _enemy.currentColor != cursorColor)
+        if (_enemy != null && _enemy.currentColor != cursorColor || GPCtrl.Instance.loveFrenzy)
         {
             var audioEvent = RuntimeManager.CreateInstance("event:/Character/TargetReveal");
             audioEvent.start();
