@@ -1009,7 +1009,7 @@ PrefabInstance:
     - target: {fileID: 1277452150524160398, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
       propertyPath: actionButton
-      value: 32
+      value: 303
       objectReference: {fileID: 0}
     - target: {fileID: 2534634862392459819, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
@@ -4857,7 +4857,7 @@ PrefabInstance:
     - target: {fileID: 1277452150524160398, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
       propertyPath: actionButton
-      value: 9
+      value: 101
       objectReference: {fileID: 0}
     - target: {fileID: 2534634862392459819, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}

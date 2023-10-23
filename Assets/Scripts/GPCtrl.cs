@@ -206,7 +206,7 @@ public class GPCtrl : MonoBehaviour
             {
                 for (int i = 0; i < enemyDataList.Count; i++)
                 {
-                    enemyDataList[i].spawnTime *= DataHolder.Instance.GeneralData.timeRateReduction;
+                    enemyDataList[i].spawnRate *= DataHolder.Instance.GeneralData.timeRateReduction;
                 }
                 currentGameStage++;
             }
