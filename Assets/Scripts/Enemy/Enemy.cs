@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
     public VisualEffect visualEffect;
     public TrailRenderer leftTrail;
     public TrailRenderer rightTrail;
-
+    public VisualEffect loadingEffect;
     #endregion
 
     #region Methods
@@ -78,6 +78,7 @@ public class Enemy : MonoBehaviour
         if (visualEffect != null) GPCtrl.Instance.SetVFX(visualEffect, _color);
         if (leftTrail != null) GPCtrl.Instance.SetVFX(leftTrail, currentColor);
         if (rightTrail != null) GPCtrl.Instance.SetVFX(rightTrail, currentColor);
+        if (loadingEffect != null) GPCtrl.Instance.SetVFX(loadingEffect, _color);
     }
     #endregion
 

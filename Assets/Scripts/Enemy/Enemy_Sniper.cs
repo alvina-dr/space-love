@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using UnityEngine.VFX;
+
 public class Enemy_Sniper : Enemy
 {
     float timer = 0;
@@ -16,6 +18,7 @@ public class Enemy_Sniper : Enemy
         else
         {
             timer += Time.deltaTime;
+            loadingEffect.SetFloat("Fresnel", timer / data.reloadTime * 10); 
             if (timer >= data.reloadTime)
             {
                 Shoot();
@@ -27,7 +30,7 @@ public class Enemy_Sniper : Enemy
     {
         Projectile _projectile = Instantiate(projectilePrefab);
         _projectile.SetupProjectile(data, currentColor);
-        _projectile.transform.position = transform.position;
+        _projectile.transform.position = loadingEffect.transform.position;
         var audioEvent = RuntimeManager.CreateInstance(data.shootSound);
         audioEvent.start();
         timer = 0;
