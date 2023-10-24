@@ -76,6 +76,7 @@ public class Scoreboard : MonoBehaviour
             scoreText.transform.DOScale(1.1f, .3f).OnComplete(() =>
             {
                 scoreText.transform.DOScale(1f, .1f);
+                EventSystem.current.SetSelectedGameObject(inputField.gameObject);
             });
         });
     }
