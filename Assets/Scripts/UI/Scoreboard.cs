@@ -82,9 +82,11 @@ public class Scoreboard : MonoBehaviour
 
     public void ShowScoreboard()
     {
-        EventSystem.current.SetSelectedGameObject(mainMenuButton);
         scoreboardMenu.gameObject.SetActive(true);
-        scoreboardMenu.DOFade(1, .3f);
+        scoreboardMenu.DOFade(1, .3f).OnComplete(() =>
+        {
+            EventSystem.current.SetSelectedGameObject(mainMenuButton);
+        });
         for (int i = 0; i < scoreList.entries.Count; i++)
         {
             InstantiateScoreboardEntry(scoreList.entries[i], i);
@@ -98,7 +100,7 @@ public class Scoreboard : MonoBehaviour
             scoreboardMenu.gameObject.SetActive(false);
             for (int i = 0; i < scoreEntryLayout.childCount; i++)
             {
-                Destroy(scoreEntryLayout.GetChild(i));
+                Destroy(scoreEntryLayout.GetChild(i).gameObject);
             }
 
         });

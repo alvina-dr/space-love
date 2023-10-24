@@ -12,7 +12,13 @@ public class MainMenu : MonoBehaviour
     public Color purple;
     public Color transparent;
     public GameObject startingButton;
+    [Header("CREDITS")]
+    public GameObject creditsButton;
+    public GameObject creditsBackButton;
     public CanvasGroup credits;
+    [Header("SCOREBOARD")]
+    public GameObject scoreboardButton;
+    public GameObject scoreboardBackButton;
     public Scoreboard scoreboard;
     public SerialController serialControler;
     public List<char> currentInput;
@@ -28,13 +34,16 @@ public class MainMenu : MonoBehaviour
         {
             credits.DOFade(0, .3f).OnComplete(() =>
             {
+                EventSystem.current.SetSelectedGameObject(creditsButton);
                 credits.gameObject.SetActive(false);
             });
         }
         else
         {
             credits.gameObject.SetActive(true);
-            credits.DOFade(1, .3f);
+            credits.DOFade(1, .3f).OnComplete(() => {
+                EventSystem.current.SetSelectedGameObject(creditsBackButton);
+            });
         }
     }
 
@@ -48,11 +57,12 @@ public class MainMenu : MonoBehaviour
         if (scoreboard.scoreboardMenu.gameObject.activeSelf)
         {
             scoreboard.HideScoreboard();
+            EventSystem.current.SetSelectedGameObject(scoreboardButton);
         }
         else
         {
             scoreboard.ShowScoreboard();
-            EventSystem.current.SetSelectedGameObject(scoreboard.mainMenuButton);
+            //EventSystem.current.SetSelectedGameObject(scoreboardBackButton);
         }
     }
 
