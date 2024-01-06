@@ -67,7 +67,7 @@ MonoBehaviour:
     Data3: -1906955098
     Data4: 1770933046
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -94,7 +94,7 @@ MonoBehaviour:
     Data3: -1129321284
     Data4: -1326307326
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -121,7 +121,7 @@ MonoBehaviour:
     Data3: -1859844702
     Data4: -942915190
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -148,7 +148,7 @@ MonoBehaviour:
     Data3: -322961751
     Data4: -1252541200
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -175,7 +175,7 @@ MonoBehaviour:
     Data3: -519639662
     Data4: -770551822
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 1
   Is3D: 1
   IsOneShot: 0
@@ -203,7 +203,7 @@ MonoBehaviour:
     Data3: -1839953259
     Data4: 473929378
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -230,7 +230,7 @@ MonoBehaviour:
     Data3: 120432298
     Data4: 483053723
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -257,7 +257,7 @@ MonoBehaviour:
     Data3: 2095276214
     Data4: 386938233
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -265,6 +265,44 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 515
+--- !u!114 &-3507732597182899955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Session/Love is Blouje FMOD @STEREO@/Build/Stereo/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638401644111513008
+  FileSizes: []
+  Exists: 1
+--- !u!114 &-2688923533001302478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: FMOD Session/Love is Blouje FMOD @STEREO@/Build/Stereo/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638401644111545196
+  FileSizes:
+  - Name: 
+    Value: 1782
+  Exists: 1
 --- !u!114 &-2288258945336539106
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -284,7 +322,7 @@ MonoBehaviour:
     Data3: 956310450
     Data4: 2102605107
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -311,7 +349,7 @@ MonoBehaviour:
     Data3: 377558931
     Data4: 906161234
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -332,8 +370,8 @@ MonoBehaviour:
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
   EditorBanks:
-  - {fileID: 4680875936719921099}
-  - {fileID: 905203115620260987}
+  - {fileID: -2688923533001302478}
+  - {fileID: -3507732597182899955}
   EditorEvents:
   - {fileID: 7716218744695588670}
   - {fileID: 7682796559211813361}
@@ -359,10 +397,10 @@ MonoBehaviour:
   - {fileID: -3556026323699837305}
   EditorParameters: []
   MasterBanks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   StringsBanks:
-  - {fileID: 4680875936719921099}
-  cacheTime: 638315948180000000
+  - {fileID: -2688923533001302478}
+  cacheTime: 638401644111545196
   cacheVersion: 131607
 --- !u!114 &30694965924488207
 MonoBehaviour:
@@ -383,7 +421,7 @@ MonoBehaviour:
     Data3: -1869263465
     Data4: -2131288044
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -419,26 +457,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1075
---- !u!114 &905203115620260987
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.bank
-  Name: Master
-  StudioPath: bank:/Master
-  lastModified: 638315948180000000
-  FileSizes:
-  - Name: Desktop
-    Value: 7964608
-  Exists: 1
 --- !u!114 &1138635782430036256
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +476,7 @@ MonoBehaviour:
     Data3: -574372447
     Data4: 384608451
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -485,7 +503,7 @@ MonoBehaviour:
     Data3: -1313752396
     Data4: -1901202936
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -512,7 +530,7 @@ MonoBehaviour:
     Data3: -902662490
     Data4: -1183152325
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -567,7 +585,7 @@ MonoBehaviour:
     Data3: -2016436339
     Data4: 690378874
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -594,7 +612,7 @@ MonoBehaviour:
     Data3: -603688008
     Data4: -360615754
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -621,7 +639,7 @@ MonoBehaviour:
     Data3: 147126950
     Data4: -417053843
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -629,26 +647,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 318
---- !u!114 &4680875936719921099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/Love is Blouje FMOD/Build/Desktop/Master.strings.bank
-  Name: Master.strings
-  StudioPath: bank:/Master.strings
-  lastModified: 638315948180000000
-  FileSizes:
-  - Name: Desktop
-    Value: 1782
-  Exists: 1
 --- !u!114 &5294883282102479005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -688,7 +686,7 @@ MonoBehaviour:
     Data3: -253585995
     Data4: -2097341456
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -715,7 +713,7 @@ MonoBehaviour:
     Data3: -198081095
     Data4: -958148204
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -762,7 +760,7 @@ MonoBehaviour:
     Data3: -488920951
     Data4: -34821698
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 1
   Is3D: 0
   IsOneShot: 0
@@ -790,7 +788,7 @@ MonoBehaviour:
     Data3: -307916874
     Data4: -350091769
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -837,7 +835,7 @@ MonoBehaviour:
     Data3: -1855341683
     Data4: -2092888109
   Banks:
-  - {fileID: 905203115620260987}
+  - {fileID: -3507732597182899955}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1

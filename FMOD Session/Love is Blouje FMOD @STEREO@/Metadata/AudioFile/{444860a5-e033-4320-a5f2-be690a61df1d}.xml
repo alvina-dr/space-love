@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{444860a5-e033-4320-a5f2-be690a61df1d}">
+		<property name="assetPath">
+			<value>Alex/SFX_Target_Reveal.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.203125</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a6c9d72e-ae26-4699-8540-7659ceb2a8c3}</destination>
+		</relationship>
+	</object>
+</objects>
