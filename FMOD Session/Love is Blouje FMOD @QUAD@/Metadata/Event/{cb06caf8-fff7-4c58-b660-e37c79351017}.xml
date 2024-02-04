@@ -62,7 +62,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{9506af2b-15ed-42e6-b65f-21120cdb5397}">
 		<property name="maxVoices">
-			<value>4</value>
+			<value>1</value>
 		</property>
 	</object>
 	<object class="MarkerTrack" id="{9a41cc0b-4404-4ea6-aec4-eae7d78c5a74}" />
@@ -128,7 +128,7 @@
 	</object>
 	<object class="EventMixerGroup" id="{a0a70c25-cbc8-4072-b7f1-dce9a2e77cca}">
 		<property name="volume">
-			<value>-8</value>
+			<value>-12</value>
 		</property>
 		<property name="name">
 			<value>Audio 1</value>

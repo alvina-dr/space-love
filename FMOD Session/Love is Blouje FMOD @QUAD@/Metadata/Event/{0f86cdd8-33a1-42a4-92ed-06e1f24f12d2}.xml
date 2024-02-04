@@ -283,10 +283,13 @@
 			<value>-13.5</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>1000</value>
+			<value>3000</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>4000</value>
+			<value>7500</value>
+		</property>
+		<property name="minimumScatterDistance">
+			<value>2</value>
 		</property>
 		<relationship name="sound">
 			<destination>{815b4249-e20f-4da3-a598-dc1e765ec7ee}</destination>
@@ -319,10 +322,10 @@
 			<value>60</value>
 		</property>
 		<property name="minimumTimeBetweenSounds">
-			<value>1000</value>
+			<value>4500</value>
 		</property>
 		<property name="maximumTimeBetweenSounds">
-			<value>3500</value>
+			<value>7000</value>
 		</property>
 		<relationship name="sound">
 			<destination>{aa4b7507-d11b-4ae7-af4e-4640296435a7}</destination>

@@ -42,7 +42,6 @@
 	</object>
 	<object class="MasterTrack" id="{7c0a0412-f03d-4c90-b4e3-2f2964b8b107}">
 		<relationship name="automationTracks">
-			<destination>{6c90ccf5-8f33-4f43-a718-2f884ac8d1fc}</destination>
 			<destination>{e6bff3a7-c770-4bcb-ae63-dcc10ae4bc32}</destination>
 		</relationship>
 		<relationship name="mixerGroup">
@@ -86,11 +85,6 @@
 			<destination>{36216eb4-1d5c-44f6-88af-c90457e2ddc3}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationTrack" id="{6c90ccf5-8f33-4f43-a718-2f884ac8d1fc}">
-		<relationship name="automator">
-			<destination>{7b3039b8-caa1-429f-84e9-b971b87cc307}</destination>
-		</relationship>
-	</object>
 	<object class="AutomationTrack" id="{e6bff3a7-c770-4bcb-ae63-dcc10ae4bc32}">
 		<relationship name="automator">
 			<destination>{c294e030-71b2-48d8-9b20-28f18b4ac565}</destination>
@@ -111,6 +105,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d77a36b2-7d6b-4987-ab01-4cc371e543c7}">
+		<property name="volume">
+			<value>-3.5</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -140,9 +137,6 @@
 		<property name="overridingOutputFormat">
 			<value>1</value>
 		</property>
-		<relationship name="automators">
-			<destination>{7b3039b8-caa1-429f-84e9-b971b87cc307}</destination>
-		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{56a12b19-5bd9-4efa-b411-31f079989350}" />
 	<object class="MixerBusEffectChain" id="{05a9d700-0f57-40a6-b6c5-c3f72b8a539d}">
@@ -157,21 +151,13 @@
 			<value>7</value>
 		</property>
 		<property name="frequencyA">
-			<value>116.379707</value>
+			<value>283.661224</value>
 		</property>
 		<property name="gainA">
 			<value>2.06896663</value>
 		</property>
 		<relationship name="automators">
 			<destination>{c294e030-71b2-48d8-9b20-28f18b4ac565}</destination>
-		</relationship>
-	</object>
-	<object class="Automator" id="{7b3039b8-caa1-429f-84e9-b971b87cc307}">
-		<property name="nameOfPropertyBeingAutomated">
-			<value>surroundStereoSeparation</value>
-		</property>
-		<relationship name="automationCurves">
-			<destination>{eb19de64-4284-4b3d-8941-eaba3747635b}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{8e2f6ec1-5529-4a15-9cda-76853afd11a0}" />
@@ -183,15 +169,6 @@
 			<destination>{4629b372-293a-4a91-b73c-5c1e689f8736}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationCurve" id="{eb19de64-4284-4b3d-8941-eaba3747635b}">
-		<relationship name="parameter">
-			<destination>{e7911da0-acd4-45f3-bc39-c40b180b5ef6}</destination>
-		</relationship>
-		<relationship name="automationPoints">
-			<destination>{6b0691a9-adfb-440e-a60a-2ddca2037adf}</destination>
-			<destination>{2e355e50-1836-44a8-b59e-7e0dd85d93ae}</destination>
-		</relationship>
-	</object>
 	<object class="AutomationCurve" id="{4629b372-293a-4a91-b73c-5c1e689f8736}">
 		<relationship name="parameter">
 			<destination>{e7911da0-acd4-45f3-bc39-c40b180b5ef6}</destination>
@@ -201,31 +178,12 @@
 			<destination>{5b35fae1-5b33-4875-b068-86eec49b1678}</destination>
 		</relationship>
 	</object>
-	<object class="AutomationPoint" id="{6b0691a9-adfb-440e-a60a-2ddca2037adf}">
-		<property name="position">
-			<value>0</value>
-		</property>
-		<property name="value">
-			<value>0</value>
-		</property>
-		<property name="curveShape">
-			<value>0.276240736</value>
-		</property>
-	</object>
-	<object class="AutomationPoint" id="{2e355e50-1836-44a8-b59e-7e0dd85d93ae}">
-		<property name="position">
-			<value>3.2000000000000002</value>
-		</property>
-		<property name="value">
-			<value>180</value>
-		</property>
-	</object>
 	<object class="AutomationPoint" id="{e48f802d-3e62-4a37-b64f-85366666b9a0}">
 		<property name="position">
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>1</value>
+			<value>1.39761686</value>
 		</property>
 		<property name="curveShape">
 			<value>0.326415151</value>
@@ -233,10 +191,10 @@
 	</object>
 	<object class="AutomationPoint" id="{5b35fae1-5b33-4875-b068-86eec49b1678}">
 		<property name="position">
-			<value>3.826013767446633</value>
+			<value>3.4457803786851655</value>
 		</property>
 		<property name="value">
-			<value>17</value>
+			<value>8</value>
 		</property>
 	</object>
 </objects>

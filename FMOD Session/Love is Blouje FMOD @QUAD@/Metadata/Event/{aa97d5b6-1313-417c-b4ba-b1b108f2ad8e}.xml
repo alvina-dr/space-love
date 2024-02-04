@@ -111,6 +111,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerGroup" id="{d77a36b2-7d6b-4987-ab01-4cc371e543c7}">
+		<property name="volume">
+			<value>-7</value>
+		</property>
 		<property name="name">
 			<value>Audio 1</value>
 		</property>
@@ -128,6 +131,7 @@
 		<relationship name="effects">
 			<destination>{438ca3b1-a1b9-4152-82b5-71eeab7b0788}</destination>
 			<destination>{ab1d7b5e-78b2-41ba-905f-ef7366b1123a}</destination>
+			<destination>{5d4a6c9f-96ac-4a99-8f36-44ce7a93ec94}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{9b8fd700-93a4-478a-aa1c-ef9550c77696}">
@@ -157,7 +161,7 @@
 			<value>7</value>
 		</property>
 		<property name="frequencyA">
-			<value>116.379707</value>
+			<value>187.428619</value>
 		</property>
 		<property name="gainA">
 			<value>2.06896663</value>
@@ -166,6 +170,7 @@
 			<destination>{c294e030-71b2-48d8-9b20-28f18b4ac565}</destination>
 		</relationship>
 	</object>
+	<object class="LoudnessMeter" id="{5d4a6c9f-96ac-4a99-8f36-44ce7a93ec94}" />
 	<object class="Automator" id="{7b3039b8-caa1-429f-84e9-b971b87cc307}">
 		<property name="nameOfPropertyBeingAutomated">
 			<value>surroundStereoSeparation</value>
@@ -225,7 +230,7 @@
 			<value>0</value>
 		</property>
 		<property name="value">
-			<value>1</value>
+			<value>3.15817595</value>
 		</property>
 		<property name="curveShape">
 			<value>0.326415151</value>
@@ -233,10 +238,10 @@
 	</object>
 	<object class="AutomationPoint" id="{5b35fae1-5b33-4875-b068-86eec49b1678}">
 		<property name="position">
-			<value>3.826013767446633</value>
+			<value>3.5</value>
 		</property>
 		<property name="value">
-			<value>17</value>
+			<value>8.15817833</value>
 		</property>
 	</object>
 </objects>
