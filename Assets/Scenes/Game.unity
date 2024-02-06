@@ -5080,6 +5080,11 @@ PrefabInstance:
       propertyPath: portName
       value: COM6
       objectReference: {fileID: 0}
+    - target: {fileID: 3614636906175348408, guid: a3772895895549d4881bda57250f25b0,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4484397138896336759, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: Planet

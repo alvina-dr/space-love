@@ -131,6 +131,7 @@ MonoBehaviour:
   visualEffect: {fileID: 2308726601788394897}
   leftTrail: {fileID: 0}
   rightTrail: {fileID: 0}
+  loadingEffect: {fileID: 0}
   projectilePrefab: {fileID: 3389932735456574026, guid: c9934d8aaef6ebb4481861bc7ed465ca,
     type: 3}
 --- !u!114 &5380081396470240869 stripped
@@ -269,6 +270,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5841354549232432563}
     m_Modifications:
+    - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Gradient.m_Array.Array.data[0].m_Value.key0.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Gradient.m_Array.Array.data[0].m_Value.key0.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
+        type: 3}
+      propertyPath: m_PropertySheet.m_Gradient.m_Array.Array.data[0].m_Value.key0.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2145773079002614219, guid: e498d7434b887fb4ea9304c93b0e2f12,
         type: 3}
       propertyPath: m_PropertySheet.m_AnimationCurve.m_Array.Array.data[0].m_Value.m_Curve.Array.data[1].time

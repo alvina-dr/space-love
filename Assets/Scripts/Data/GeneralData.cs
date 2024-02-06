@@ -7,6 +7,7 @@ public class GeneralData : ScriptableObject
 {
     [Header("DEBUG")]
     public bool computerMode;
+    public bool externalDevice;
 
     [Header("SETUP")]
     public int scoreboardSize;

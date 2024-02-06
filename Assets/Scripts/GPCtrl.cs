@@ -77,6 +77,7 @@ public class GPCtrl : MonoBehaviour
                 break;
             case EnemyData.Color.Red:
                 _renderer.material.SetColor("_color", visibleRed);
+                Debug.Log(_renderer.material.GetColorArray(0));
                 break;
             case EnemyData.Color.Blue:
                 _renderer.material.SetColor("_color", visibleBlue);
@@ -160,7 +161,15 @@ public class GPCtrl : MonoBehaviour
     #endregion
 
     #region Unity API
-
+#if UNITY_EDITOR //DEBUG COMMAND ONLY
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Y))
+        {
+            GameOver();
+        }
+    }
+#endif
 
     private void FixedUpdate()
     {
@@ -173,23 +182,26 @@ public class GPCtrl : MonoBehaviour
 
         if (spawnerMode == SpawnerMode.Game)
         {
-            currentInput.Clear();
-            string input;
-            while ((input = serialControler.ReadSerialMessage()) != null)
-                if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
-                    Debug.Log("Connection established");
-                else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
-                    Debug.Log("Connection attempt failed or disconnection detected");
-                else
-                {
-                    currentInput.AddRange(input);
-                }
+            if (DataHolder.Instance.GeneralData.externalDevice)
+            {
+                currentInput.Clear();
+                string input;
+                while ((input = serialControler.ReadSerialMessage()) != null)
+                    if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
+                        Debug.Log("Connection established");
+                    else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
+                        Debug.Log("Connection attempt failed or disconnection detected");
+                    else
+                    {
+                        currentInput.AddRange(input);
+                    }
 
-            if (currentInput.Contains('R'))
-                PlayerRed.Shoot();
+                if (currentInput.Contains('R'))
+                    PlayerRed.Shoot();
 
-            if (currentInput.Contains('B'))
-                PlayerBlue.Shoot();
+                if (currentInput.Contains('B'))
+                    PlayerBlue.Shoot();
+            }
 
             if (timeSinceStart >= 180) DataHolder.Instance.musicEvent.setParameterByName("Layer", 3);
             else if (timeSinceStart >= 120) DataHolder.Instance.musicEvent.setParameterByName("Layer", 2);
@@ -258,11 +270,14 @@ public class GPCtrl : MonoBehaviour
         //    PlayerRed.playerInput.SwitchCurrentControlScheme(UnityEngine.InputSystem.Keyboard.current);
         //    PlayerBlue.playerInput.SwitchCurrentControlScheme(UnityEngine.InputSystem.Keyboard.current);
         //}
+        if (!DataHolder.Instance.GeneralData.externalDevice)
+        {
+            serialControler.enabled = false;
+        }
     }
 
     void Start()
     {
-        serialControler = GetComponent<SerialController>();
         foreach (EnemyData enemy in enemyDataList)
         {
             timerList.Add(enemy.spawnRate);

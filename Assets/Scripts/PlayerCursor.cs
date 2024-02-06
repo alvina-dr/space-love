@@ -89,6 +89,7 @@ public class PlayerCursor : MonoBehaviour
         {
             var audioEvent = RuntimeManager.CreateInstance("event:/Character/TargetReveal");
             audioEvent.start();
+            
             _enemy.ChangeColor(EnemyData.Color.White);
             targetList.Add(_enemy);
         }

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: GeneralData
   m_EditorClassIdentifier: 
   computerMode: 1
+  externalDevice: 0
   scoreboardSize: 10
   planetMaxHealth: 10
   cursorSpeed: 300
