@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{e2f5ed30-1c4d-4e16-9ab7-33e69fa24d72}">
+		<property name="assetPath">
+			<value>Alex/SFX_Enemy_Sniper_Charge.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{a6c9d72e-ae26-4699-8540-7659ceb2a8c3}</destination>
+		</relationship>
+	</object>
+</objects>
