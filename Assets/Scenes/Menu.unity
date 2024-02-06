@@ -348,18 +348,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1ab7765fc43a43c469b80c8573ffe67c, type: 3}
---- !u!114 &308360719 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3614636906175348408, guid: a3772895895549d4881bda57250f25b0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1528122598}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bc5f48af2cffd747a079fe8c632e2c8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &342645049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3463591758985989627, guid: 29bf18554f22cff40bf22b7e3c9e5104,
@@ -924,6 +912,16 @@ PrefabInstance:
     - target: {fileID: 250414078194232635, guid: 29bf18554f22cff40bf22b7e3c9e5104,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 265941042516622666, guid: 29bf18554f22cff40bf22b7e3c9e5104,
+        type: 3}
+      propertyPath: onClickSoundName
+      value: event:/UI/GoBack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613989676822140433, guid: 29bf18554f22cff40bf22b7e3c9e5104,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2613989676822140433, guid: 29bf18554f22cff40bf22b7e3c9e5104,
@@ -1748,7 +1746,7 @@ PrefabInstance:
         type: 3}
       propertyPath: serialController
       value: 
-      objectReference: {fileID: 308360719}
+      objectReference: {fileID: 0}
     - target: {fileID: 1363588829007209964, guid: ed7a203655fc39249b8ec0a6fbc7e04e,
         type: 3}
       propertyPath: m_IsActive
