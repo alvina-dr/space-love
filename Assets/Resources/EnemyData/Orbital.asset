@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Orbital
   m_EditorClassIdentifier: 
   enemyType: 1
-  spawnRate: 20
-  spawnTime: 60
+  spawnRate: 11.809798
+  spawnTime: 0
   enemyPrefab: {fileID: 4537874187888344512, guid: 3c473efd8bbf3b640812c9b95f8aaab4,
     type: 3}
   maxHealth: 1
@@ -23,8 +23,8 @@ MonoBehaviour:
   scoreOnKill: 20
   deathSound: event:/Ennemy/OrbitalDie
   hitSound: 
-  shootSound: event:/Ennemy/TirOrbital
   shootingDistance: 3
   projectileSpeed: 4
   reloadTime: 5
+  shootSound: event:/Ennemy/TirOrbital
   lifeDuration: 0
