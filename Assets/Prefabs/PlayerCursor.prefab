@@ -305,6 +305,7 @@ MonoBehaviour:
   rb: {fileID: 1227452468975223562}
   circleSprite: {fileID: 6828210086234628748}
   internCircleSprite: {fileID: 4110444259292137761}
+  crossSprite: {fileID: 2573487216438958105}
   playerInput: {fileID: 1063967004348678349}
   targetList: []
   playerCurrentPoint: 0

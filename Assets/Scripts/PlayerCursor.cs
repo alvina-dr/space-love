@@ -14,6 +14,7 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private Rigidbody rb;
     [SerializeField] private SpriteRenderer circleSprite;
     [SerializeField] private SpriteRenderer internCircleSprite;
+    [SerializeField] private SpriteRenderer crossSprite;
     public PlayerInput playerInput;
 
     [Header("CURRENT INFO")]
@@ -89,8 +90,12 @@ public class PlayerCursor : MonoBehaviour
         {
             var audioEvent = RuntimeManager.CreateInstance("event:/Character/TargetReveal");
             audioEvent.start();
-            
             _enemy.ChangeColor(EnemyData.Color.White);
+            if (targetList.Count == 0)
+            {
+                crossSprite.transform.DORotate(new Vector3(0, 0, 360), .3f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Incremental).SetEase(Ease.Linear);
+                crossSprite.transform.DOScale(.15f, .3f).SetLoops(-1, LoopType.Yoyo).SetEase(Ease.InOutElastic);
+            }
             targetList.Add(_enemy);
         }
     }
@@ -102,6 +107,17 @@ public class PlayerCursor : MonoBehaviour
         {
             if(!GPCtrl.Instance.loveFrenzy) _enemy.ChangeColor(_enemy.currentColor);
             targetList.Remove(_enemy);
+            StopCrossAnimation();
+        }
+    }
+
+    public void StopCrossAnimation()
+    {
+        if (targetList.Count == 0)
+        {
+            crossSprite.transform.DOKill();
+            crossSprite.transform.DOScale(.1f, .3f);
+            crossSprite.transform.DORotate(Vector3.zero, .3f);
         }
     }
 
