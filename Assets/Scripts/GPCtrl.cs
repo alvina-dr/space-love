@@ -134,6 +134,9 @@ public class GPCtrl : MonoBehaviour
         {
             enemyArray[i].ChangeColor(EnemyData.Color.White);
         }
+        DataHolder.Instance.musicEvent.setParameterByName("Heart", 1);
+        Instantiate(DataHolder.Instance.GeneralData.frenzyFX);
+        UICtrl.frenzyBar.gameObject.SetActive(true);
     }
 
     public void EndLoveFrenzy()
@@ -144,6 +147,8 @@ public class GPCtrl : MonoBehaviour
         {
             enemyArray[i].ChangeColor(enemyArray[i].currentColor);
         }
+        DataHolder.Instance.musicEvent.setParameterByName("Heart", 0);
+        UICtrl.frenzyBar.gameObject.SetActive(false);
     }
 
     public void GameOver()
@@ -178,6 +183,7 @@ public class GPCtrl : MonoBehaviour
         float timeSinceStart = Time.time - startTime;
 
         if (loveFrenzy) loveFrenzyTimer -= Time.deltaTime;
+        if (loveFrenzy) UICtrl.frenzyBar.SetSliderValue(loveFrenzyTimer / DataHolder.Instance.GeneralData.loveFrenzyDuration, 1);
         if (loveFrenzy && loveFrenzyTimer <= 0) EndLoveFrenzy();
 
         if (spawnerMode == SpawnerMode.Game)
@@ -280,7 +286,7 @@ public class GPCtrl : MonoBehaviour
     {
         foreach (EnemyData enemy in enemyDataList)
         {
-            timerList.Add(enemy.spawnRate);
+            timerList.Add(0);
         }
     }
     #endregion

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Sirenix.OdinInspector;
 
 [CreateAssetMenu(fileName = "GeneralData", menuName = "ScriptableObjects/GeneralData", order = 1)]
 public class GeneralData : ScriptableObject
@@ -16,8 +17,10 @@ public class GeneralData : ScriptableObject
     public List<float> gameStage = new List<float>();
     public float timeRateReduction;
 
-    [Header("FX")]
+    [BoxGroup("FX")]
     public GameObject explosionDeathEffect;
+    [BoxGroup("FX")]
+    public FrenzyFX frenzyFX;
 
     [Header("GAMEPLAY")]
     public float loveFrenzyDuration;
