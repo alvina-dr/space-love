@@ -37,7 +37,7 @@ public class DataHolder : MonoBehaviour
     {
         //Destroy(GPCtrl.Instance.gameObject);
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
-        darkBackground.DOFade(1, .3f).OnComplete(() =>
+        darkBackground.DOFade(1, 2f).OnComplete(() =>
         {
             SceneManager.LoadScene("Game");
             musicEvent.setParameterByName("Layer", 0);
@@ -53,13 +53,14 @@ public class DataHolder : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
             musicEvent.setParameterByName("Layer", -1);
+            musicEvent.setParameterByName("Heart", 0);
             ambianceEvent.setParameterByName("Layer", -1);
         });
     }
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        darkBackground.DOFade(0, .3f);
+        darkBackground.DOFade(0, 3f);
         SceneManager.sceneLoaded -= OnLevelFinishedLoading;
     }
 }

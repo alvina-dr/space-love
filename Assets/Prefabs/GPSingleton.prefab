@@ -54,7 +54,7 @@ MonoBehaviour:
   currentInput: 
   enemyDataList: []
   pause: 0
-  spawnRadius: 9
+  spawnRadius: 9.5
   visibleRed: {r: 0.8235294, g: 0, b: 0.11372549, a: 1}
   visibleBlue: {r: 0, g: 0, b: 1, a: 1}
   visibleAll: {r: 1, g: 0, b: 1, a: 1}

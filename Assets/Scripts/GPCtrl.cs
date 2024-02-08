@@ -134,6 +134,7 @@ public class GPCtrl : MonoBehaviour
         {
             enemyArray[i].ChangeColor(EnemyData.Color.White);
         }
+        DataHolder.Instance.musicEvent.setParameterByName("Heart", 1);
     }
 
     public void EndLoveFrenzy()
@@ -144,6 +145,7 @@ public class GPCtrl : MonoBehaviour
         {
             enemyArray[i].ChangeColor(enemyArray[i].currentColor);
         }
+        DataHolder.Instance.musicEvent.setParameterByName("Heart", 0);
     }
 
     public void GameOver()
@@ -280,7 +282,7 @@ public class GPCtrl : MonoBehaviour
     {
         foreach (EnemyData enemy in enemyDataList)
         {
-            timerList.Add(enemy.spawnRate);
+            timerList.Add(0);
         }
     }
     #endregion
