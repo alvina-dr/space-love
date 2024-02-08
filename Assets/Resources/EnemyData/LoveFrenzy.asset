@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: LoveFrenzy
   m_EditorClassIdentifier: 
   enemyType: 2
-  spawnRate: 8.747999
-  spawnTime: 3
+  spawnRate: 90
+  spawnTime: 90
   enemyPrefab: {fileID: 2117703788881945439, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
     type: 3}
   maxHealth: 1
