@@ -48,6 +48,10 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _Inside_Texture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _MainTex:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -89,7 +93,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Contact_Fresnel_Strenght: 0
+    - _Contact_Fresnel_Strenght: 2
     - _Contact_Strenght: 0.2
     - _Cull: 2
     - _Cutoff: 0.5
@@ -98,17 +102,22 @@ Material:
     - _DstBlend: 0
     - _DstBlendAlpha: 0
     - _EnvironmentReflections: 1
-    - _Fresnel_Strenght: 5
+    - _Fresnel_Strenght: 2.5
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _Medium_Contact_Fresnel_Strenght: 0.6
+    - _Medium_Fresnel_Strenght: 2
+    - _Medium_Noise_Scale: 1000
     - _Metallic: 0
-    - _Noise_Scale: 2000
+    - _Noise_Scale: 3000
     - _OcclusionStrength: 1
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Small_Fresnel_Strenght: 0.7
+    - _Small_Noise_Scale: 3000
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
