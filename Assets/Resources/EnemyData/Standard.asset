@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
   m_Name: Standard
   m_EditorClassIdentifier: 
-  enemyType: 0
   spawnRate: 7
   spawnTime: 0
   enemyPrefab: {fileID: 8743144145005346839, guid: 72e4da443b8b256448030bde0ea3003b,
@@ -23,8 +22,6 @@ MonoBehaviour:
   scoreOnKill: 10
   deathSound: event:/Ennemy/StandartDie
   hitSound: 
-  shootSound: 
   shootingDistance: 0
   projectileSpeed: 0
   reloadTime: 0
-  lifeDuration: 0

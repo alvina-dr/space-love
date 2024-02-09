@@ -12,7 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
   m_Name: Sniper
   m_EditorClassIdentifier: 
-  enemyType: 1
   spawnRate: 20
   spawnTime: 150
   enemyPrefab: {fileID: 516706601494008066, guid: 8a1587ee4902e5343821dfcb5d241291,

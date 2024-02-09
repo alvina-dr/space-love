@@ -32,7 +32,8 @@ public class GPCtrl : MonoBehaviour
     [Header("SPAWN")]
     public float spawnRadius;
     private float startTime;
-    private List<float> timerList = new List<float>();
+    private List<float> chronoList = new List<float>();
+    private List<float> enemySpawnRate = new List<float>();
 
     [Header("COLORS")]
     public Color visibleRed;
@@ -134,7 +135,6 @@ public class GPCtrl : MonoBehaviour
         {
             enemyArray[i].ChangeColor(EnemyData.Color.White);
         }
-        DataHolder.Instance.musicEvent.setParameterByName("Heart", 1);
         Instantiate(DataHolder.Instance.GeneralData.frenzyFX);
         UICtrl.frenzyBar.gameObject.SetActive(true);
     }
@@ -147,12 +147,12 @@ public class GPCtrl : MonoBehaviour
         {
             enemyArray[i].ChangeColor(enemyArray[i].currentColor);
         }
-        DataHolder.Instance.musicEvent.setParameterByName("Heart", 0);
         UICtrl.frenzyBar.gameObject.SetActive(false);
     }
 
     public void GameOver()
     {
+        EndLoveFrenzy();
         currentScore = PlayerBlue.playerCurrentPoint + PlayerRed.playerCurrentPoint;
         pause = true;
         Enemy[] enemyArray = FindObjectsOfType<Enemy>();
@@ -222,23 +222,20 @@ public class GPCtrl : MonoBehaviour
         {
             if (DataHolder.Instance.GeneralData.gameStage.Count > currentGameStage + 1)
             {
-                for (int i = 0; i < enemyDataList.Count; i++)
+                for (int i = 0; i < enemySpawnRate.Count; i++)
                 {
-                    enemyDataList[i].spawnRate *= DataHolder.Instance.GeneralData.timeRateReduction;
+                    enemySpawnRate[i] *= DataHolder.Instance.GeneralData.timeRateReduction;
                 }
                 currentGameStage++;
             }
         }
-        for(int i = 0; i < timerList.Count; i++)
+        for(int i = 0; i < chronoList.Count; i++)
         {
-            if(timeSinceStart < enemyDataList[i].spawnTime)
+            if (timeSinceStart < enemyDataList[i].spawnTime) continue;
+            chronoList[i] -= Time.fixedDeltaTime;
+            if (chronoList[i] <= 0f)
             {
-                continue;
-            }
-            timerList[i] -= Time.fixedDeltaTime;
-            if (timerList[i] <= 0f)
-            {
-                timerList[i] = enemyDataList[i].spawnRate;
+                chronoList[i] = enemySpawnRate[i];
                 if (enemyDataList[i].name == "Standard")
                 {
                     float _angle = UnityEngine.Random.Range(0f, 2.0f * Mathf.PI);
@@ -286,7 +283,8 @@ public class GPCtrl : MonoBehaviour
     {
         foreach (EnemyData enemy in enemyDataList)
         {
-            timerList.Add(0);
+            chronoList.Add(0);
+            enemySpawnRate.Add(enemy.spawnRate);
         }
     }
     #endregion
