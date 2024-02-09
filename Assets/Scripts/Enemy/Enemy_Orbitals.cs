@@ -11,9 +11,7 @@ public class Enemy_Orbitals : Enemy
     public override void Move()
     {
         transform.RotateAround(target.transform.position, Vector3.back, Time.deltaTime * 50);
-            meshParent.forward = Vector3.RotateTowards(meshParent.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
-        if (transform.position.x <= 0.001) mesh.transform.localRotation = Quaternion.Euler(180, -90, 0);
-        else mesh.transform.localRotation = Quaternion.Euler(0, -90, 0);
+        meshParent.forward = Vector3.RotateTowards(meshParent.forward, target.transform.position - transform.position, 10 * Time.deltaTime, 0);
         if (Vector3.Distance(transform.position, target.transform.position) > data.shootingDistance)
             transform.position = Vector3.MoveTowards(transform.position, target.transform.position, Time.deltaTime * data.speed);
         else

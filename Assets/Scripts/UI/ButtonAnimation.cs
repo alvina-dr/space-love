@@ -12,7 +12,6 @@ public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, 
     #region Properties
     public Image background;
     public TextMeshProUGUI text;
-    [SerializeField] private string onClickSoundName;
     #endregion
 
     [SerializeField] private Color active;
@@ -45,7 +44,6 @@ public class ButtonAnimation : MonoBehaviour, ISelectHandler, IDeselectHandler, 
     public void Activate()
     {
         var audioEvent = RuntimeManager.CreateInstance("event:/UI/Click");
-        if (onClickSoundName != "") audioEvent = RuntimeManager.CreateInstance(onClickSoundName);
         audioEvent.start();
     }
 }

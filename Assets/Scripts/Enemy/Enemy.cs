@@ -71,16 +71,6 @@ public class Enemy : MonoBehaviour
         {
             var audioEvent = RuntimeManager.CreateInstance(data.deathSound);
             audioEvent.start();
-            if (GPCtrl.Instance.PlayerBlue.targetList.Contains(this))
-            {
-                GPCtrl.Instance.PlayerBlue.targetList.Remove(this);
-                GPCtrl.Instance.PlayerBlue.StopCrossAnimation();
-            }
-            if (GPCtrl.Instance.PlayerRed.targetList.Contains(this))
-            {
-                GPCtrl.Instance.PlayerRed.targetList.Remove(this);
-                GPCtrl.Instance.PlayerRed.StopCrossAnimation();
-            }
         }
         meshParent.transform.DOScale(0f, .1f).OnComplete(() => { 
             Destroy(gameObject);

@@ -81,34 +81,27 @@ public class MainMenu : MonoBehaviour
         {
             Instance = this;
         }
-        if (!DataHolder.Instance.GeneralData.externalDevice)
-        {
-            serialControler.enabled = false;
-        }
     }
 
     private void Update()
     {
-        if (DataHolder.Instance.GeneralData.externalDevice)
-        {
-            currentInput.Clear();
-            string input;
-            while ((input = serialControler.ReadSerialMessage()) != null)
-                if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
-                    Debug.Log("Connection established");
-                else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
-                    Debug.Log("Connection attempt failed or disconnection detected");
-                else
-                {
-                    currentInput.AddRange(input);
-                }
+        currentInput.Clear();
+        string input;
+        while ((input = serialControler.ReadSerialMessage()) != null)
+            if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
+                Debug.Log("Connection established");
+            else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
+                Debug.Log("Connection attempt failed or disconnection detected");
+            else
+            {
+                currentInput.AddRange(input);
+            }
 
-            if (currentInput.Contains('R'))
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+        if (currentInput.Contains('R'))
+            EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
 
-            if (currentInput.Contains('B'))
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
-        }
+        if (currentInput.Contains('B'))
+            EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
     }
     #endregion
 }
