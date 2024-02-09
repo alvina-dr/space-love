@@ -26,7 +26,7 @@ MonoBehaviour:
   timeRateReduction: 0.9
   explosionDeathEffect: {fileID: 4866811070604463223, guid: 741dc64e69c91044abc1d39bf00ca27f,
     type: 3}
-  frenzyFX: {fileID: 5070770540880718946, guid: d3a449edae33a1f4582f622895d4e99c,
+  frenzyFX: {fileID: 9134443732467927201, guid: d3a449edae33a1f4582f622895d4e99c,
     type: 3}
   scorePopperFX: {fileID: 4398685475867980911, guid: 37cb41efdfe55ca48af75106871f7d76,
     type: 3}
