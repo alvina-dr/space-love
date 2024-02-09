@@ -60,7 +60,12 @@ public class Enemy : MonoBehaviour
     public virtual void Kill(PlayerCursor _cursor = null)
     {
         Instantiate(DataHolder.Instance.GeneralData.explosionDeathEffect).transform.position = transform.position;
-        if (_cursor != null) _cursor.GainPoints(data.scoreOnKill);
+        if (_cursor != null)
+        {
+            _cursor.GainPoints(data.scoreOnKill);
+            ScorePopper _scorePopper = Instantiate(DataHolder.Instance.GeneralData.scorePopperFX, GPCtrl.Instance.UICtrl.transform);
+            _scorePopper.SetupScorePopper(data.scoreOnKill, transform.position);
+        }
         if (meshParent == null) return;
         if (GPCtrl.Instance.spawnerMode == GPCtrl.SpawnerMode.Game)
         {
