@@ -21,6 +21,8 @@ public class GeneralData : ScriptableObject
     public GameObject explosionDeathEffect;
     [BoxGroup("FX")]
     public FrenzyFX frenzyFX;
+    [BoxGroup("FX")]
+    public ScorePopper scorePopperFX;
 
     [Header("GAMEPLAY")]
     public float loveFrenzyDuration;
