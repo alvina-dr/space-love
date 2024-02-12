@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/VFX/Warpdrive.meta
+guid: 5c8a2989777476a41b37a36688da06c7
+folderAsset: yes
+DefaultImporter:
+========
+guid: 802970f09fd8e334d99dfd15658e5ee5
+NativeFormatImporter:
+>>>>>>>> main:Assets/Settings/Custom Renderer.asset.meta
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

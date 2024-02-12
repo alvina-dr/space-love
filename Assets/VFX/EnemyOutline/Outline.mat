@@ -102,7 +102,7 @@ Material:
     - _Is_Visible: 1
     - _Metallic: 0
     - _OcclusionStrength: 1
-    - _Outline_Strenght: 1.1
+    - _Outline_Strenght: 0.005
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
