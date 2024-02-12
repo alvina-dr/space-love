@@ -81,13 +81,18 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 5c07ec2049ec3814b8e845795f00656f,
         type: 3}
       propertyPath: m_Materials.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: -7511558181221131132, guid: 5c07ec2049ec3814b8e845795f00656f,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: c5c73750581339343acc33ea17c4f352, type: 2}
+      objectReference: {fileID: 2100000, guid: cb48a659bf9f4374aa7af545bc3fe6e1, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 5c07ec2049ec3814b8e845795f00656f,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: b5b6558a7bb24154691b0a2568785820, type: 2}
     - target: {fileID: 919132149155446097, guid: 5c07ec2049ec3814b8e845795f00656f,
         type: 3}
       propertyPath: m_Name
@@ -242,6 +247,7 @@ MonoBehaviour:
   visualEffect: {fileID: 9061914784854585742}
   leftTrail: {fileID: 0}
   rightTrail: {fileID: 0}
+  loadingEffect: {fileID: 0}
 --- !u!4 &1935495590301067896 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5866727234085087101, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
