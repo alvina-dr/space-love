@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f23ac25548cf20740ad22cac514385a0, type: 3}
   m_Name: LoveFrenzy
   m_EditorClassIdentifier: 
-  enemyType: 0
   spawnRate: 90
-  spawnTime: 0
+  spawnTime: 90
   enemyPrefab: {fileID: 2117703788881945439, guid: e56350f62bb0bb74bb7cdf52f9c03f0a,
     type: 3}
   maxHealth: 1
@@ -23,8 +22,8 @@ MonoBehaviour:
   scoreOnKill: 10
   deathSound: event:/Ennemy/StandartDie
   hitSound: 
+  shootSound: 
   shootingDistance: 0
   projectileSpeed: 0
   reloadTime: 0
-  shootSound: 
   lifeDuration: 10
