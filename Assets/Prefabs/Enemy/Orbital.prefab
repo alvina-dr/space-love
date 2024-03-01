@@ -122,7 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshParent: {fileID: 5841354549232432563}
-  mesh: {fileID: 0}
+  mesh: {fileID: 7949665567884525554}
   healthBar: {fileID: 5380081396470240869}
   target: {fileID: 0}
   data: {fileID: 11400000, guid: debea066f705a4d428eb086a8ccd9ed1, type: 2}
@@ -370,6 +370,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b5e29ab4b863da43b553a44c25f3606, type: 3}
+--- !u!23 &7949665567884525554 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 7b5e29ab4b863da43b553a44c25f3606,
+    type: 3}
+  m_PrefabInstance: {fileID: 8760476640066904950}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &9086520685055362205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 7b5e29ab4b863da43b553a44c25f3606,

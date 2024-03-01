@@ -1,9 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.VFX;
 using DG.Tweening;
 using FMODUnity;
+using UnityEngine;
+using UnityEngine.VFX;
 public class Enemy : MonoBehaviour
 {
     #region Properties
@@ -41,6 +39,7 @@ public class Enemy : MonoBehaviour
     public virtual void Damage(int _value, PlayerCursor _cursor)
     {
         if (currentHealth <= 0) return;
+        Instantiate(DataHolder.Instance.GeneralData.explosionDeathEffect).transform.position = transform.position;
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
         if (meshParent == null) return;
@@ -50,8 +49,8 @@ public class Enemy : MonoBehaviour
             {
                 if (currentHealth <= 0)
                 {
-                    Kill(_cursor);
                     _cursor.targetList.Remove(this);
+                    Kill(_cursor);
                 }
             });
         });
@@ -59,7 +58,6 @@ public class Enemy : MonoBehaviour
 
     public virtual void Kill(PlayerCursor _cursor = null)
     {
-        Instantiate(DataHolder.Instance.GeneralData.explosionDeathEffect).transform.position = transform.position;
         if (_cursor != null)
         {
             _cursor.GainPoints(data.scoreOnKill);
@@ -87,13 +85,19 @@ public class Enemy : MonoBehaviour
         });
     }
 
-    public void ChangeColor(EnemyData.Color _color)
+    public void ChangeColor(EnemyData.Color _color, bool _transition = false)
     {
-        if (mesh != null) GPCtrl.Instance.SetColor(mesh, _color);
+        if (mesh != null && !_transition) GPCtrl.Instance.SetColor(mesh, _color);
         if (visualEffect != null) GPCtrl.Instance.SetVFX(visualEffect, _color);
         if (leftTrail != null) GPCtrl.Instance.SetVFX(leftTrail, currentColor);
         if (rightTrail != null) GPCtrl.Instance.SetVFX(rightTrail, currentColor);
         if (loadingEffect != null) GPCtrl.Instance.SetVFX(loadingEffect, _color);
+    }
+
+    public void SetOutline(bool _value)
+    {
+        Debug.Log("outline setup : " + mesh.materials[1].name);
+        mesh.materials[1].SetFloat("_Is_Visible", _value ? 1.0f : 0);
     }
     #endregion
 
@@ -110,9 +114,10 @@ public class Enemy : MonoBehaviour
     {
         target = GPCtrl.Instance.Planet;
         currentHealth = data.maxHealth;
-        currentColor = (EnemyData.Color)Random.Range(1, 3);
+        currentColor = (EnemyData.Color) Random.Range(1, 3);
         if (GPCtrl.Instance.loveFrenzy) ChangeColor(EnemyData.Color.White);
         else ChangeColor(currentColor);
+        SetOutline(false);
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
     }
 

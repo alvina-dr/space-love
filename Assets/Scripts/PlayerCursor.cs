@@ -91,6 +91,7 @@ public class PlayerCursor : MonoBehaviour
             var audioEvent = RuntimeManager.CreateInstance("event:/Character/TargetReveal");
             audioEvent.start();
             _enemy.ChangeColor(EnemyData.Color.White);
+            _enemy.SetOutline(true);
             if (targetList.Count == 0)
             {
                 crossSprite.transform.DORotate(new Vector3(0, 0, 360), .3f, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Incremental).SetEase(Ease.Linear);
@@ -105,7 +106,11 @@ public class PlayerCursor : MonoBehaviour
         Enemy _enemy = collision.GetComponent<Enemy>();
         if (_enemy != null)
         {
-            if(!GPCtrl.Instance.loveFrenzy) _enemy.ChangeColor(_enemy.currentColor);
+            if (targetList.Contains(_enemy))
+            {
+                if (!GPCtrl.Instance.loveFrenzy) _enemy.ChangeColor(_enemy.currentColor);
+                _enemy.SetOutline(false);
+            }
             targetList.Remove(_enemy);
             StopCrossAnimation();
         }

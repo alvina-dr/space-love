@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using FMODUnity;
+using DG.Tweening;
+
 public class Enemy_Cameleon : Enemy
 {
     #region Methods
@@ -13,7 +15,8 @@ public class Enemy_Cameleon : Enemy
     public override void Damage(int _value, PlayerCursor _cursor)
     {
         base.Damage(_value, _cursor);
-        switch(currentColor)
+        if (_cursor.targetList.Contains(this)) _cursor.targetList.Remove(this);
+        switch (currentColor)
         {
             case EnemyData.Color.Blue:
                 currentColor = EnemyData.Color.Red;
@@ -22,7 +25,12 @@ public class Enemy_Cameleon : Enemy
                 currentColor = EnemyData.Color.Blue;
                 break;
         }
-        ChangeColor(currentColor);
+        ChangeColor(currentColor, true);
+        if (currentColor == EnemyData.Color.Red) mesh.material.SetFloat("_Spawns_Red", 1);
+        else mesh.material.SetFloat("_Spawns_Red", 0);
+        mesh.material.SetFloat("_Is_Magenta", 0);
+        SetOutline(false);
+        mesh.material.DOFloat(2.0f, "_Transition_Strength", .3f);
         if (GPCtrl.Instance.spawnerMode == GPCtrl.SpawnerMode.Game)
         {
             var audioEvent = RuntimeManager.CreateInstance(data.hitSound);

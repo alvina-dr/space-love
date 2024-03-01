@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshParent: {fileID: 1935495590301067896}
-  mesh: {fileID: 0}
+  mesh: {fileID: 6614346303906221431}
   healthBar: {fileID: 100495886318913966}
   target: {fileID: 0}
   data: {fileID: 11400000, guid: b5d210684f65e724c9c0a075c74b7163, type: 2}
@@ -240,6 +240,12 @@ PrefabInstance:
 --- !u!4 &5440854365288035864 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2c95c14f988f0954db6dd6c3fef92e2d,
+    type: 3}
+  m_PrefabInstance: {fileID: 5479602334916743667}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6614346303906221431 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: 2c95c14f988f0954db6dd6c3fef92e2d,
     type: 3}
   m_PrefabInstance: {fileID: 5479602334916743667}
   m_PrefabAsset: {fileID: 0}

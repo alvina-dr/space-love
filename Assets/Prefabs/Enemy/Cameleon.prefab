@@ -28,6 +28,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5290071314402178958, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
+        type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 383
+      objectReference: {fileID: 0}
     - target: {fileID: 7346113833092785132, guid: 6d7d5f7ecb7dac44ca64e11535cb3edd,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -116,7 +121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshParent: {fileID: 6316456876115573011}
-  mesh: {fileID: 0}
+  mesh: {fileID: 4299654169805083678}
   healthBar: {fileID: 5481402558774155973}
   target: {fileID: 0}
   data: {fileID: 11400000, guid: e93edf933ed4a164699b7579f1ff212e, type: 2}
@@ -250,6 +255,12 @@ PrefabInstance:
 --- !u!4 &3161628589357379441 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c40ddd53344bc784c963f521c6c8e10d,
+    type: 3}
+  m_PrefabInstance: {fileID: 3200622333674965146}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4299654169805083678 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: c40ddd53344bc784c963f521c6c8e10d,
     type: 3}
   m_PrefabInstance: {fileID: 3200622333674965146}
   m_PrefabAsset: {fileID: 0}

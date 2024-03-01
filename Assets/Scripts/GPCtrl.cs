@@ -58,12 +58,17 @@ public class GPCtrl : MonoBehaviour
         switch(_color)
         {
             case EnemyData.Color.White:
+                _renderer.material.SetFloat("_Is_Magenta", 1);
                 _renderer.material.color = visibleAll;
                 break;
             case EnemyData.Color.Red:
+                _renderer.material.SetFloat("_Is_Magenta", 0);
+                _renderer.material.SetFloat("_Spawns_Red", 1);
                 _renderer.material.color = visibleRed;
                 break;
             case EnemyData.Color.Blue:
+                _renderer.material.SetFloat("_Is_Magenta", 0);
+                _renderer.material.SetFloat("_Spawns_Red", 0);
                 _renderer.material.color = visibleBlue;
                 break;
         }
