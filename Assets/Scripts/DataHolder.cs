@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using FMODUnity;
 using UnityEngine.SceneManagement;
 using DG.Tweening;
+using Sirenix.OdinInspector;
 
 public class DataHolder : MonoBehaviour
 {
@@ -62,5 +63,11 @@ public class DataHolder : MonoBehaviour
     {
         darkBackground.DOFade(0, 3f);
         SceneManager.sceneLoaded -= OnLevelFinishedLoading;
+    }
+
+    [Button]
+    public void DeletePlayerPrefs()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
