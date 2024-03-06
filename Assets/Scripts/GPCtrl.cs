@@ -159,6 +159,7 @@ public class GPCtrl : MonoBehaviour
     {
         EndLoveFrenzy();
         currentScore = PlayerBlue.playerCurrentPoint + PlayerRed.playerCurrentPoint;
+        UICtrl.cockpitUI.SetActive(false);
         pause = true;
         Enemy[] enemyArray = FindObjectsOfType<Enemy>();
         for (int i = 0; i < enemyArray.Length; i++)

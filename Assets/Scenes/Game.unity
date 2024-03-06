@@ -1135,6 +1135,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: {fileID: 1257434474}
+--- !u!1 &1294622605 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2184557132300260770, guid: 7b08056f9fff1324aacd6ad5c418afb1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1518220365}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1451930942 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3614636906175348408, guid: a3772895895549d4881bda57250f25b0,
@@ -2466,6 +2472,7 @@ MonoBehaviour:
   scoreboard: {fileID: 1690204201}
   redScore: {fileID: 1622362916}
   blueScore: {fileID: 1257434476}
+  cockpitUI: {fileID: 2082453450}
 --- !u!114 &1925674664 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 555257832531712288, guid: d76f14748c424e8408ad4a7b4d8af663,
@@ -3026,6 +3033,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 264930647777188442, guid: d76f14748c424e8408ad4a7b4d8af663,
+        type: 3}
+      propertyPath: keyboardFirstButton
+      value: 
+      objectReference: {fileID: 1294622605}
     - target: {fileID: 345421292880767633, guid: d76f14748c424e8408ad4a7b4d8af663,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3179,6 +3191,11 @@ PrefabInstance:
     - target: {fileID: 475635279805024190, guid: d76f14748c424e8408ad4a7b4d8af663,
         type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 555257832531712288, guid: d76f14748c424e8408ad4a7b4d8af663,
+        type: 3}
+      propertyPath: m_Navigation.m_Mode
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 731912797011431738, guid: d76f14748c424e8408ad4a7b4d8af663,

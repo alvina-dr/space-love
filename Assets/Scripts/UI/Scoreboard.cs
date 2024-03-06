@@ -36,6 +36,7 @@ public class Scoreboard : MonoBehaviour
     public GameObject scoreEntryPrefab;
     public Transform scoreEntryLayout;
     public GameObject mainMenuButton;
+    public GameObject keyboardFirstButton;
 
     private void Start()
     {
@@ -76,7 +77,7 @@ public class Scoreboard : MonoBehaviour
             scoreText.transform.DOScale(1.1f, .3f).OnComplete(() =>
             {
                 scoreText.transform.DOScale(1f, .1f);
-                EventSystem.current.SetSelectedGameObject(inputField.gameObject);
+                EventSystem.current.SetSelectedGameObject(keyboardFirstButton);
             });
         });
     }

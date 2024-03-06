@@ -10,5 +10,6 @@ public class UICtrl : MonoBehaviour
     public Scoreboard scoreboard;
     public Score redScore;
     public Score blueScore;
+    public GameObject cockpitUI;
     #endregion
 }
