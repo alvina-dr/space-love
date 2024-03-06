@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour
 
     public void SetOutline(bool _value)
     {
-        Debug.Log("outline setup : " + mesh.materials[1].name);
+        if (mesh == null) return;
         mesh.materials[1].SetFloat("_Is_Visible", _value ? 1.0f : 0);
     }
     #endregion
