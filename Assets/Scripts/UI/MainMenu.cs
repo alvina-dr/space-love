@@ -22,10 +22,13 @@ public class MainMenu : MonoBehaviour
     public Scoreboard scoreboard;
     public SerialController serialControler;
     public List<char> currentInput;
+    [Header("FX")]
+    public Transform warpdriveFX;
 
     public void StartGame()
     {
         DataHolder.Instance.LoadGame();
+        warpdriveFX.DOScale(1.17f, 1f);
     }
 
     public void Credits()

@@ -38,11 +38,14 @@ public class DataHolder : MonoBehaviour
     {
         //Destroy(GPCtrl.Instance.gameObject);
         SceneManager.sceneLoaded += OnLevelFinishedLoading;
-        darkBackground.DOFade(1, 2f).OnComplete(() =>
+        DOVirtual.DelayedCall(1.7f, () =>
         {
-            SceneManager.LoadScene("Game");
-            musicEvent.setParameterByName("Layer", 0);
-            ambianceEvent.setParameterByName("Layer", 0);
+            darkBackground.DOFade(1, 0.3f).OnComplete(() =>
+            {
+                SceneManager.LoadScene("Game");
+                musicEvent.setParameterByName("Layer", 0);
+                ambianceEvent.setParameterByName("Layer", 0);
+            });
         });
     }
 
@@ -61,7 +64,14 @@ public class DataHolder : MonoBehaviour
 
     void OnLevelFinishedLoading(Scene scene, LoadSceneMode mode)
     {
-        darkBackground.DOFade(0, 3f);
+        Camera.main.orthographicSize = 3;
+        darkBackground.DOFade(0, 0.6f).OnComplete(() =>
+        {
+            Camera.main.DOOrthoSize(5.0f, 0.3f).OnComplete(() =>
+            {
+                Camera.main.DOOrthoSize(4.8f, 0.3f);
+            });
+        });
         SceneManager.sceneLoaded -= OnLevelFinishedLoading;
     }
 
