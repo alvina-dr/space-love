@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44eca5f262f99054194d79e39b64f838, type: 3}
   m_Name: GeneralData
   m_EditorClassIdentifier: 
-  computerMode: 1
-  externalDevice: 0
+  computerMode: 0
+  externalDevice: 1
   scoreboardSize: 10
   planetMaxHealth: 10
   cursorSpeed: 300

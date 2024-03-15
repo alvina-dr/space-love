@@ -1,8 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using DG.Tweening;
 using FMODUnity;
+using UnityEngine.InputSystem;
+
 public class PlanetBehavior : MonoBehaviour
 {
     #region Properties
@@ -30,8 +33,13 @@ public class PlanetBehavior : MonoBehaviour
             if(meshRenderer != null) meshRenderer.material.SetFloat("_destruction", _destruction);
         });
         GPCtrl.Instance.UICtrl.planetHealthBar.SetSliderValue(currentHealth, DataHolder.Instance.GeneralData.planetMaxHealth);
+        Debug.Log(Gamepad.all[0].name);
         if (DataHolder.Instance.GeneralData.externalDevice)
-            serialController.SendSerialMessage((currentHealth+10).ToString());
+        {
+            Gamepad.all[0].SetMotorSpeeds(0f, 0f);
+            //serialController.SendSerialMessage((currentHealth + 10).ToString());
+            //Gamepad.current.SetMotorSpeeds((float)currentHealth / (float)DataHolder.Instance.GeneralData.planetMaxHealth, 0);
+        }
         if (currentHealth <= 0)
         {
             var deathEvent = RuntimeManager.CreateInstance("event:/Earth/PlanetExplosion");

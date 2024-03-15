@@ -208,11 +208,11 @@ public class GPCtrl : MonoBehaviour
                         currentInput.AddRange(input);
                     }
 
-                if (currentInput.Contains('R'))
-                    PlayerRed.Shoot();
+                //if (currentInput.Contains('R'))
+                //    PlayerRed.Shoot();
 
-                if (currentInput.Contains('B'))
-                    PlayerBlue.Shoot();
+                //if (currentInput.Contains('B'))
+                //    PlayerBlue.Shoot();
             }
 
             if (timeSinceStart >= 180) DataHolder.Instance.musicEvent.setParameterByName("Layer", 3);

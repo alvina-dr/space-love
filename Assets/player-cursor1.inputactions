@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "4d5d1e36-2a14-4b26-90e2-faeb56f1910d",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -161,6 +161,17 @@
                     "name": "",
                     "id": "268649d4-2000-421f-a11d-76c5325d4f09",
                     "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "cc862aa8-4586-4ce1-9ea1-51dfd381372f",
+                    "path": "<XInputController>/buttonSouth",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

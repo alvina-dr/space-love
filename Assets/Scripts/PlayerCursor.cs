@@ -15,7 +15,9 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private SpriteRenderer circleSprite;
     [SerializeField] private SpriteRenderer internCircleSprite;
     [SerializeField] private SpriteRenderer crossSprite;
-    public PlayerInput playerInput;
+    //public PlayerInput playerInput;
+    public Playercursor1 controlPlayer1;
+    public Playercursor2 controlPlayer2;
 
     [Header("CURRENT INFO")]
     public List<Enemy> targetList = new List<Enemy>();
@@ -28,7 +30,7 @@ public class PlayerCursor : MonoBehaviour
     #endregion
 
     #region Methods
-    public void Shoot()
+    public void Shoot(InputAction.CallbackContext callbackContext)
     {
         internCircleSprite.transform.DOScale(0.05f, .1f).OnComplete(() =>
         {
@@ -50,7 +52,7 @@ public class PlayerCursor : MonoBehaviour
             if (targetList[targetList.Count - 1].currentColor == cursorColor && !GPCtrl.Instance.loveFrenzy)
             {
                 targetList.Remove(targetList[targetList.Count - 1]);
-                Shoot();
+                Shoot(callbackContext);
             } else
             {
                 playerCurrentPoint += targetList[targetList.Count - 1].data.scoreOnKill;
@@ -73,11 +75,11 @@ public class PlayerCursor : MonoBehaviour
         }
     }
 
-    public void OnMove(InputValue value)
+    public void OnMove(InputAction.CallbackContext callbackContext)
     {
         if (!DataHolder.Instance.GeneralData.computerMode)
         {
-            direction = value.Get<Vector2>().normalized;
+            direction = callbackContext.ReadValue<Vector2>().normalized;
         }
     }
     #endregion
@@ -134,7 +136,7 @@ public class PlayerCursor : MonoBehaviour
         //}
         if (Input.GetKeyDown(actionButton))
         {
-            Shoot();
+            //Shoot(InputAction.CallbackContext callbackContext);
         }
         if (DataHolder.Instance.GeneralData.computerMode)
         {
@@ -167,10 +169,21 @@ public class PlayerCursor : MonoBehaviour
             case EnemyData.Color.Red:
                 GPCtrl.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
                 inputValue = 'R';
+                controlPlayer2 = new Playercursor2();
+                controlPlayer2.Enable();
+                controlPlayer2.Player.Move.performed += OnMove;
+                controlPlayer2.Player.Fire.performed += Shoot;
+
                 break;
             case EnemyData.Color.Blue:
                 GPCtrl.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
                 inputValue = 'B';
+
+
+                controlPlayer1 = new Playercursor1();
+                controlPlayer1.Enable();
+                controlPlayer1.Player.Move.performed += OnMove;
+                controlPlayer1.Player.Fire.performed += Shoot;
                 break;
         }
     }

@@ -7,7 +7,7 @@
             "actions": [
                 {
                     "name": "Move",
-                    "type": "Value",
+                    "type": "PassThrough",
                     "id": "4d5d1e36-2a14-4b26-90e2-faeb56f1910d",
                     "expectedControlType": "Vector2",
                     "processors": "",
@@ -39,7 +39,7 @@
                 {
                     "name": "",
                     "id": "0087f7ce-8780-4de9-a9a2-a9dc55f26cd7",
-                    "path": "<Gamepad>/rightStick",
+                    "path": "<XInputController>/rightStick",
                     "interactions": "",
                     "processors": "",
                     "groups": "Joystick",
@@ -106,6 +106,17 @@
                     "name": "",
                     "id": "b06ed5d8-151c-4b15-8b8d-36a0b30cdcfd",
                     "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Fire",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "5c85b13d-a0a8-40be-9c12-7d6a293b1f78",
+                    "path": "<XInputController>/buttonEast",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

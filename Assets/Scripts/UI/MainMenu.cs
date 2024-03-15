@@ -88,6 +88,7 @@ public class MainMenu : MonoBehaviour
         {
             serialControler.enabled = false;
         }
+
     }
 
     private void Update()
@@ -106,11 +107,11 @@ public class MainMenu : MonoBehaviour
                     currentInput.AddRange(input);
                 }
 
-            if (currentInput.Contains('R'))
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+            //if (currentInput.Contains('R'))
+            //    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
 
-            if (currentInput.Contains('B'))
-                EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
+            //if (currentInput.Contains('B'))
+            //    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
         }
     }
     #endregion
