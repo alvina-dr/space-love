@@ -39,7 +39,6 @@ public class Enemy : MonoBehaviour
     public virtual void Damage(int _value, PlayerCursor _cursor)
     {
         if (currentHealth <= 0) return;
-        Instantiate(DataHolder.Instance.GeneralData.explosionDeathEffect).transform.position = transform.position;
         currentHealth -= _value;
         healthBar.SetSliderValue(currentHealth, data.maxHealth);
         if (meshParent == null) return;
@@ -51,6 +50,9 @@ public class Enemy : MonoBehaviour
                 {
                     _cursor.targetList.Remove(this);
                     Kill(_cursor);
+                } else
+                {
+                    Instantiate(DataHolder.Instance.GeneralData.explosionDeathEffect).transform.position = transform.position;
                 }
             });
         });
@@ -80,7 +82,8 @@ public class Enemy : MonoBehaviour
                 GPCtrl.Instance.PlayerRed.StopCrossAnimation();
             }
         }
-        meshParent.transform.DOScale(0f, .1f).OnComplete(() => { 
+        meshParent.transform.DOScale(0f, .1f).OnComplete(() => {
+            Instantiate(DataHolder.Instance.GeneralData.explosionDeathEffect).transform.position = transform.position;
             Destroy(gameObject);
         });
     }

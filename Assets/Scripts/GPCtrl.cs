@@ -224,17 +224,21 @@ public class GPCtrl : MonoBehaviour
 
         }
 
-        if (timeSinceStart > DataHolder.Instance.GeneralData.gameStage[currentGameStage])
+        if (spawnerMode == SpawnerMode.Game)
         {
-            if (DataHolder.Instance.GeneralData.gameStage.Count > currentGameStage + 1)
+            if (timeSinceStart > DataHolder.Instance.GeneralData.gameStage[currentGameStage])
             {
-                for (int i = 0; i < enemySpawnRate.Count; i++)
+                if (DataHolder.Instance.GeneralData.gameStage.Count > currentGameStage + 1)
                 {
-                    enemySpawnRate[i] *= DataHolder.Instance.GeneralData.timeRateReduction;
+                    for (int i = 0; i < enemySpawnRate.Count; i++)
+                    {
+                        enemySpawnRate[i] *= DataHolder.Instance.GeneralData.timeRateReduction;
+                    }
+                    currentGameStage++;
                 }
-                currentGameStage++;
             }
         }
+
         for(int i = 0; i < chronoList.Count; i++)
         {
             if (timeSinceStart < enemyDataList[i].spawnTime) continue;
@@ -268,10 +272,13 @@ public class GPCtrl : MonoBehaviour
         {
             Instance = this;
         }
-        EnemyData[] enemyDataArray = Resources.LoadAll<EnemyData>("EnemyData");
-        for (int i = 0; i < enemyDataArray.Length; i++)
+        if (spawnerMode == SpawnerMode.Game)
         {
-            enemyDataList.Add(enemyDataArray[i]);
+            EnemyData[] enemyDataArray = Resources.LoadAll<EnemyData>("EnemyData");
+            for (int i = 0; i < enemyDataArray.Length; i++)
+            {
+                enemyDataList.Add(enemyDataArray[i]);
+            }
         }
         startTime = Time.time;
         //if (DataHolder.Instance.GeneralData.computerMode)

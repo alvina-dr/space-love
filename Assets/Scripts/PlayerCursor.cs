@@ -24,7 +24,6 @@ public class PlayerCursor : MonoBehaviour
     public int playerCurrentPoint = 0;
 
     [Header("ACTION BUTTON")]
-    public KeyCode actionButton;
     public EnemyData.Color cursorColor;
     private char inputValue;
     #endregion
@@ -134,10 +133,6 @@ public class PlayerCursor : MonoBehaviour
         //if(input.Contains<byte>((byte)inputValue)) {
         //    Shoot();
         //}
-        if (Input.GetKeyDown(actionButton))
-        {
-            //Shoot(InputAction.CallbackContext callbackContext);
-        }
         if (DataHolder.Instance.GeneralData.computerMode)
         {
             switch(cursorColor)
@@ -151,11 +146,6 @@ public class PlayerCursor : MonoBehaviour
             }
         }
     }
-
-    //public void OnFire(InputValue value)
-    //{
-    //    Shoot();
-    //}
 
     private void FixedUpdate()
     {
@@ -178,8 +168,6 @@ public class PlayerCursor : MonoBehaviour
             case EnemyData.Color.Blue:
                 GPCtrl.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
                 inputValue = 'B';
-
-
                 controlPlayer1 = new Playercursor1();
                 controlPlayer1.Enable();
                 controlPlayer1.Player.Move.performed += OnMove;
