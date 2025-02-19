@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using DG.Tweening;
 using FMODUnity;
+using UnityEngine.InputSystem.Users;
 
 public class PlayerCursor : MonoBehaviour
 {
@@ -15,9 +16,7 @@ public class PlayerCursor : MonoBehaviour
     [SerializeField] private SpriteRenderer circleSprite;
     [SerializeField] private SpriteRenderer internCircleSprite;
     [SerializeField] private SpriteRenderer crossSprite;
-    //public PlayerInput playerInput;
-    public Playercursor1 controlPlayer1;
-    public Playercursor2 controlPlayer2;
+    public IA_PlayerCursor controlPlayer;
 
     [Header("CURRENT INFO")]
     public List<Enemy> targetList = new List<Enemy>();
@@ -25,7 +24,7 @@ public class PlayerCursor : MonoBehaviour
 
     [Header("ACTION BUTTON")]
     public EnemyData.Color cursorColor;
-    private char inputValue;
+
     #endregion
 
     #region Methods
@@ -129,10 +128,6 @@ public class PlayerCursor : MonoBehaviour
 
     void Update()
     {
-        //byte[] input = serialController.ReadSerialMessage();
-        //if(input.Contains<byte>((byte)inputValue)) {
-        //    Shoot();
-        //}
         if (DataHolder.Instance.GeneralData.computerMode)
         {
             switch(cursorColor)
@@ -154,28 +149,26 @@ public class PlayerCursor : MonoBehaviour
 
     private void Start()
     {
+        controlPlayer = new IA_PlayerCursor();
+        controlPlayer.Enable();
+        controlPlayer.Player.Move.performed += OnMove;
+        controlPlayer.Player.Fire.performed += Shoot;
+
+        var gamepad = Joystick.all[0];
         switch (cursorColor)
         {
             case EnemyData.Color.Red:
+                gamepad = Joystick.all[0];
                 GPCtrl.Instance.UICtrl.redScore.SetValue(playerCurrentPoint);
-                inputValue = 'R';
-                controlPlayer2 = new Playercursor2();
-                controlPlayer2.Enable();
-                controlPlayer2.Player.Move.performed += OnMove;
-                controlPlayer2.Player.Fire.performed += Shoot;
-
                 break;
             case EnemyData.Color.Blue:
+                gamepad = Joystick.all[1];
                 GPCtrl.Instance.UICtrl.blueScore.SetValue(playerCurrentPoint);
-                inputValue = 'B';
-                controlPlayer1 = new Playercursor1();
-                controlPlayer1.Enable();
-                controlPlayer1.Player.Move.performed += OnMove;
-                controlPlayer1.Player.Fire.performed += Shoot;
                 break;
         }
+
+        var user = InputUser.PerformPairingWithDevice(gamepad);
+        user.AssociateActionsWithUser(controlPlayer);
     }
     #endregion
-
-
 }

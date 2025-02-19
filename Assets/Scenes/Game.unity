@@ -198,6 +198,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 86518732}
   m_CullTransparentMesh: 1
+--- !u!114 &131521802 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1277452150524160398, guid: 3de703a2e583ba94e925445a8e7197cb,
+    type: 3}
+  m_PrefabInstance: {fileID: 1987857497}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6654b438e492cc47927cd5fcf6a9e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -896,18 +908,6 @@ MonoBehaviour:
   m_DeselectOnBackgroundClick: 1
   m_PointerBehavior: 0
   m_CursorLockBehavior: 0
---- !u!114 &1248007679 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1277452150524160398, guid: 3de703a2e583ba94e925445a8e7197cb,
-    type: 3}
-  m_PrefabInstance: {fileID: 1987857497}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6654b438e492cc47927cd5fcf6a9e5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1257434472
 GameObject:
   m_ObjectHideFlags: 0
@@ -1645,14 +1645,8 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1063967004348678349, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
-      propertyPath: m_Actions
-      value: 
-      objectReference: {fileID: -944628639613478452, guid: c4805fc67fa8b564996529798b6900b7,
-        type: 3}
-    - target: {fileID: 1063967004348678349, guid: 3de703a2e583ba94e925445a8e7197cb,
-        type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Joystick
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1063967004348678349, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
@@ -5795,7 +5789,7 @@ PrefabInstance:
     - target: {fileID: 1063967004348678349, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
       propertyPath: m_DefaultControlScheme
-      value: Joystick
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 1063967004348678349, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
@@ -5811,6 +5805,11 @@ PrefabInstance:
         type: 3}
       propertyPath: actionButton
       value: 101
+      objectReference: {fileID: 0}
+    - target: {fileID: 1277452150524160398, guid: 3de703a2e583ba94e925445a8e7197cb,
+        type: 3}
+      propertyPath: playerInputAction.m_Name
+      value: Player Input
       objectReference: {fileID: 0}
     - target: {fileID: 2534634862392459819, guid: 3de703a2e583ba94e925445a8e7197cb,
         type: 3}
@@ -6098,7 +6097,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerBlue
       value: 
-      objectReference: {fileID: 1248007679}
+      objectReference: {fileID: 131521802}
     - target: {fileID: 5977869905310930427, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6174,7 +6173,7 @@ PrefabInstance:
         type: 3}
       propertyPath: PlayerBlue
       value: 
-      objectReference: {fileID: 1248007679}
+      objectReference: {fileID: 0}
     - target: {fileID: 7027378175158169636, guid: a3772895895549d4881bda57250f25b0,
         type: 3}
       propertyPath: visibleAll.a

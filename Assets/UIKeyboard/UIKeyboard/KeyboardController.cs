@@ -10,7 +10,6 @@ public class KeyboardController : MonoBehaviour
     public string typedString = "";
     
     public void GetKey(char key) {
-        Debug.Log(key);
         typedString += key;
     }
 

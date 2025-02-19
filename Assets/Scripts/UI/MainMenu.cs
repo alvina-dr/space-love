@@ -73,7 +73,12 @@ public class MainMenu : MonoBehaviour
     private void Start()
     {
         EventSystem.current.SetSelectedGameObject(startingButton);
+        DOVirtual.DelayedCall(.1f, () =>
+        {
+            EventSystem.current.SetSelectedGameObject(startingButton);
+        });
     }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -96,22 +101,6 @@ public class MainMenu : MonoBehaviour
         if (DataHolder.Instance.GeneralData.externalDevice)
         {
             currentInput.Clear();
-            string input;
-            while ((input = serialControler.ReadSerialMessage()) != null)
-                if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_CONNECTED))
-                    Debug.Log("Connection established");
-                else if (ReferenceEquals(input, SerialController.SERIAL_DEVICE_DISCONNECTED))
-                    Debug.Log("Connection attempt failed or disconnection detected");
-                else
-                {
-                    currentInput.AddRange(input);
-                }
-
-            //if (currentInput.Contains('R'))
-            //    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
-
-            //if (currentInput.Contains('B'))
-            //    EventSystem.current.currentSelectedGameObject.GetComponent<Button>().onClick.Invoke();
         }
     }
     #endregion

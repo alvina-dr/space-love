@@ -316,7 +316,6 @@ GameObject:
   - component: {fileID: 2534634862392459819}
   - component: {fileID: 1277452150524160398}
   - component: {fileID: 1227452468975223562}
-  - component: {fileID: 1063967004348678349}
   - component: {fileID: 6254275016987508510}
   m_Layer: 0
   m_Name: PlayerCursor
@@ -360,11 +359,31 @@ MonoBehaviour:
   circleSprite: {fileID: 6828210086234628748}
   internCircleSprite: {fileID: 4110444259292137761}
   crossSprite: {fileID: 2573487216438958105}
-  playerInput: {fileID: 1063967004348678349}
   targetList: []
   playerCurrentPoint: 0
-  actionButton: 0
   cursorColor: 0
+  playerInputAction:
+    m_Name: Player Input
+    m_Id: 5692b275-663b-492b-80cb-b7f8aa66e4a6
+    m_Asset: {fileID: 0}
+    m_Actions:
+    - m_Name: New action
+      m_Type: 1
+      m_ExpectedControlType: Button
+      m_Id: be49f1ec-03d6-48c9-b003-aa0488209068
+      m_Processors: 
+      m_Interactions: 
+      m_SingletonActionBindings: []
+      m_Flags: 0
+    m_Bindings:
+    - m_Name: 
+      m_Id: 1cb89e49-1055-42c0-b295-169678e6b24e
+      m_Path: 
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: New action
+      m_Flags: 0
 --- !u!54 &1227452468975223562
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -392,37 +411,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &1063967004348678349
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8974442546683678017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: fc3f20fe46c45634d9ef5ef7a7fb6d60,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Joystick
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!136 &6254275016987508510
 CapsuleCollider:
   m_ObjectHideFlags: 0
